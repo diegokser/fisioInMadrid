@@ -1,0 +1,64 @@
+#logotipo-page{
+    width: 7rem;
+    display: flex;
+    margin-left: 3rem;
+}
+.navbar-all{
+    padding: 0rem;
+}
+.text-navbar-info{
+    color:white;
+}
+.nav-link{
+    font-weight: bold;
+    color: rgb(132,156,187)
+}
+.navbar-toggler{
+    margin:3rem;
+    color: rgb(132,156,187)
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .info-navbar-responsive {
+        display: none;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .nav-link{
+        margin:0rem 1rem 0rem 1rem;
+    }
+    .text-navbar-info{
+        font-size: 12px;
+    }
+    .info-navbar{
+        justify-content: center;
+        background-color:rgb(5,76,132);
+        padding: 1rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .text-navbar-info{
+        font-size: 14px;
+    }
+    .info-navbar{
+        padding:1rem;
+        justify-content: center;
+        background-color:rgb(5,76,132)
+    }
+    /* .navbar-content { DE ESTA FORMA CENTRO EL NAVBAR PERO PASA ALGO EN LA FOTO
+        flex-direction: column;
+    } */
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
