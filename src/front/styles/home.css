@@ -1,7 +1,71 @@
-/*
-    home.css: This website contains selectors only used in home.css
+.carousel-container{
+    display: flex;
+}
+.carousel-caption {
+    color: white;
+    z-index: 2;
+    width: 70%; /* Ajusta el ancho del cuadro de texto */ 
+    height: 70%;
+    padding: auto;
+}
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(91, 90, 90, 0.7);
+    z-index: 1; /* Coloca la capa oscura detrás de la imagen */
+}
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+.carousel-control-prev .carousel-control-next .carousel-indicators{
+    position:absolute;
+    z-index: 3;
+}
+
+.caption-title {
+    font-size: 4vw;
+    color:rgb(5,76,132);
+}
+
+.caption-description {
+    font-size: 3vw; /* Ajusta el tamaño de fuente según tus preferencias */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto; /* Ajusta automáticamente la altura según el ancho */
+    max-height: 700px; /* Establece una altura máxima si es necesario */
+    object-fit: cover; /* Hace que la imagen cubra todo el contenedor */
+}
+.card-info-home{
+    margin:5rem;
+    border:none;
+}
+.img-1-home{
+    border-radius: 1rem;
+}
+.card-home-text{
+    background-color: rgba(1,179,229,255);
+    border-radius: 1rem;
+    text-align: center;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

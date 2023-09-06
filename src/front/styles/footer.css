@@ -1,0 +1,60 @@
+.footer_container{
+  background-color: rgb(5,76,132);
+}
+.footer_infotext{
+  color:white;
+  font-weight: bold;
+  font-size: 2vw;
+}
+.footer_infosubtext{
+  color:white;
+  font-size: 1.5vw;
+  text-decoration: none;
+}
+.footer_infosubtext:hover{
+  color:white;
+  text-decoration: underline;
+}
+.footer_social{
+  color:white;
+  display:flex;
+}
+.footer_iconos{
+  margin:1vw;
+  font-size: 2vw;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { 
+  .footer_container{
+    padding-left: 12vw;
+    padding-top: 1rem;    
+    padding-bottom: 1rem;
+  }
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+  .footer_container{
+    padding-left: 6rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+  .footer_container{
+    padding-left: 8rem;
+  }
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+  
+  }
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+   
+  }
