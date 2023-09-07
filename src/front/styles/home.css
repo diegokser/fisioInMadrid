@@ -40,7 +40,8 @@
 }
 .card-info-home{
     border:none;
-    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
 }
 .img-1-home{
     border-radius: 1rem;
@@ -64,31 +65,45 @@
 .card-links-home:hover{
     color:rgb(5,76,132);
 }
+
+.title-bienvenida{
+    color: rgb(5,76,132);
+}
+.subtitle-bienvenida{
+    color:  rgba(1,179,229,255);
+}
+.text-bienvenida{
+    color: rgb(132,156,187);
+    text-align: justify;
+}
+.imagen-oferta-home{
+    width: 200px;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .card-info-home{
-        padding:1rem;
-    }
     .card-text-info{
-        padding: 1rem;
-        font-size: 3.5vw;
+        font-size: 3.3vw;
     }
     .card-home-text{
         top:20%;
         right:-10%;
         height: 90%;
     }
+    .home-oferta{
+        padding-top:3rem;
+    }
+    .card-info-home{
+        padding:2rem;
+    }
 }
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .card-info-home{
-        padding:2rem;
-    }
     .card-text-info{
         padding: 2rem;
-        font-size: 24px;
+        font-size: 22px;
     }
     .card-home-text{
         top:20%;
@@ -96,13 +111,44 @@
         width: 90%;
         height: 90%;
     }
+    .home-oferta{
+        padding-top:5rem;
+    }
+    .title-bienvenida{
+        font-size: 3vw;
+    }
+    .subtitle-bienvenida{
+        font-size: 3vw;
+    }
+    .text-bienvenida{
+        font-size: 3vw;
+    }
+    .card-info-home{
+        padding:3rem 3rem 3rem 3rem;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .card-text-info{
         padding: 1rem;
-        font-size: 15px;   
+        font-size: 14px;   
+    }
+    .home-oferta{
+        padding-top:1rem;
+        padding-left: 6rem;
+    }
+    .title-bienvenida{
+        font-size: 1.5vw;
+    }
+    .subtitle-bienvenida{
+        font-size: 1.4vw;
+    }
+    .text-bienvenida{
+        font-size: 1.4vw;
+    }
+    .card-info-home{
+        padding:3rem 3rem 3rem 3rem;
     }
 }
 
@@ -111,12 +157,18 @@
     .card-text-info{
         font-size: 20px;
     }
+    .card-info-home{
+        padding:4rem 2rem 4rem 2rem;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .card-text-info{
         padding: 2rem;
-        font-size: 27px;
+        font-size: 25px;
+    }
+    .card-info-home{
+        padding:5rem 3rem 5rem 3rem;
     }
 }
