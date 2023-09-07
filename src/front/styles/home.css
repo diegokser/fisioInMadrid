@@ -39,33 +39,84 @@
     object-fit: cover; /* Hace que la imagen cubra todo el contenedor */
 }
 .card-info-home{
-    margin:5rem;
     border:none;
+    margin-bottom: 2rem;
 }
 .img-1-home{
     border-radius: 1rem;
+    position:relative;
+    height: 100%;
 }
 .card-home-text{
     background-color: rgba(1,179,229,255);
     border-radius: 1rem;
     text-align: center;
+    position:absolute;
+}
+.card-text-info{
+    color:  rgb(5,76,132);
+    font-weight: bold;
+}
+.card-links-home{
+    color:white;
+    text-decoration: none;
+}
+.card-links-home:hover{
+    color:rgb(5,76,132);
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .card-info-home{
+        padding:1rem;
+    }
+    .card-text-info{
+        padding: 1rem;
+        font-size: 3.5vw;
+    }
+    .card-home-text{
+        top:20%;
+        right:0%;
+        height: 90%;
+    }
 }
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    .card-info-home{
+        padding:2rem;
+    }
+    .card-text-info{
+        padding: 2rem;
+        font-size: 24px;
+    }
+    .card-home-text{
+        top:20%;
+        left:20%;
+        width: 90%;
+        height: 90%;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+    .card-text-info{
+        padding: 1rem;
+        font-size: 15px;   
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+    .card-text-info{
+        font-size: 20px;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .card-text-info{
+        padding: 2rem;
+        font-size: 27px;
+    }
+}
