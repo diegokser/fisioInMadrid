@@ -1,3 +1,9 @@
+/* :root{
+    --color-primary: rgb(5,76,132);
+    --logo-font:arial;
+} */
+/* color:var(--color-primary) Para nombrarlo*/
+
 .carousel-container{
     display: flex;
 }
@@ -51,12 +57,17 @@
 .card-home-text{
     background-color: rgba(1,179,229,255);
     border-radius: 1rem;
-    text-align: center;
     position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .card-text-info{
     color:  rgb(5,76,132);
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
 }
 .card-links-home{
     color:white;
@@ -68,33 +79,49 @@
 
 .title-bienvenida{
     color: rgb(5,76,132);
+    margin-right: auto;
 }
 .subtitle-bienvenida{
     color:  rgba(1,179,229,255);
+    margin-right: auto;
 }
 .text-bienvenida{
     color: rgb(132,156,187);
     text-align: justify;
+    margin-right: auto;
 }
 .imagen-oferta-home{
     width: 200px;
+}
+.home-oferta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .card-text-info{
-        font-size: 3.3vw;
+        font-size: 1rem;
     }
     .card-home-text{
         top:20%;
         right:-10%;
-        height: 90%;
     }
-    .home-oferta{
-        padding-top:3rem;
+    .home-info{
+        padding-bottom:7rem;
     }
     .card-info-home{
         padding:2rem;
+    }
+    .title-bienvenida{
+        font-size: 1.25rem;
+    }
+    .subtitle-bienvenida{
+        font-size: 1.25rem;
+    }
+    .text-bienvenida{
+        font-size: 1rem;
     }
 }
 
@@ -102,8 +129,7 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .card-text-info{
-        padding: 2rem;
-        font-size: 22px;
+        font-size: 1.25rem;
     }
     .card-home-text{
         top:20%;
@@ -115,60 +141,74 @@
         padding-top:5rem;
     }
     .title-bienvenida{
-        font-size: 3vw;
+        font-size: 1.5rem;
     }
     .subtitle-bienvenida{
-        font-size: 3vw;
+        font-size: 1.25rem;
     }
     .text-bienvenida{
-        font-size: 3vw;
+        font-size: 1rem;
     }
     .card-info-home{
-        padding:3rem 3rem 3rem 3rem;
+        padding:4rem;
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .card-text-info{
-        padding: 1rem;
-        font-size: 14px;   
+        font-size: 1.5rem;   
     }
     .home-oferta{
-        padding-top:1rem;
-        padding-left: 6rem;
+        padding-top:4rem;
     }
     .title-bienvenida{
-        font-size: 1.5vw;
+        font-size: 1.5rem;
     }
     .subtitle-bienvenida{
-        font-size: 1.4vw;
+        font-size: 1.5rem;
     }
     .text-bienvenida{
-        font-size: 1.4vw;
+        font-size: 1rem;
     }
-    .card-info-home{
-        padding:3rem 3rem 3rem 3rem;
-    }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .card-text-info{
-        font-size: 20px;
-    }
     .card-info-home{
-        padding:4rem 2rem 4rem 2rem;
+        padding:3rem;
+    }
+    .card-text-info{
+        font-size: 1rem;
+    }
+    .home-oferta{
+        padding-left: 6rem;
+        padding-top: 1rem;
+    }
+    .title-bienvenida{
+        font-size: 1rem;
+    }
+    .subtitle-bienvenida{
+        font-size: 1rem;
+    }
+    .text-bienvenida{
+        font-size: 1rem;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .card-text-info{
-        padding: 2rem;
-        font-size: 25px;
+        font-size: 1.25rem;
     }
-    .card-info-home{
-        padding:5rem 3rem 5rem 3rem;
+    .title-bienvenida{
+        font-size: 1.25rem;
+    }
+    .subtitle-bienvenida{
+        font-size: 1.25rem;
+    }
+    .text-bienvenida{
+        font-size: 1rem;
     }
 }
