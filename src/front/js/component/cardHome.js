@@ -29,9 +29,8 @@ export const CardHome  = () =>{
             <h5 className="subtitle-bienvenida">Bienvenidos</h5>
             <p className="text-bienvenida">
                 FISIOIN MADRID SL, expertos en rehabilitación neurológica a domicilio, nace para facilitar el acceso a los servicios de fisioterapia, logopedia, neuropiscología y terapia ocupacional, tanto a personas con limitaciones de movilidad como a personas que prefieran recibir su tratamiento en la comodidad de su hogar.
-                Apostamos por un nuevo modelo de tratamiento en el que combinar las sesiones presenciales a domicilio con las ventajas que nos aporta la tecnología, disponiendo de videoconsultas y sesiones online para poder estar en contacto con tu terapeuta a lo largo del tratamiento
-                -10% en todos nuestros bonos, verano 23 (válida hasta 30 junio)</p>
-            <img src={imagenOferta} className="imagen-oferta-home" alt="imagen oferta"/>
+                Apostamos por un nuevo modelo de tratamiento en el que combinar las sesiones presenciales a domicilio con las ventajas que nos aporta la tecnología, disponiendo de videoconsultas y sesiones online para poder estar en contacto con tu terapeuta a lo largo del tratamiento.
+            </p>
         </div>
     </div>
     )

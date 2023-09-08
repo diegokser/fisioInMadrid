@@ -177,7 +177,7 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .card-info-home{
-        padding:3rem;
+        padding:4rem;
     }
     .card-text-info{
         font-size: 1rem;
@@ -203,12 +203,12 @@
         font-size: 1.25rem;
     }
     .title-bienvenida{
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     .subtitle-bienvenida{
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     .text-bienvenida{
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 }

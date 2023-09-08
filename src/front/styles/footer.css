@@ -10,6 +10,8 @@
   color:white;
   font-size: 1rem;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 .footer_infosubtext:hover{
   color:white;
