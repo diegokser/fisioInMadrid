@@ -1,7 +1,6 @@
 import React from "react";
 import "../../styles/home.css";
 import imagenCard from "../../img/IMG-0376.jpg";
-import imagenOferta from "../../img/IMG-0557.jpg";
 import { Link } from "react-router-dom";
 
 export const CardHome  = () =>{

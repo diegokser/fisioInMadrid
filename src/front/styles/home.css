@@ -98,6 +98,61 @@
     flex-direction: column;
     align-items: center;
 }
+.text-especialidades{
+    padding:2rem 4rem 2rem 4rem;
+    text-align: center;
+    background-color: #F4F9FC;
+}
+.title-1{
+    color: rgb(132,156,187);
+}
+.title-2{
+    color: rgba(1,179,229,255);
+}
+.subtitle-especialidades{
+    color: rgb(5,76,132);
+}
+.all-especialidades{
+    padding: 2rem 0rem 2rem 0rem;
+    display: flex;
+}
+.row-especialidades{
+    justify-content: center;
+}
+.card-especialidades{
+    border: none;
+    padding: 1rem;
+}
+.imagen-especialidades{
+    width: 8rem;
+    align-self: center;
+}
+.description-especialidades{
+    color: rgb(132,156,187);
+    text-align: justify;
+    font-size: 1rem;
+}
+.all-questions{
+    padding: 4rem;
+}
+.card-questions{
+    justify-content: center;
+}
+.one-question{
+    box-shadow: 2px 2px 8px rgb(132,156,187);
+    margin:1rem;
+}
+.icono-questions{
+    color:white;
+    background-color: rgba(1,179,229,255);
+    padding: 4px;
+    border-radius: 0.1rem;
+    font-size: 0.75rem;
+    margin-left: 1rem;
+}
+.collapse-questions{
+    border:none;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -123,6 +178,14 @@
     .text-bienvenida{
         font-size: 1rem;
     }
+    .text-questions{
+        font-size: 1rem;
+        color:rgb(132,156,187);
+    }
+    .text-questions:hover{
+        font-size: 1rem;
+        color:rgb(132,156,187); 
+    }
 }
 
 
@@ -138,7 +201,7 @@
         height: 90%;
     }
     .home-oferta{
-        padding-top:5rem;
+        padding-top:6rem;
     }
     .title-bienvenida{
         font-size: 1.5rem;
@@ -152,15 +215,20 @@
     .card-info-home{
         padding:4rem;
     }
+    .text-questions{
+        font-size: 1.25rem;
+        color:rgb(132,156,187);
+    }
+    .text-questions:hover{
+        font-size: 1.25rem;
+        color:rgb(132,156,187); 
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .card-text-info{
         font-size: 1.5rem;   
-    }
-    .home-oferta{
-        padding-top:4rem;
     }
     .title-bienvenida{
         font-size: 1.5rem;
@@ -171,7 +239,10 @@
     .text-bienvenida{
         font-size: 1rem;
     }
-
+    .card-especialidades{
+        width: calc(45% - 10px); /* 25% de ancho con 5px de margen a cada lado */
+        margin: 10px; /* Márgenes de 5px */
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -184,7 +255,7 @@
     }
     .home-oferta{
         padding-left: 6rem;
-        padding-top: 1rem;
+        padding-top: 2rem;
     }
     .title-bienvenida{
         font-size: 1rem;
@@ -194,6 +265,10 @@
     }
     .text-bienvenida{
         font-size: 1rem;
+    }
+    .card-especialidades{
+        width: calc(25% - 20px); /* 25% de ancho con 5px de margen a cada lado */
+        margin: 10px; /* Márgenes de 5px */
     }
 }
 
