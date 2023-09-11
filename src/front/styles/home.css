@@ -141,6 +141,7 @@
 .one-question{
     box-shadow: 2px 2px 8px rgb(132,156,187);
     margin:1rem;
+    border-radius: 0.2rem;
 }
 .icono-questions{
     color:white;
