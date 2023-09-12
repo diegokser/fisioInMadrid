@@ -154,6 +154,15 @@
 .collapse-questions{
     border:none;
 }
+.text-questions{
+    color:rgb(132,156,187);
+    text-align:justify;
+}
+.text-questions:hover{
+    color:rgb(132,156,187);
+    text-align: justify; 
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -181,11 +190,9 @@
     }
     .text-questions{
         font-size: 1rem;
-        color:rgb(132,156,187);
     }
     .text-questions:hover{
         font-size: 1rem;
-        color:rgb(132,156,187); 
     }
 }
 
@@ -218,11 +225,9 @@
     }
     .text-questions{
         font-size: 1.25rem;
-        color:rgb(132,156,187);
     }
     .text-questions:hover{
         font-size: 1.25rem;
-        color:rgb(132,156,187); 
     }
 }
 
