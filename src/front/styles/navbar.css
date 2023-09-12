@@ -14,7 +14,6 @@
     color: rgb(132,156,187)
 }
 .navbar-toggler{
-    margin:3rem;
     color: rgb(132,156,187)
 }
 
@@ -55,9 +54,6 @@
         justify-content: center;
         background-color:rgb(5,76,132)
     }
-    /* .navbar-content { DE ESTA FORMA CENTRO EL NAVBAR PERO PASA ALGO EN LA FOTO
-        flex-direction: column;
-    } */
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
