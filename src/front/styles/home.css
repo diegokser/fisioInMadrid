@@ -143,24 +143,18 @@
     margin:1rem;
     border-radius: 0.2rem;
 }
-.icono-questions{
-    color:white;
-    background-color: rgba(1,179,229,255);
-    padding: 4px;
-    border-radius: 0.1rem;
-    font-size: 0.75rem;
-    margin-left: 1rem;
-}
-.collapse-questions{
-    border:none;
+.icon-phone{
+    color: rgb(5,76,132);
+    padding-left: 1rem;
+    text-decoration: none;
 }
 .text-questions{
+    padding-right: 2rem;
     color:rgb(132,156,187);
     text-align:justify;
 }
-.text-questions:hover{
-    color:rgb(132,156,187);
-    text-align: justify; 
+.accordion-button:not(.collapsed){
+    background-color: #F4F9FC;
 }
 
 
@@ -189,9 +183,6 @@
         font-size: 1rem;
     }
     .text-questions{
-        font-size: 1rem;
-    }
-    .text-questions:hover{
         font-size: 1rem;
     }
 }
@@ -224,9 +215,6 @@
         padding:4rem;
     }
     .text-questions{
-        font-size: 1.25rem;
-    }
-    .text-questions:hover{
         font-size: 1.25rem;
     }
 }
