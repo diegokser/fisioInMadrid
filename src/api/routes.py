@@ -16,3 +16,23 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+@api.route('/admin/signup', methods=['POST'])
+def signup():
+    data=request.json()
+    email=data.get("email")
+    password=data.get("password")
+
+    if not email and not password:
+        return jsonify({"message": "faltan datos"}),400
+    
+    existe = User.query.filter_by(email=email).first()
+
+    if existe:
+        return jsonify({"message": "el usuario ya existe"}), 400
+    
+    addUsuario = User(email = email, password = password)
+    db.session.add(addUsuario)
+    db.session.commit()
+
+    return jsonify({"message": "Usuario añadido con exito"}), 200
