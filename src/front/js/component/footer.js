@@ -1,8 +1,8 @@
 import React from "react";
 import "../../styles/footer.css";
 import { Link } from "react-router-dom";
-import imagenCam from "../../img/CAM.jpg";
-import imagenFisio from "../../img/IMG-0376.jpg";
+import imagenCam from "../../img/IMG_0488.jpg";
+import imagenColegio from "../../img/IMG_0649.jpg";
 
 export const Footer = () => (
   <footer className="footer_container" id="footer_contain">
@@ -14,7 +14,10 @@ export const Footer = () => (
           <i className="fab fa-facebook-square fa-lg footer_iconos"></i>
         </div>
         <div className="imagenes-footer">
-        <img src={imagenCam} className="img-cam" alt="imagen cheque servicio"/>
+          <img src={imagenCam} className="img-cam" alt="imagen cheque servicio"/>
+        </div>
+        <div className="imagenes-footer">
+          <img src={imagenColegio} className="img-cam" alt="imagen colegiofisio"/>
         </div>
       </div>
       <div className="col-4 footer_col">

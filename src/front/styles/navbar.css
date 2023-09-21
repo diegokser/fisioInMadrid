@@ -1,17 +1,23 @@
 #logotipo-page{
     width: 7rem;
     display: flex;
-    margin-left: 3rem;
 }
 .navbar-all{
     padding: 0rem;
 }
 .text-navbar-info{
     color:white;
+    text-decoration: none;
+}
+.text-navbar-info:hover{
+    color:rgba(1,179,229,255);
 }
 .nav-link{
     font-weight: bold;
     color: rgb(132,156,187)
+}
+.nav-link:hover{
+    color: rgb(5,76,132);
 }
 .navbar-toggler{
     color: rgb(132,156,187)

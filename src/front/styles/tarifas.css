@@ -1,0 +1,131 @@
+.container-tarifas{
+    background-color: #F4F9FC;
+}
+
+.tarifas-texto2{
+    padding-top: 2rem;
+}
+
+.all-carousel-tarifas{
+    padding-top: 2rem;
+}
+.img-carousel-tarifas{
+    border-radius: 0.25rem;
+}
+.title-tarifas{
+    color:rgb(5,76,132);
+    text-align: center;
+    padding-top: 2rem;
+}
+.subtitle-tarifas{
+    color:rgba(1,179,229,255);
+    margin: 1rem;
+}
+.text-tarifas{
+    color: rgb(132,156,187);
+    margin:1rem;
+    text-align: justify;
+}
+.link-text-tarifas{
+    color: rgb(5,76,132);
+}
+.all-tarifas{
+    padding: 1rem 2rem 3rem 2rem;
+    display: flex;
+}
+.row-tarifas{
+    justify-content: center;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+.card-tarifas{
+    border-radius: 0.2rem;
+    border: none;
+    box-shadow: 2px 2px 8px rgb(132,156,187);
+    /* background-color: #F4F9FC; */
+}
+.card-bono-tarifas{
+    text-align: center;
+}
+.bono-title-tarifas{
+    color:rgb(5,76,132);
+}
+.bono-precio-tarifas{
+    color: rgb(132,156,187);
+}
+.bono-sesion-tarifas{
+    color:rgba(1,179,229,255);
+    padding-bottom: 1rem;
+}
+.btn-bono-tarifas{
+    background-color:rgb(5,76,132);
+    color:white;
+}
+.btn-bono-tarifas:hover{
+    background-color:rgba(1,179,229,255);
+    color:white;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .bono-title-tarifas{
+        font-size: 1.5rem;
+    }
+    .bono-precio-tarifas{
+        font-size: 1.5rem;
+    }
+    .bono-sesion-tarifas{
+        font-size: 1.5rem;
+    }
+    .text-tarifas{
+        font-size: 1rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .bono-title-tarifas{
+        font-size: 1.5rem;
+    }
+    .bono-precio-tarifas{
+        font-size: 1.5rem;
+    }
+    .bono-sesion-tarifas{
+        font-size: 1.5rem;
+    }
+    .text-tarifas{
+        font-size: 1.25rem;
+    }
+    .subtitle-tarifas{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .text-tarifas{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .card-tarifas{
+        width: calc(35% - 10px); /* 25% de ancho con 5px de margen a cada lado */
+        margin: 10px; /* Márgenes de 5px */
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1400px) {
+    .card-tarifas{
+        width: calc(25% - 20px); /* 25% de ancho con 5px de margen a cada lado */
+        margin: 10px; /* Márgenes de 5px */
+    }
+}
