@@ -42,7 +42,7 @@ export const QuestionsHome = () =>  {
     }
     ]
     return (
-        <div className="container-fluid all-questions">
+        <section className="container-fluid all-questions">
           <div className="row card-questions">
             <div className="accordion col-12 col-md-6" id="accordionPanelsStayOpenExample">
               {questions.map((pregunta,index)=>{
@@ -81,6 +81,6 @@ export const QuestionsHome = () =>  {
               })}
             </div>
           </div>
-        </div>
+        </section>
       );
     };

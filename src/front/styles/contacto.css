@@ -1,0 +1,100 @@
+.container-contacto{
+    padding: 2rem;
+    /* background-color: #F4F9FC; */
+}
+.title-contacto{
+    color:rgb(5,76,132);
+    text-align: center;
+}
+.imagen-logo-contacto{
+    height: 10rem;
+}
+.text-contacto{
+    color: rgb(132,156,187);
+    padding:1rem;
+    text-align: center;
+    align-self: center;
+}
+.contacto-horario{
+    color:rgba(1,179,229,255);
+    font-weight: bold;
+}
+.card-contacto{
+    border-radius: 0.2rem;
+    border: none;
+    box-shadow: 2px 2px 8px rgb(132,156,187);
+    margin:1rem;
+    /* background-color:  #F4F9FC; */
+}
+.row-contacto{
+    justify-content: center;
+}
+.icono-email{
+    color:rgb(5,76,132);
+    font-size: 5rem;
+    margin:1rem;
+    align-self: center;
+    text-align: center;
+}
+.icono-whatsapp{
+    color:rgb(37 211 102);
+    font-size: 5rem;
+    margin:1rem;
+    align-self: center;
+    text-align: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+.text-contacto{
+    font-size: 1.25rem;
+}
+.icono-email{
+    font-size: 3rem;
+    margin:0.5rem;
+}
+.icono-whatsapp{
+    font-size: 3rem;
+    margin:0.5rem
+}
+.imagen-logo-contacto{
+    height: 7rem;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .text-contacto{
+        font-size: 1.25rem;
+    }
+    .icono-email{
+        font-size: 3rem;
+        margin:0.5rem;
+    }
+    .icono-whatsapp{
+        font-size: 3rem;
+        margin:0.5rem
+    }
+    .imagen-logo-contacto{
+        height: 10rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .icono-email{
+        font-size: 5rem;
+        margin:1rem;
+    }
+    .icono-whatsapp{
+        font-size: 5rem;
+        margin:1rem
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
