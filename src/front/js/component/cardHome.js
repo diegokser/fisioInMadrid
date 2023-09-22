@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const CardHome  = () =>{
     return(
-    <div className="container-fluid row card-info-home">
+    <section className="container-fluid row card-info-home">
         <div className="col-12 col-lg-6 home-info">
             <div className="card border-0">
                 <img src={imagenCard} className="card-img-top img-1-home" alt="imagen masaje"/>
@@ -29,7 +29,7 @@ export const CardHome  = () =>{
             Contamos con un equipo multidisciplinar de profesionales especializados en rehabilitación neurológica para garantizar una atención integral personalizada y totalmente adaptada a las necesidades de cada paciente.
             </p>
         </div>
-    </div>
+    </section>
     )
 
 }

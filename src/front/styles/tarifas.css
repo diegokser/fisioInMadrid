@@ -1,9 +1,12 @@
 .container-tarifas{
-    background-color: #F4F9FC;
+    /* background-color: #F4F9FC; */
 }
 
 .tarifas-texto2{
     padding-top: 2rem;
+}
+.tarifas-texto{
+    text-align-last: center;
 }
 
 .all-carousel-tarifas{
@@ -94,12 +97,10 @@
     }
     .text-tarifas{
         font-size: 1.25rem;
-    }
-    .subtitle-tarifas{
         padding-left: 2rem;
         padding-right: 2rem;
     }
-    .text-tarifas{
+    .subtitle-tarifas{
         padding-left: 2rem;
         padding-right: 2rem;
     }

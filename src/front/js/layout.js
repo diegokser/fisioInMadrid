@@ -13,6 +13,9 @@ import { Footer } from "./component/footer";
 import { Specialties } from "./pages/specialties";
 import { Tarifas } from "./pages/tarifas";
 import { Derechos } from "./pages/derechos";
+import { Contacto } from "./pages/contacto";
+import { Legal } from "./pages/legal";
+import { Privacidad } from "./pages/privacidad";
 
 //create your first component
 const Layout = () => {
@@ -35,6 +38,9 @@ const Layout = () => {
                         <Route element={<Specialties />} path="/especialidades" />
                         <Route element={<Tarifas />} path="/tarifas" />
                         <Route element={<Derechos />} path="/derechos" />
+                        <Route element={<Contacto />} path="/contacto" />
+                        <Route element={<Legal />} path="/legal" />
+                        <Route element={<Privacidad />} path="/privacidad" />
                     </Routes>
                     <Footer />
                 </ScrollToTop>

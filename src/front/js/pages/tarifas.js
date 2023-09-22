@@ -29,7 +29,7 @@ export const Tarifas = () =>{
     }]
 
     return(
-        <div className="container-fluid container-tarifas">
+        <section className="container-fluid container-tarifas">
             <div className="tarifas-texto">
                 <h1 className="title-tarifas">NUESTRAS TARIFAS</h1>
                 <p className="text-tarifas">No solo ofrecemos opciones para facilitar el acceso a los servicios de neurorrehabilitación eliminando las barreras físicas y tecnológicas, también flexibilizamos las económicas. </p>
@@ -61,7 +61,8 @@ export const Tarifas = () =>{
                                     **Los bonos incluyen sesiones de tratamiento de 60 minutos, informes personalizados, acceso al portal del paciente, videoconsultas de seguimiento.<br/>
                                     ***Los bonos tienen una validez de 6 meses.
                                 </p>
-                                <p className="text-tarifas">Defendemos el decálogo de los derechos de los usuarios:<br/>
+                                <h3 className="subtitle-tarifas">CHEQUE SERVICIO</h3>
+                                <p className="text-tarifas">Utiliza tu cheque servicio de la comunidad de Madrid con nosotros. Se rige por los precios acordados con la comunidad y siempre cumpliendo el decálogo de derechos de los usuarios:<br/>
                                 <Link className="link-text-tarifas" to="/derechos">Consúltalo aquí</Link>
                                  </p>
                             </div>
@@ -92,6 +93,6 @@ export const Tarifas = () =>{
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

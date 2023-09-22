@@ -30,7 +30,7 @@ export const Especialidades = () =>{
         },
     ]
     return(
-        <div className="container-fluid all-especialidades">
+        <section className="container-fluid all-especialidades">
             <div className="row row-especialidades">
                 {specialidad.map((especialidad,index)=>{
                     return(
@@ -45,6 +45,6 @@ export const Especialidades = () =>{
                     ) 
                 })}
             </div>
-        </div>
+        </section>
     )
 }
