@@ -11,6 +11,12 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Signup } from "./pages/signup";
+import { Specialties } from "./pages/specialties";
+import { Tarifas } from "./pages/tarifas";
+import { Derechos } from "./pages/derechos";
+import { Contacto } from "./pages/contacto";
+import { Legal } from "./pages/legal";
+import { Privacidad } from "./pages/privacidad";
 
 //create your first component
 const Layout = () => {
@@ -31,6 +37,12 @@ const Layout = () => {
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Signup />} path="/admin/signup/"/>
+                        <Route element={<Specialties />} path="/especialidades" />
+                        <Route element={<Tarifas />} path="/tarifas" />
+                        <Route element={<Derechos />} path="/derechos" />
+                        <Route element={<Contacto />} path="/contacto" />
+                        <Route element={<Legal />} path="/legal" />
+                        <Route element={<Privacidad />} path="/privacidad" />
                     </Routes>
                     <Footer />
                 </ScrollToTop>
