@@ -11,7 +11,7 @@ export const Signup = () => {
     })
 
     return(
-        <div className="container-fluid signup-container">
+        <section className="container-fluid signup-container">
             <h1 className="signup-title">Formulario de registro</h1>
             <form className="signup-all">
             <div className="mb-3">
@@ -29,6 +29,6 @@ export const Signup = () => {
             </div>
             <button type="submit" className="btn signup-submit">Enviar</button>
             </form>
-        </div>
+        </section>
     )
 }

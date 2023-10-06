@@ -17,6 +17,7 @@ import { Derechos } from "./pages/derechos";
 import { Contacto } from "./pages/contacto";
 import { Legal } from "./pages/legal";
 import { Privacidad } from "./pages/privacidad";
+import { Login } from "./pages/login";
 
 //create your first component
 const Layout = () => {
@@ -36,7 +37,8 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
-                        <Route element={<Signup />} path="/admin/signup/"/>
+                        <Route element={<Signup />} path="/admin/signup"/>
+                        <Route element={<Login />} path="/admin/login"/>
                         <Route element={<Specialties />} path="/especialidades" />
                         <Route element={<Tarifas />} path="/tarifas" />
                         <Route element={<Derechos />} path="/derechos" />

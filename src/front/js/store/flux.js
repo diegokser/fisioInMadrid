@@ -46,6 +46,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error);
 				  }
 				},
+			login: async (user) =>{
+				const store = getStore()
+				try {
+					const response = await fetch(process.env.BACKEND_URL + "/api/admin/login", {
+					  method: "POST",
+					  body: JSON.stringify(user),
+					  headers: {
+						"Content-Type": "application/json",
+					  },
+					});
+					const result = await response.json();
+					if (response.status == 200) {
+						localStorage.setItem("jwt-token", result.token);
+						console.log("Logeado con éxito")
+					}else {
+						return result.message;
+					  }
+					} catch (error) {
+					  console.log("Error loading message from backend");
+					}
+			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
