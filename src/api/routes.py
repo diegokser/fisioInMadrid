@@ -2,27 +2,16 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Blog
 from api.utils import generate_sitemap, APIException
-from flask_jwt_extended import create_access_token
-from flask_jwt_extended import get_jwt_identity
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 import argon2
+from datetime import datetime
 
 
 ph = argon2.PasswordHasher()
 
 api = Blueprint('api', __name__)
-
-
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-
-    return jsonify(response_body), 200
 
 @api.route('/admin/signup', methods=['POST'])
 def signup():
@@ -37,6 +26,9 @@ def signup():
 
     if existe:
         return jsonify({"message": "el usuario ya existe"}), 400
+    
+    if email != "fisioinmadrid@gmail.com":
+        return jsonify({"message": "Correo electrónico no permitido"}), 400
     
     hashed_password = ph.hash(password)
     print(hashed_password)
@@ -65,12 +57,29 @@ def login():
             try:
                 if ph.verify(user.password, password):
                     token = create_access_token(identity=user.id)
-                    return jsonify({"email": email, "token":token, "message": "Inicio de sesión realizado con éxito"}),200
+                    return jsonify({"email": email, "token":token, "user_data": {"id": user.id}, "message": "Inicio de sesión realizado con éxito"}),200
                 else:
                     return jsonify({"message": "Contraseña incorrecta"}), 401
             except argon2.exceptions.VerifyMismatchError:
                     return jsonify({"message": "Contraseña incorrecta"}), 401
 
+@api.route('/admin/post', methods=['POST'])
+# @jwt_required()
+def post():
+    data = request.get_json()
+    title = data.get("title")
+    description = data.get ("description")
+    img = data.get("img")
+    user_id = get_jwt_identity()
+    fecha = datetime.today().strftime('%Y-%m-%d')
 
-# @api.route('/admin/info', methods=['POST'])
-# def info():
+    if not title or not description:
+        return ({"message": "Faltan datos"}), 401
+    
+    addPost = Blog(title = title, description = description, img = img, user_id = user_id, fecha = fecha)
+    db.session.add(addPost)
+    db.session.commit()
+
+    return jsonify({"message": "Post add successfull"}), 200
+
+

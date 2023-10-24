@@ -1,22 +1,29 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
     const {actions} = useContext(Context)
     const [user, setUser] = useState({})
 
     const user_login = (event) => {
-        setUser({ ...user, [event.target.id]: event.target.value });
+        setUser({
+          ...user,
+          email: event.target.id === "exampleInputEmail1" ? event.target.value : user.email.toLowerCase(),
+          password: event.target.id === "exampleInputPassword1" ? event.target.value : user.password
+        });
         console.log(user)
       };
 
     const submit_login = async (event) => {
         event.preventDefault()
-        const loged = actions.login(user)
-        if (loged == true) console.log("EXITO!")
-        else console.log("FATAL")
+        const result = await actions.login(user);
+        if (result.success) navigate("/admin/post");
+        else console.log("FATAL:", result.message);
     }
+
+    const navigate = useNavigate()
 
     return(
         <section className="container-fluid signup-container">
@@ -27,8 +34,8 @@ export const Login = () => {
                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => {user_login(e); }} required/>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label" onChange={(e) => {user_login(e); }} required>Contraseña</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                    <label htmlFor="exampleInputPassword1" className="form-label" onChange={(data) => {setUser({...user, password: data.target.value})}} >Contraseña</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1" onChange={(e) => {user_login(e); }} required/>
                 </div>
                 <button type="submit" className="btn signup-submit">Enviar</button>
             </form>

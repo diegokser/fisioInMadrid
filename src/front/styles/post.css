@@ -1,0 +1,39 @@
+.post-container{
+    padding: 4rem;
+}
+.post-submit{
+    background-color: rgb(5,76,132);
+    color:white;
+}
+
+.post-submit:hover{
+    color:white;
+}
+
+.post-encabezado{
+    color:rgb(5,76,132);
+    text-align: center;
+}
+
+.post-title{
+    color: rgb(132,156,187);
+    font-weight:600;
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1400px) {
+
+}

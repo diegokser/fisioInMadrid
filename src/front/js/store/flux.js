@@ -14,7 +14,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			user: {}
+			user: {},
+			user_data: {},
+			isloged: false
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -57,46 +59,95 @@ const getState = ({ getStore, getActions, setStore }) => {
 					  },
 					});
 					const result = await response.json();
+					console.log("Response status:", response.status);
+					console.log("Response message:", result.message);
 					if (response.status == 200) {
 						localStorage.setItem("jwt-token", result.token);
-						console.log("Logeado con éxito")
+						// Almacena la ID del usuario en el almacenamiento local
+						localStorage.setItem("user_id", result.user_data.id);
+						console.log("Logeado con éxito");
+						setStore({ isloged: true });
+						setStore({ jwt_token: result.token });
+						setStore({
+							user_data: {
+								...store.user_data,
+								id: result.user_data.id,
+							},
+						});
+						return { success: true, message: "Inicio de sesión realizado con éxito" };
 					}else {
-						return result.message;
+						console.log("Error al iniciar sesión:", result.message);
+						return { success: false, message: result.message };
 					  }
 					} catch (error) {
-					  console.log("Error loading message from backend");
+					  console.log("Error al cargar datos desde el servidor:", error);
+					  return { success: false, message: "Error al conectarse al servidor" };
 					}
 			},
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
+			isloged: () => {
+				const token = localStorage.getItem("jwt-token");
+				const userId = localStorage.getItem("user_id");
 
-			getMessage: async () => {
-				try{
-					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const data = await resp.json()
-					setStore({ message: data.message })
-					// don't forget to return something, that is how the async resolves
-					return data;
-				}catch(error){
-					console.log("Error loading message from backend", error)
+				// Check if the token exists and is not expired
+				if (token && userId) {
+					const decodedToken = JSON.parse(atob(token.split(".")[1]));
+					const expirationTime = decodedToken.exp * 1000; // Convert expiration time to milliseconds
+					const currentTime = Date.now();
+
+					if (currentTime >= expirationTime) {
+						console.log("Se ha acabado el token");
+						setStore({ isloged: false });
+						localStorage.removeItem("jwt-token");
+						return false;
+					}
+
+					setStore({ jwt_token: token });
+					setStore({ isloged: true });
+					setStore({ user_data: { id: userId } });
 				}
 			},
-			changeColor: (index, color) => {
-				//get the store
+			logout: () => {
+				setStore({ isloged: false });
+				localStorage.clear();
+				setStore({ user_data: {} });
+			  },
+			post: async (title, description, img) => {
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			}
+				const newPost = {
+				  title: title,
+				  description: description,
+				  img: img,
+				  user_id: store.user_data.id
+				};
+		
+				try {
+				  const token = localStorage.getItem("jwt-token");
+				  const response = await fetch(
+					process.env.BACKEND_URL + "/api/admin/post",
+					{
+					  method: "POST",
+					  headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + token,
+					  },
+					  body: JSON.stringify(newPost),
+					}
+				  );
+				  const result = await response.json();
+				  if (response.status == 401) {
+					console.log("error al agregar post");
+		
+					navigate("/", { replace: true });
+				  }
+				  if (response.status == 200) {
+					console.log(response);
+					return true;
+				  }
+				  return false;
+				} catch (error) {
+				  console.log(error);
+				}
+			  },
 		}
 	};
 };
