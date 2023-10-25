@@ -9,22 +9,31 @@ export const Metodo = () =>{
         <section className="container-fluid container-metodo">
             <h1 className="title-metodo"><span className="title-1-metodo">NUESTRO </span><span className="title-2-metodo">MÉTODO</span></h1>
             <div className="all-card-metodo">
-                <div class="card card-metodo">
-                    <div class="card-body">
-                        <h5 class="subtitle-metodo"><i class="fas fa-home icono-metodo"></i> SIN DESPLAZAMIENTOS</h5>
-                        <p class="card-text text-metodo"> Ofrecemos servicios a domicilio para facilitar el acceso a los programas de rehabilitación.</p>
+                <div className="card card-metodo">
+                    <div className="card-body">
+                        <div className="row row-iconos">
+                            <i className="col-2 fas fa-home icono-metodo"></i>
+                            <h5 className="col-7 subtitle-metodo">SIN DESPLAZAMIENTOS</h5>
+                        </div>
+                        <p className="card-text text-metodo"> Ofrecemos servicios a domicilio para facilitar el acceso a los programas de rehabilitación.</p>
                     </div>
                 </div>
-                <div class="card card-metodo">
-                    <div class="card-body">
-                        <h5 class="subtitle-metodo"><i class="fa-solid fa-calendar-days icono-metodo"></i> NEURORREHABILITACIÓN INTEGRAL</h5>
-                        <p class="card-text text-metodo">Tratamiento individualizado con amplia flexibilidad horaria y adaptado a tus objetivos personales.</p>
+                <div className="card card-metodo">
+                    <div className="card-body">
+                    <div className="row row-iconos">
+                        <i className="col-2 fa-solid fa-calendar-days icono-metodo"></i>
+                        <h5 className="col-7 subtitle-metodo">REHABILITACIÓN NEUROLÓGICA INTEGRAL</h5>
+                    </div>
+                        <p className="card-text text-metodo">Tratamiento individualizado con amplia flexibilidad horaria y adaptado a tus objetivos personales.</p>
                     </div>
                 </div>
-                <div class="card card-metodo">
-                    <div class="card-body">
-                        <h5 class="subtitle-metodo"><i class="fas fa-hospital-user icono-metodo"></i> EQUIPO ESPECIALIZADO</h5>
-                        <p class="card-text text-metodo">Contamos con un equipo de profesionales especializados que apuestan por tratamientos de vanguardia y basados en la evidencia.</p>
+                <div className="card card-metodo">
+                    <div className="card-body">
+                        <div className="row row-iconos">
+                            <i className="col-2 fas fa-hospital-user icono-metodo"></i> 
+                            <h5 className="col-7 subtitle-metodo">EQUIPO ESPECIALIZADO</h5>
+                        </div>
+                        <p className="card-text text-metodo">Contamos con un equipo de profesionales especializados que apuestan por tratamientos de vanguardia y basados en la evidencia.</p>
                     </div>
                 </div>
             </div>
