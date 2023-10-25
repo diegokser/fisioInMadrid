@@ -10,7 +10,7 @@ export const Postea = () => {
     })
 
     return (
-        <section className="container-fluid post-container">
+        <section className="container-fluid postea-container">
             <h1 className="post-encabezado">Publica tu post</h1>
             <div className="mb-3">
                 <label htmlFor="title" className="form-label post-title" value={post.title} onChange={(data)=> {setPost({...post, title: data.target.value})}}>Título</label>

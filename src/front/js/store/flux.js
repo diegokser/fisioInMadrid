@@ -89,7 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const userId = localStorage.getItem("user_id");
 
 				// Check if the token exists and is not expired
-				if (token && userId) {
+				if (token) {
 					const decodedToken = JSON.parse(atob(token.split(".")[1]));
 					const expirationTime = decodedToken.exp * 1000; // Convert expiration time to milliseconds
 					const currentTime = Date.now();
@@ -97,14 +97,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (currentTime >= expirationTime) {
 						console.log("Se ha acabado el token");
 						setStore({ isloged: false });
-						localStorage.removeItem("jwt-token");
+						localStorage.clear();
 						return false;
 					}
 
 					setStore({ jwt_token: token });
 					setStore({ isloged: true });
-					setStore({ user_data: { id: userId } });
-				}
+					setStore({ user_data: JSON.parse(userId) });
+					return true;
+			  }
+	  
+			  // Token doesn't exist
+			  setStore({ isloged: false });
+			  localStorage.clear();
+			  return false;
 			},
 			logout: () => {
 				setStore({ isloged: false });

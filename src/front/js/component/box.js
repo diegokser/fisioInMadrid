@@ -7,10 +7,10 @@ export const Box = () =>{
     const navigate = useNavigate()
     return(
         <div className="list-group">
-            <Link to="#" className="list-group-item list-group-item-action active" aria-current="true">
+            <Link to="#" className="list-group-item list-group-item-action box-list active" aria-current="true">
                 Publica tu post
             </Link>
-            <Link to="#" className="list-group-item list-group-item-action">Tu blog</Link>
+            <Link to="#" className="list-group-item list-group-item-action box-list">Tu blog</Link>
             <button
                 className="list-group-item list-group-item-action"
                 onClick={() => {

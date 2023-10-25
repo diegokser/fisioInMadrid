@@ -1,45 +1,22 @@
+.box-list:hover{
+    background-color: rgb(132,156,187);
+    color:white
+}
 
-.post-submit{
+.box-list.active{
     background-color: rgb(5,76,132);
-    color:white;
-}
-
-.post-submit:hover{
-    color:white;
-}
-
-.post-encabezado{
-    color:rgb(5,76,132);
-    text-align: center;
-}
-
-.post-title{
-    color: rgb(132,156,187);
-    font-weight:600;
+    color:white
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .post-container{
-        padding: 2rem;
-    }
-    .postea-container{
-        padding-top: 2rem;
-    }
+
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .post-container{
-        padding: 4rem;
-    }
-    .postea-container{
-        padding-top: 2rem;
-    }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .postea-container{
-        padding-top: 0rem;
-    }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

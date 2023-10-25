@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const Login = () => {
     const {actions} = useContext(Context)
     const [user, setUser] = useState({})
+    const navigate = useNavigate()
 
     const user_login = (event) => {
         setUser({
@@ -22,8 +23,6 @@ export const Login = () => {
         if (result.success) navigate("/admin/post");
         else console.log("FATAL:", result.message);
     }
-
-    const navigate = useNavigate()
 
     return(
         <section className="container-fluid signup-container">
