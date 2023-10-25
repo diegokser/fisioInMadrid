@@ -31,9 +31,9 @@ export const Tarifas = () =>{
     return(
         <section className="container-fluid container-tarifas">
             <div className="tarifas-texto">
-                <h1 className="title-tarifas">NUESTRAS TARIFAS</h1>
+                <h1 className="title-tarifas"><span className="title-1-tarifas">NUESTRAS</span><span className="title-2-tarifas"> TARIFAS</span></h1>
                 <p className="text-tarifas">No solo ofrecemos opciones para facilitar el acceso a los servicios de neurorrehabilitación eliminando las barreras físicas y tecnológicas, también flexibilizamos las económicas. </p>
-                <h3 className="subtitle-tarifas">BONO POR ESPECIALIDAD</h3>
+                <h3 className="title-tarifas">BONO POR ESPECIALIDAD</h3>
                 <p className="text-tarifas">Contrata individualmente tus sesiones de fisioterapia, logopedia, neuropsicología o terapia ocupacional</p>
             </div>
             <div className="all-tarifas">

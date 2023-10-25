@@ -2,6 +2,13 @@
     background-color: #F4F9FC;
 }
 
+.title-1-tarifas{
+    color: rgb(132,156,187);
+}
+.title-2-tarifas{
+    color: rgba(1,179,229,255);
+}
+
 .tarifas-texto2{
     padding-top: 2rem;
 }

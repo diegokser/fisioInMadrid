@@ -6,6 +6,12 @@
     text-align: center;
     padding-top: 2rem;
 }
+.title-1-metodo{
+    color: rgb(132,156,187);
+}
+.title-2-metodo{
+    color: rgba(1,179,229,255);
+}
 .title-metodo-2{
     color:rgb(5,76,132);
     padding-top: 2rem;
