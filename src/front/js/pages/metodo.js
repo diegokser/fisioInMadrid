@@ -29,11 +29,11 @@ export const Metodo = () =>{
                 </div>
             </div>
             <div className="all-metodo">
-                <div className="row">
-                    <div className="col-12 col-md-6 card-img-metodo">
+                <div className="row row-text-img-metodo">
+                    <div className="col-12 col-md-5 card-img-metodo">
                         <img src={imagenCuidar} className="img-metodo" alt="Una empleada cuidando a un cliente"/>                         
                     </div>
-                    <div className="col-12 col-md-6">
+                    <div className="col-12 col-md-6 card-text-metodo">
                         <h3 className="title-metodo-2">Quiénes somos</h3>
                         <p className="text-metodo"><strong className="title-2">FISIOIN</strong> <strong className="title-1">MADRID</strong>  nace para facilitar el acceso a los programas de rehabilitación, tanto a personas con limitaciones de movilidad como a personas que prefieran recibir su tratamiento en la comodidad de su hogar.</p>
                         <p className="text-metodo">En <strong className="title-2">FISIOIN</strong>  estamos totalmente comprometidos con la recuperación del paciente, por ello simplificamos los procesos para cumplir los programas de rehabilitación. Disponemos de gran flexibilidad horaria y facilidad de reservar o modificar citas online, el terapeuta acude a tu domicilio para recudir el tiempo en desplazamientos y salas de espera, hacemos que sea participe de su recuperación marcando sus objetivos personales e individuales, siendo una atención totalmente personalizada.</p>
