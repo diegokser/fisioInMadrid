@@ -11,7 +11,7 @@
 }
 
 .cookie-notice{
-    background-color: rgb(132,156,187);
+    background-color: rgb(132,156,187,0.9);
     position: fixed;
     bottom: 0;
     left: 0;
