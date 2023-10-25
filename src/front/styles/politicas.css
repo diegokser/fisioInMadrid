@@ -9,3 +9,31 @@
     text-align: justify;
     color:rgb(5,76,132);
 }
+
+.cookie-notice{
+    padding: 2rem;
+    background-color: rgb(132,156,187);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff; /* Color del texto */
+    z-index: 999; /* Asegura que esté por encima del contenido */
+}
+.cookie-alert-text{
+    color:white;
+    text-align: justify;
+}
+
+.cookies-all{
+    justify-content: center;
+}
+.cookie-alert-button{
+    background-color: rgb(5,76,132);
+    color:white;
+    box-shadow: 2px 2px 8px rgb(132,156,187);
+    border-radius: 0.25rem;
+    width: 8rem;
+    height: 2rem;
+}
+

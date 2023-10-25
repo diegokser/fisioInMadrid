@@ -16,6 +16,8 @@ import { Derechos } from "./pages/derechos";
 import { Contacto } from "./pages/contacto";
 import { Legal } from "./pages/legal";
 import { Privacidad } from "./pages/privacidad";
+import { Cookies } from "./pages/cookies";
+import { CookieAlert } from "./component/cookiesAlert";
 
 //create your first component
 const Layout = () => {
@@ -38,10 +40,12 @@ const Layout = () => {
                         <Route element={<Specialties />} path="/especialidades" />
                         <Route element={<Tarifas />} path="/tarifas" />
                         <Route element={<Derechos />} path="/derechos" />
+                        <Route element={<Cookies />} path="/cookies" />
                         <Route element={<Contacto />} path="/contacto" />
                         <Route element={<Legal />} path="/legal" />
                         <Route element={<Privacidad />} path="/privacidad" />
                     </Routes>
+                    <CookieAlert />
                     <Footer />
                 </ScrollToTop>
             </BrowserRouter>
