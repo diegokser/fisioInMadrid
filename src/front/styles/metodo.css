@@ -1,0 +1,87 @@
+.title-metodo{
+    color:rgb(5,76,132);
+    text-align: center;
+    padding-top: 2rem;
+}
+.title-metodo-2{
+    color:rgb(5,76,132);
+    padding-top: 2rem;
+    margin:1rem;
+}
+.subtitle-metodo{
+    color:rgba(1,179,229,255);
+    margin: 1rem;
+    text-align: left;
+}
+.text-metodo{
+    color: rgb(132,156,187);
+    margin:1rem;
+    text-align: justify;
+}
+.all-card-metodo{
+    text-align: -webkit-center;
+    padding: 2rem;
+}
+.all-metodo{
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+.card-metodo{
+    border: none;
+    box-shadow: 2px 2px 8px rgb(132,156,187);
+    margin-bottom: 1rem;
+}
+.card-img-metodo{
+    align-self: center;
+    text-align: center;
+}
+.img-metodo{
+    border-radius: 0.25rem;
+}
+.icono-metodo{
+    color:rgb(5,76,132)
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .text-metodo{
+        font-size: 1rem;
+    }
+    .subtitle-metodo{
+        font-size: 1rem;
+    }
+    .img-metodo{
+        height: 20rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .img-metodo{
+        height: 20rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .img-metodo{
+        height: 30rem;
+    }
+    .card-metodo{
+        width: 70%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1400px) {
+
+}

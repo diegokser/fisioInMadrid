@@ -32,9 +32,10 @@ export const Navbar = () => {
 						<li className="nav-item">
 							<Link className="nav-link" to="/especialidades">ESPECIALIDADES</Link>
 						</li>
-						{/* <li className="nav-item">
-							<Link className="nav-link" to="#">METODO</Link>
+						<li className="nav-item">
+							<Link className="nav-link" to="/metodo">METODO</Link>
 						</li>
+						{/* 
 						<li className="nav-item">
 							<Link className="nav-link" to="#">BLOG</Link>
 						</li> */}
