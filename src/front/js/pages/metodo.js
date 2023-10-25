@@ -17,7 +17,7 @@ export const Metodo = () =>{
                 </div>
                 <div class="card card-metodo">
                     <div class="card-body">
-                        <h5 class="subtitle-metodo"><i class="fas fa-user icono-metodo"></i> NEURORREHABILITACIÓN INTEGRAL</h5>
+                        <h5 class="subtitle-metodo"><i class="fa-solid fa-calendar-days icono-metodo"></i> NEURORREHABILITACIÓN INTEGRAL</h5>
                         <p class="card-text text-metodo">Tratamiento individualizado con amplia flexibilidad horaria y adaptado a tus objetivos personales.</p>
                     </div>
                 </div>
