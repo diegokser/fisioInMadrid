@@ -26,7 +26,7 @@
     padding: 2rem;
 }
 .all-metodo{
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 .row-text-img-metodo{
     justify-content: center;
@@ -74,6 +74,9 @@
     }
     .card-metodo{
         width: 70%;
+    }
+    .text-metodo{
+        font-size: 1.10rem;
     }
 }
 
