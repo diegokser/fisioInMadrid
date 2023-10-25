@@ -22,8 +22,8 @@ export const CookieAlert = () => {
     return showNotice ? (
         <div className="cookie-notice container-fluid">
             <div className='row cookies-all'>
-                <p className='cookie-alert-text col-9'>Este sitio web utiliza cookies para optimizar su funcionamiento y mejorar nuestros servicios. El sitio web puede no funcionar correctamente sin estas cookies. Al continuar navegando, acepta nuestro uso de cookies.&nbsp;
-                    <Link className='cookie-alert-text' to="/cookies">Consulta nuestra página sobre política de cookies</Link>
+                <p className='cookie-alert-text col-9'>Este sitio web utiliza cookies para optimizar su funcionamiento y mejorar nuestros servicios. Al continuar navegando, acepta nuestro uso de cookies.&nbsp;
+                    <Link className='cookie-alert-text' to="/cookies">Consulta nuestra política de cookies</Link>
                 </p>
                 <button className="cookie-alert-button col-2" onClick={acceptCookies}>Aceptar</button>
             </div>
