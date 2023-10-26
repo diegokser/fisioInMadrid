@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo  from "/workspaces/fisioInMadrid/src/front/img/IMG-0357.jpg"
+import logo  from "/workspaces/fisioInMadrid/src/front/img/IMG_0494.png"
 import "/workspaces/fisioInMadrid/src/front/styles/navbar.css"
 
 export const Navbar = () => {
