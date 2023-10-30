@@ -117,6 +117,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 				localStorage.clear();
 				setStore({ user_data: {} });
 			  },
+			img_upload: async (img) => {
+				const store = getStore();
+		
+				try {
+				  const response = await fetch(
+					process.env.BACKEND_URL + "/api/postimg",
+					{
+					  method: "POST",
+					  body: img,
+					}
+				  );
+				  const result = await response.json();
+				  if (response.status == 400) {
+					return { message: "Max image size is 10MB" };
+				  } else if (response.status == 200) {
+					return result;
+				  } else {
+					return { message: "Error uploading image" };
+				  }
+				} catch (error) {
+				  console.log("Error loading message from backend");
+				}
+			  },
 			post: async (title, description, img) => {
 				const store = getStore();
 				const newPost = {

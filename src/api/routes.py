@@ -7,11 +7,16 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 import argon2
 from datetime import datetime
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 ph = argon2.PasswordHasher()
 
 api = Blueprint('api', __name__)
+
+cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), api_secret=os.getenv('API_SECRET'))
 
 @api.route('/admin/signup', methods=['POST'])
 def signup():
@@ -62,9 +67,27 @@ def login():
                     return jsonify({"message": "Contraseña incorrecta"}), 401
             except argon2.exceptions.VerifyMismatchError:
                     return jsonify({"message": "Contraseña incorrecta"}), 401
+            
+@api.route('/admin/change/<int:UserId>', methods=['PUT'])
+@jwt_required()
+def change_password():
+    data = request.get_json()
+    user = User.query.get(id)
+
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+
+    if "password" in data:
+        user.password = data.get("password")
+
+    hashed_password = ph.hash(user.password)
+    print(hashed_password)
+
+    db.session.commit()
+    return jsonify({"message": "Password updated successfully"}), 200
 
 @api.route('/admin/post', methods=['POST'])
-# @jwt_required()
+@jwt_required()
 def post():
     data = request.get_json()
     title = data.get("title")
