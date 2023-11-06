@@ -7,11 +7,24 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 import argon2
 from datetime import datetime
+import os #No se bien el porque
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+import json
 
 
 ph = argon2.PasswordHasher()
 
 api = Blueprint('api', __name__)
+
+# cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), api_secret=os.getenv('API_SECRET'))
+cloudinary.config( 
+  cloud_name = "dcfzd2h8e", 
+  api_key = "217632135377832", 
+  api_secret = "DFtr90vkur45KHhRSsJoNzIer_g",
+  secure = True
+)
 
 @api.route('/admin/signup', methods=['POST'])
 def signup():
@@ -62,9 +75,27 @@ def login():
                     return jsonify({"message": "Contraseña incorrecta"}), 401
             except argon2.exceptions.VerifyMismatchError:
                     return jsonify({"message": "Contraseña incorrecta"}), 401
+            
+@api.route('/admin/change/<int:UserId>', methods=['PUT'])
+@jwt_required()
+def change_password():
+    data = request.get_json()
+    user = User.query.get(id)
+
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+
+    if "password" in data:
+        user.password = data.get("password")
+
+    hashed_password = ph.hash(user.password)
+    print(hashed_password)
+
+    db.session.commit()
+    return jsonify({"message": "Password updated successfully"}), 200
 
 @api.route('/admin/post', methods=['POST'])
-# @jwt_required()
+@jwt_required()
 def post():
     data = request.get_json()
     title = data.get("title")
@@ -80,6 +111,23 @@ def post():
     db.session.add(addPost)
     db.session.commit()
 
-    return jsonify({"message": "Post add successfull"}), 200
+    return jsonify({"message": "Post add successful"}), 200
 
 
+
+@api.route("/postimg", methods=['POST'])
+def img_upload():  
+    try:
+        
+        file_to_upload = request.files['img']
+        
+        if file_to_upload:
+            upload_result = cloudinary.uploader.upload(file_to_upload)
+            
+            if upload_result:
+                return jsonify({"message" : "exito", "img" : upload_result.get("secure_url")}),200
+            
+    except Exception as ex:
+        print(ex)
+
+    return jsonify({"message" : "error"}),400
