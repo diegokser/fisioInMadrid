@@ -17,6 +17,7 @@ import { Legal } from "./pages/legal";
 import { Privacidad } from "./pages/privacidad";
 import { Login } from "./pages/login";
 import { Post } from "./pages/post";
+import { AdminBlogs } from "./pages/adminBlogs";
 
 //create your first component
 const Layout = () => {
@@ -43,6 +44,7 @@ const Layout = () => {
                         <Route element={<Legal />} path="/legal" />
                         <Route element={<Privacidad />} path="/privacidad" />
                         <Route element={<Post />} path="/admin/post" />
+                        <Route element={<AdminBlogs />} path="/admin/blogs" />
                     </Routes>
                     <Footer />
                 </ScrollToTop>

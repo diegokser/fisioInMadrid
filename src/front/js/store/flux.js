@@ -16,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			user: {},
 			user_data: {},
+			post:{},
 			isloged: false
 		},
 		actions: {
@@ -118,6 +119,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ user_data: {} });
 			  },
 			img_upload: async (img) => {
+				const store = getStore()
 				try {
 					const response = await fetch(
 						process.env.BACKEND_URL + "/api/postimg",
@@ -161,8 +163,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  const result = await response.json();
 				  if (response.status == 401) {
 					console.log("error al agregar post");
-		
-					navigate("/", { replace: true });
 				  }
 				  if (response.status == 200) {
 					console.log(response);

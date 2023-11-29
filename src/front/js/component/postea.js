@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "../../styles/post.css";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
@@ -22,25 +22,23 @@ export const Postea = () => {
             const img = await actions.img_upload(data)
                 if (img.message == "exito"){
                         setPost({...post, img: img.img})
-                        console.log(post)
                         setImgUpload(true)
                 } else {
-                    imgUpload == true? setImgUpload(false):
-                    console.log(img.message);
+                    imgUpload == true? setImgUpload(false): console.log(img.message);
                 }
         }
       };
 
       const handleSignup = async (e) => {
         e.preventDefault();
+        console.log(post);
         if (post.title === "" || post.description === "" || post.img === "") {
             console.log("Faltan datos");
         } else {
             try {
-                const result = await actions.post(post.title, post.description, post.img.secure_url);
+                const result = await actions.post(post.title, post.description, post.img);
                 if (result === true) {
-                    console.log(post.title, post.description, post.img);
-                    navigate('/', { replace: true });
+                    navigate('/admin/blogs', { replace: true });
                 } else {
                     console.log(result);
                 }
@@ -49,6 +47,16 @@ export const Postea = () => {
             }
         }
     };
+
+    const [isDisabled, setIsDisabled] = useState(true);
+
+    useEffect(() => {
+        if (post.title !== '' && post.description !== '' && post.img !== '') {
+            setIsDisabled(false);
+        } else {
+            setIsDisabled(true);
+        }
+    }, [post.title, post.description, post.img]);
 
     return (
         <section className="container-fluid postea-container">
@@ -66,7 +74,7 @@ export const Postea = () => {
                     <label htmlFor="formFile" className="form-label">Añade tu imagen</label>
                     <input className="form-control" type="file" id="formFile" onChange={(e) => { uploadFile(e) }} />
                 </div>
-                <button type="submit" className="btn post-submit">Enviar</button>
+                <button type="submit" className="btn post-submit" disabled={isDisabled}>Enviar</button>
             </form>
         </section>
     )

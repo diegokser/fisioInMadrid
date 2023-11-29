@@ -22,7 +22,7 @@ cloudinary.config(
     cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
     api_key=os.getenv('CLOUDINARY_API_KEY'),
     api_secret=os.getenv('CLOUDINARY_API_SECRET'),
-    api_preset=os.getenv('CLOUDINARY_PRESET'),
+    # api_preset=os.getenv('CLOUDINARY_PRESET'),
     secure=True
 )
 
@@ -106,7 +106,7 @@ def post():
 
     if not title or not description:
         return ({"message": "Faltan datos"}), 401
-    
+    print(img)
     addPost = Blog(title = title, description = description, img = img, user_id = user_id, fecha = fecha)
     db.session.add(addPost)
     db.session.commit()
@@ -121,7 +121,10 @@ def img_upload():
         file_to_upload = request.files['img']
 
         if file_to_upload:
-            upload_result = cloudinary.uploader.upload(file_to_upload)
+            # Nombre de la carpeta en Cloudinary
+            folder_name = 'fisioin'
+            
+            upload_result = cloudinary.uploader.upload(file_to_upload, folder=folder_name)
             
             if upload_result:
                 return jsonify({"message": "exito", "img": upload_result.get("secure_url")}), 200
