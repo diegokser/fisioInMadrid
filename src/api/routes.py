@@ -18,12 +18,12 @@ ph = argon2.PasswordHasher()
 
 api = Blueprint('api', __name__)
 
-# cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), api_secret=os.getenv('API_SECRET'))
-cloudinary.config( 
-  cloud_name = "dcfzd2h8e", 
-  api_key = "217632135377832", 
-  api_secret = "DFtr90vkur45KHhRSsJoNzIer_g",
-  secure = True
+cloudinary.config(
+    cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.getenv('CLOUDINARY_API_KEY'),
+    api_secret=os.getenv('CLOUDINARY_API_SECRET'),
+    api_preset=os.getenv('CLOUDINARY_PRESET'),
+    secure=True
 )
 
 @api.route('/admin/signup', methods=['POST'])
@@ -116,18 +116,17 @@ def post():
 
 
 @api.route("/postimg", methods=['POST'])
-def img_upload():  
+def img_upload():
     try:
-        
         file_to_upload = request.files['img']
-        
+
         if file_to_upload:
             upload_result = cloudinary.uploader.upload(file_to_upload)
             
             if upload_result:
-                return jsonify({"message" : "exito", "img" : upload_result.get("secure_url")}),200
-            
+                return jsonify({"message": "exito", "img": upload_result.get("secure_url")}), 200
+
     except Exception as ex:
         print(ex)
 
-    return jsonify({"message" : "error"}),400
+    return jsonify({"message": "error"}), 400
