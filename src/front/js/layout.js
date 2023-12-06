@@ -4,18 +4,20 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Signup } from "./pages/signup";
 import { Specialties } from "./pages/specialties";
 import { Tarifas } from "./pages/tarifas";
 import { Derechos } from "./pages/derechos";
 import { Contacto } from "./pages/contacto";
 import { Legal } from "./pages/legal";
 import { Privacidad } from "./pages/privacidad";
+import { Login } from "./pages/login";
+import { Post } from "./pages/post";
+import { AdminBlogs } from "./pages/adminBlogs";
 import { Cookies } from "./pages/cookies";
 import { CookieAlert } from "./component/cookiesAlert";
 import { Metodo } from "./pages/metodo";
@@ -35,9 +37,9 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Demo />} path="/demo" />
-                        <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
+                        <Route element={<Signup />} path="/admin/signup"/>
+                        <Route element={<Login />} path="/admin/login"/>
                         <Route element={<Specialties />} path="/especialidades" />
                         <Route element={<Metodo />} path="/metodo" />
                         <Route element={<Tarifas />} path="/tarifas" />
@@ -46,6 +48,8 @@ const Layout = () => {
                         <Route element={<Contacto />} path="/contacto" />
                         <Route element={<Legal />} path="/legal" />
                         <Route element={<Privacidad />} path="/privacidad" />
+                        <Route element={<Post />} path="/admin/post" />
+                        <Route element={<AdminBlogs />} path="/admin/blogs" />
                     </Routes>
                     <CookieAlert />
                     <Footer />

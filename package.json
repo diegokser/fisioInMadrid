@@ -73,8 +73,12 @@
 		]
 	},
 	"dependencies": {
+		"@cloudinary/react": "^1.11.2",
+		"@cloudinary/url-gen": "^1.13.0",
+		"cloudinary": "^1.41.0",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
+		"react-cloudinary-upload-widget": "^2.0.0",
 		"react-dom": "^16.8.4",
 		"react-pdf": "^7.3.3",
 		"react-polyfills": "0.0.1",
