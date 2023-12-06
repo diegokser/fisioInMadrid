@@ -23,7 +23,8 @@ class Blog (db.Model):
     description = db.Column(db.String(100000), unique=False, nullable=False)
     img = db.Column(db.String(10000000), unique=False, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    fecha = db.Column (db.DateTime, unique=False, nullable=False)
+    # fecha = db.Column (db.DateTime, unique=False, nullable=False) ESTO ALMACENA FECHA Y HORA
+    date = db.Column(db.Date, unique=False, nullable=False)
 
     def __repr__(self):
         return f'<Blog {self.id}>'
@@ -35,5 +36,5 @@ class Blog (db.Model):
             "description": self.description,
             "img":self.img,
             "user_id":self.user_id,
-            "fecha":self.fecha
+            "date":self.date
         }

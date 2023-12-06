@@ -102,12 +102,12 @@ def post():
     description = data.get ("description")
     img = data.get("img")
     user_id = get_jwt_identity()
-    fecha = datetime.today().strftime('%Y-%m-%d')
+    date = datetime.today().strftime('%Y-%m-%d')
 
     if not title or not description:
         return ({"message": "Faltan datos"}), 401
     print(img)
-    addPost = Blog(title = title, description = description, img = img, user_id = user_id, fecha = fecha)
+    addPost = Blog(title = title, description = description, img = img, user_id = user_id, date = date)
     db.session.add(addPost)
     db.session.commit()
 
@@ -133,3 +133,14 @@ def img_upload():
         print(ex)
 
     return jsonify({"message": "error"}), 400
+
+
+@api.route('/post', methods=['GET'])
+def blogs():
+    blog =  Blog.query.all()
+    posts = []
+
+    for post in blog:
+        posts.append(post.serialize())
+
+    return jsonify(posts), 200
