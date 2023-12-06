@@ -103,7 +103,7 @@ def post():
     description = data.get ("description")
     img = data.get("img")
     user_id = get_jwt_identity()
-    date = datetime.today().strftime('%Y-%m-%d')
+    date = datetime.today().date().strftime('%Y-%m-%d')
 
     if not title or not description:
         return ({"message": "Faltan datos"}), 401
@@ -145,6 +145,14 @@ def blogs():
         posts.append(post.serialize())
 
     return jsonify(posts), 200
+
+@api.route('/post/<int:post_id>', methods=['GET'])
+def get_post(post_id):
+    post = Blog.query.filter_by(id = post_id).first()
+    if not post:
+        return jsonify({'message' : 'No se encuentra el post'})
+
+    return jsonify(post.serialize()), 200
 
 @api.route('/set_cookie', methods=['POST'])
 def cookies():

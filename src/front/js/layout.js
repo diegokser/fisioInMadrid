@@ -21,6 +21,7 @@ import { AdminBlogs } from "./pages/adminBlogs";
 import { Cookies } from "./pages/cookies";
 import { CookieAlert } from "./component/cookiesAlert";
 import { Metodo } from "./pages/metodo";
+import { UserBlogs } from "./pages/userBlogs";
 
 //create your first component
 const Layout = () => {
@@ -50,6 +51,7 @@ const Layout = () => {
                         <Route element={<Privacidad />} path="/privacidad" />
                         <Route element={<Post />} path="/admin/post" />
                         <Route element={<AdminBlogs />} path="/admin/blogs" />
+                        <Route element={<UserBlogs />} path="/blog" />
                     </Routes>
                     <CookieAlert />
                     <Footer />

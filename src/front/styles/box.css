@@ -7,16 +7,31 @@
     background-color: rgb(5,76,132);
     color:white
 }
+.list-group {
+    display: flex;
+    flex-direction: row; /* Por defecto, mostrar en columnas */
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-
+    .box-list{
+        text-align: center;
+    }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    .box-list{
+        text-align: center;
+    }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+    .list-group {
+        flex-direction: column;
+    }
+    .box-list{
+        text-align: left;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

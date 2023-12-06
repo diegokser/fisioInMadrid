@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-// import "../../styles/blogs.css";
+import "../../styles/blogs.css";
 
 export const Blogs = () => {
     const { store, actions } = useContext(Context);
     const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true); // Agrega un estado para manejar la carga
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,7 +24,8 @@ export const Blogs = () => {
                 const result = await response.json();
 
                 if (response.ok) {
-                    setPosts(result);
+                    setPosts(result.map(post => ({ ...post, date: new Date(post.date).toLocaleDateString() })));
+                    // Se pone asi en lugar de setPosts(result) porque en JS en el front aparece la hora y así formatea la hora y escoge ese formato
                 } else {
                     console.error("Error al obtener las publicaciones:", result);
                 }
@@ -36,20 +37,20 @@ export const Blogs = () => {
         };
 
         fetchData();
-    }, []); // Dependencia vacía para que se ejecute solo una vez al montar el componente
+    }, []);
 
     return (
-        <section className="container-fluid">
-            <div className="row">
+        <section className="container-fluid container-blog">
+            <div className="row row-blog">
                 {loading ? (
                     <p>Cargando...</p>
                 ) : posts.length > 0 ? (
                     posts.map((post, index) => (
-                        <div className="card col-12 col-md-4" key={index}>
-                            <Link to={`/blog/${post.id}`}><img src={post.img} className="card-img-top" alt="imagen de post"/></Link>
+                        <div className="card col-12 col-md-4 card-blog" key={index}>
+                            <Link to={`/blog/${post.id}`}><img src={post.img} className="card-img-top img-blog" alt="imagen de post"/></Link>
                             <div className="card-body">
-                                <h5 className="card-title">{post.title}</h5>
-                                <p className="card-text">{post.date}</p>
+                                <h5 className="card-title title-blog">{post.title}</h5>
+                                <p className="card-text date-blog">{post.date}</p>
                             </div>
                         </div>
                     ))
