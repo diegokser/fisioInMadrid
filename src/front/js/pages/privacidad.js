@@ -4,7 +4,7 @@ import "../../styles/politicas.css";
 export const Privacidad = () => {
     return (
         <article className="container container-politicas">
-            <h2 className="title-politicas">Fisioin fisioterapia neurológica a domicilio</h2>
+            <h2 className="title-politicas">Fisioin Madrid SL fisioterapia y rehabilitación neurológica domicilio</h2>
             <h3 className="text-politicas">CONSENTIMIENTO PARA EL TRATAMIENTO DE DATOS PERSONALES</h3>
             <p className="text-politicas">EMPRESA es el Responsable del tratamiento de los datos personales del Usuario y le informa que estos datos serán tratados de conformidad con lo dispuesto en las normativas vigentes en protección de datos personales, el Reglamento (UE) 2016/679 de 27 de abril de 2016 (GDPR) y la Ley Orgánica (ES) 15/1999 de 13 de diciembre (LOPD), por lo que se le facilita la siguiente información del tratamiento:<br/>
                 Fin del tratamiento: recabar información de carácter personal para poder responder sus dudas y/o requerimiento de información adecuadamente y el envío de comunicaciones sobre nuestros servicios que pueden resultar de interés para el usuario.<br/>

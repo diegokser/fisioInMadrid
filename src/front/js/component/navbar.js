@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo  from "/workspaces/fisioInMadrid/src/front/img/IMG-0357.jpg"
+import logo  from "/workspaces/fisioInMadrid/src/front/img/IMG_0494.png"
 import "/workspaces/fisioInMadrid/src/front/styles/navbar.css"
 
 export const Navbar = () => {
@@ -32,9 +32,10 @@ export const Navbar = () => {
 						<li className="nav-item">
 							<Link className="nav-link" to="/especialidades">ESPECIALIDADES</Link>
 						</li>
-						{/* <li className="nav-item">
-							<Link className="nav-link" to="#">METODO</Link>
+						<li className="nav-item">
+							<Link className="nav-link" to="/metodo">METODO</Link>
 						</li>
+						{/* 
 						<li className="nav-item">
 							<Link className="nav-link" to="#">BLOG</Link>
 						</li> */}

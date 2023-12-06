@@ -18,6 +18,9 @@ import { Privacidad } from "./pages/privacidad";
 import { Login } from "./pages/login";
 import { Post } from "./pages/post";
 import { AdminBlogs } from "./pages/adminBlogs";
+import { Cookies } from "./pages/cookies";
+import { CookieAlert } from "./component/cookiesAlert";
+import { Metodo } from "./pages/metodo";
 
 //create your first component
 const Layout = () => {
@@ -38,14 +41,17 @@ const Layout = () => {
                         <Route element={<Signup />} path="/admin/signup"/>
                         <Route element={<Login />} path="/admin/login"/>
                         <Route element={<Specialties />} path="/especialidades" />
+                        <Route element={<Metodo />} path="/metodo" />
                         <Route element={<Tarifas />} path="/tarifas" />
                         <Route element={<Derechos />} path="/derechos" />
+                        <Route element={<Cookies />} path="/cookies" />
                         <Route element={<Contacto />} path="/contacto" />
                         <Route element={<Legal />} path="/legal" />
                         <Route element={<Privacidad />} path="/privacidad" />
                         <Route element={<Post />} path="/admin/post" />
                         <Route element={<AdminBlogs />} path="/admin/blogs" />
                     </Routes>
+                    <CookieAlert />
                     <Footer />
                 </ScrollToTop>
             </BrowserRouter>

@@ -31,9 +31,9 @@ export const Tarifas = () =>{
     return(
         <section className="container-fluid container-tarifas">
             <div className="tarifas-texto">
-                <h1 className="title-tarifas">NUESTRAS TARIFAS</h1>
+                <h1 className="title-tarifas"><span className="title-1-tarifas">NUESTRAS</span><span className="title-2-tarifas"> TARIFAS</span></h1>
                 <p className="text-tarifas">No solo ofrecemos opciones para facilitar el acceso a los servicios de neurorrehabilitación eliminando las barreras físicas y tecnológicas, también flexibilizamos las económicas. </p>
-                <h3 className="subtitle-tarifas">BONO POR ESPECIALIDAD</h3>
+                <h3 className="title-tarifas">BONO POR ESPECIALIDAD</h3>
                 <p className="text-tarifas">Contrata individualmente tus sesiones de fisioterapia, logopedia, neuropsicología o terapia ocupacional</p>
             </div>
             <div className="all-tarifas">
@@ -67,25 +67,25 @@ export const Tarifas = () =>{
                                  </p>
                             </div>
                             <div className="col-12 col-xl-6 all-carousel-tarifas">
-                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src={imagenPalo} class="d-block img-carousel-tarifas" alt="..."/>
+                                <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+                                <div className="carousel-inner">
+                                    <div className="carousel-item active">
+                                        <img src={imagenPalo} className="d-block img-carousel-tarifas" alt="..."/>
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src={imagenPesas} class="d-block img-carousel-tarifas" alt="..."/>
+                                    <div className="carousel-item">
+                                        <img src={imagenPesas} className="d-block img-carousel-tarifas" alt="..."/>
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src={imagenEscritura} class="d-block img-carousel-tarifas" alt="..."/>
+                                    <div className="carousel-item">
+                                        <img src={imagenEscritura} className="d-block img-carousel-tarifas" alt="..."/>
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
+                                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span className="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
+                                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span className="visually-hidden">Next</span>
                                 </button>
                                 </div>
                             </div>

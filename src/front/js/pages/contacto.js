@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/contacto.css";
-import imagenLogo from "../../img/IMG_0367.png";
+import imagenLogo from "../../img/Mano.png";
 
 
 

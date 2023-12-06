@@ -1,0 +1,111 @@
+.container-metodo{
+    background-color: #F4F9FC;
+}
+.title-metodo{
+    color:rgb(5,76,132);
+    text-align: center;
+    padding-top: 2rem;
+}
+.title-1-metodo{
+    color: rgb(132,156,187);
+}
+.title-2-metodo{
+    color: rgba(1,179,229,255);
+}
+.title-metodo-2{
+    color:rgb(5,76,132);
+    padding-top: 2rem;
+    margin:1rem;
+}
+.subtitle-metodo{
+    color:rgba(1,179,229,255);
+    margin: 1rem;
+    text-align: left;
+}
+.text-metodo{
+    color: rgb(132,156,187);
+    margin:1rem;
+    text-align: justify;
+}
+.all-card-metodo{
+    text-align: -webkit-center;
+    padding: 2rem;
+}
+.all-metodo{
+    padding-bottom: 2rem;
+}
+.row-text-img-metodo{
+    justify-content: center;
+}
+.card-metodo{
+    border: none;
+    box-shadow: 2px 2px 8px rgb(132,156,187);
+    margin-bottom: 1rem;
+}
+.card-img-metodo{
+    align-self: center;
+    text-align: center;
+}
+.img-metodo{
+    border-radius: 0.25rem;
+}
+.icono-metodo{
+    color:rgb(5,76,132);
+    align-self: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .text-metodo{
+        font-size: 0.9rem;
+    }
+    .subtitle-metodo{
+        font-size: 0.9rem;
+    }
+    .img-metodo{
+        height: 20rem;
+    }
+    .icono-metodo{
+        font-size: 2rem;
+    }
+    .row-iconos{
+        justify-content: center;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .img-metodo{
+        height: 20rem;
+    }
+    .icono-metodo{
+        font-size: 3rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .img-metodo{
+        height: 27rem;
+    }
+    .card-metodo{
+        width: 70%;
+    }
+    .text-metodo{
+        font-size: 1.10rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1400px) {
+
+}

@@ -9,3 +9,62 @@
     text-align: justify;
     color:rgb(5,76,132);
 }
+
+.cookie-notice{
+    background-color: rgb(132,156,187,0.9);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff; /* Color del texto */
+    z-index: 999; /* Asegura que esté por encima del contenido */
+}
+.cookie-alert-text{
+    color:white;
+    text-align: justify;
+}
+
+.cookies-all{
+    justify-content: center;
+}
+.cookie-alert-button{
+    background-color: rgb(5,76,132);
+    color:white;
+    box-shadow: 2px 2px 8px rgb(132,156,187);
+    border-radius: 0.25rem;
+    width: 8rem;
+    height: 2rem;
+    align-self: center;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .cookie-alert-text{
+        font-size: 12px;
+    }
+    .cookie-notice{
+        padding: 1rem;}
+    .cookie-alert-button{
+        font-size: 12px;
+        width: 5rem;
+        height: 2rem;
+        }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .cookie-notice{
+        padding: 2rem;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
