@@ -1,23 +1,11 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			],
 			user: {},
 			user_data: {},
-			post:{},
-			isloged: false
+			// blogs:[],
+			blog:null,
+			isloged: false,
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -86,6 +74,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 			},
 			isloged: () => {
+			// Tenemos que poner en el fichero appContext esta función para que se pueda llamar en un useEffect si queremos que se ejecute 
+
 				const token = localStorage.getItem("jwt-token");
 				const userId = localStorage.getItem("user_id");
 
@@ -173,6 +163,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  console.log(error);
 				}
 			  },
+			//   blogs: () =>{
+			// 	fetch(process.env.BACKEND_URL + "/api/post")
+			// 	.then((response) => response.json())
+			// 	.then((response) => {
+			// 		console.log(response)
+			// 		setStore({blogs: response})
+			// 	})
+			//   },
+			  blog: (id) =>{
+				fetch(`${process.env.BACKEND_URL}/api/post/${id}`)
+				.then((response) => response.json())
+				.then((response) => {
+					console.log(response)
+					setStore({blog: response})
+				})
+			  }
 		}
 	};
 };

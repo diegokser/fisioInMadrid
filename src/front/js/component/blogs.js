@@ -2,9 +2,47 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/blogs.css";
+import { TextAlignment } from "@cloudinary/url-gen/qualifiers";
 
 export const Blogs = () => {
-    const { store, actions } = useContext(Context);
+
+// Otra forma de hacerlo mediante la store y actions. Usando AppContext
+//     const { store } = useContext(Context);
+//     const [loading, setLoading] = useState(true);
+
+//     useEffect(() => {
+//         setTimeout(() => {
+//             setLoading(false);
+//         }, 2000);
+//     }, []); 
+
+//     return (
+//         <section className="container-fluid container-blog">
+//             <div className="row row-blog">
+//                 {loading ? (
+//                 <div className="container-fluid">
+//                     <h1 style={{ textAlign: "center", color: "rgb(5,76,132)"}}>Cargando...</h1>
+//                 </div>
+//             ) :store.blogs.length > 0 ? (
+//                     store.blogs.map((post, index) => (
+//                         <div className="card col-12 col-md-4 card-blog" key={index}>
+//                             <Link to={`/blog/${post.id}`}><img src={post.img} className="card-img-top img-blog" alt="imagen de post"/></Link>
+//                             <div className="card-body">
+//                                 <Link to={`/blog/${post.id}`} className="card-title title-blog" ><h5>{post.title}</h5></Link>
+//                                 <p className="card-text date-blog">{post.date}</p>
+//                             </div>
+//                         </div>
+//                     ))
+//                 ) : (
+//                     <div className="container-fluid">
+//                         <h1 style={{ textAlign: "center", color: "rgb(5,76,132)"}} >No hay post publicados</h1>
+//                     </div>
+//                 )}
+//             </div>
+//         </section>
+//     );
+// };
+
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -43,20 +81,20 @@ export const Blogs = () => {
         <section className="container-fluid container-blog">
             <div className="row row-blog">
                 {loading ? (
-                    <p>Cargando...</p>
+                    <p style={{ textAlign: "center", color: "rgb(5,76,132)"}}>Cargando...</p>
                 ) : posts.length > 0 ? (
                     posts.map((post, index) => (
                         <div className="card col-12 col-md-4 card-blog" key={index}>
                             <Link to={`/blog/${post.id}`}><img src={post.img} className="card-img-top img-blog" alt="imagen de post"/></Link>
                             <div className="card-body">
-                                <h5 className="card-title title-blog">{post.title}</h5>
+                                <Link to={`/blog/${post.id}`} className="card-title title-blog" ><h5>{post.title}</h5></Link>
                                 <p className="card-text date-blog">{post.date}</p>
                             </div>
                         </div>
                     ))
                 ) : (
                     <div className="container-fluid">
-                        <h1>No hay post publicados</h1>
+                        <h1 style={{ textAlign: "center", color: "rgb(5,76,132)"}} >No hay post publicados</h1>
                     </div>
                 )}
             </div>
