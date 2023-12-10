@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Actions } from "@cloudinary/url-gen";
+import "../../styles/post.css";
 
 export const UserBlog = () => {
     const params = useParams()
+    const [post, setPost] = useState([]);
     const {store, actions} = useContext(Context)
 
     useEffect(()=> {
@@ -12,16 +14,16 @@ export const UserBlog = () => {
     })
 
     return(
-        <section className="container-fluid">
+        <section className="container-fluid container-post">
             <h1 className="title-especialidades" style={{ textAlign: "center" }}><span className="title-1">NUESTRO</span><span className="title-2"> BLOG</span></h1>
             {store.blog ? (
                 <div>
-                    <img src={store.blog.img} alt="foto post" className="imagen-post"/>                    
-                    <p>{store.blog.date}</p>
-                    <h2>{store.blog.title}</h2>
-                    <p>{store.blog.description}</p>
+                    <img src={store.blog.img} alt="foto post" className="img-post"/>                    
+                    <p className="date-post"> {new Date(store.blog.date).toLocaleDateString()}</p>
+                    <h2 className="title-post">{store.blog.title}</h2>
+                    <p className="description-post">{store.blog.description}</p>
                 </div>
-                ) : <h1>Nada que mostrar</h1>}
+                ) : <h1 className="title-post">Nada que mostrar</h1>}
         </section>
 )}
 

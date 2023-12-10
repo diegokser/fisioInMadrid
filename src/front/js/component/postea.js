@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import "../../styles/post.css";
+import "../../styles/postea.css";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
