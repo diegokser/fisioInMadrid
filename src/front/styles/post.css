@@ -3,18 +3,18 @@
     text-align: -webkit-center;
 }
 .img-post{
-    width: 75%;
+    /* width: 75%; */
     padding-top: 2rem;
 }
 .title-post{
     color:rgb(5,76,132);
 }
+
 .date-post{
     color:rgb(132,156,187);
     text-align: right;
 }
 .description-post{
-    padding-top: 1rem;
     text-align: justify;
     color: rgb(132,156,187);
 }
@@ -30,6 +30,9 @@
 @media only screen and (min-width: 600px) {
     .img-post{
         width: 75%;
+    }
+    .description-post{
+        padding: 1rem 3rem 0 3rem;
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */
