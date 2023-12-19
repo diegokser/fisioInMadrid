@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { Box } from "../component/box";
-import { Blogs } from "../component/blogs";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { BlogsEdit } from "../component/blogsEdit";
 // import "../../styles/blogs.css";
 
 
@@ -25,7 +25,7 @@ export const AdminBlogs = () => {
                     <Box />
                 </div>
                 <div className="col-12 col-md-9">
-                    <Blogs /> 
+                    <BlogsEdit /> 
                 </div>
             </div>
         </section>

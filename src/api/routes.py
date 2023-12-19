@@ -13,11 +13,16 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import json
+from flask_mail import Message, Mail
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 
 ph = argon2.PasswordHasher()
 
 api = Blueprint('api', __name__)
+
+mail = Mail()
 
 cloudinary.config(
     cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
@@ -79,21 +84,21 @@ def login():
             
 @api.route('/admin/change/<int:UserId>', methods=['PUT'])
 @jwt_required()
-def change_password():
+def change_password(UserId):
     data = request.get_json()
-    user = User.query.get(id)
+    user = User.query.get(UserId)
 
     if not user:
         return jsonify({"message": "User not found"}), 404
 
-    if "password" in data:
-        user.password = data.get("password")
+    if user:
+        new_password = data.get("password")
+        user.password = ph.hash(new_password)
+        db.session.commit()
 
-    hashed_password = ph.hash(user.password)
-    print(hashed_password)
-
-    db.session.commit()
-    return jsonify({"message": "Password updated successfully"}), 200
+        return jsonify({"message": "Password updated successfully"}), 200
+    else:
+        return jsonify({"message": "Error trying to modify password"}), 400
 
 @api.route('/admin/post', methods=['POST'])
 @jwt_required()
@@ -154,9 +159,65 @@ def get_post(post_id):
 
     return jsonify(post.serialize()), 200
 
+@api.route('/post/<int:post_id>', methods=['DELETE'])
+@jwt_required()
+def delete_post(post_id):
+    post = Blog.query.filter_by(id = post_id).first()
+    if post:
+        db.session.delete(post)
+        db.session.commit()
+        return jsonify({'message': 'Post was deleted successfully'})
+    else:
+        return jsonify({'message': 'Error trying to delete post'}), 404
+
+@api.route('/post/<int:post_id>', methods=['PUT'])
+@jwt_required()
+def put_post(post_id):
+    post = Blog.query.get(post_id)
+
+    if post:
+        data = request.get_json()
+
+        post.title = data.get("title")
+        post.description = data.get("description")
+        post.img = data.get("img")
+        post.user_id = get_jwt_identity()
+        post.date = datetime.today().date().strftime('%Y-%m-%d')
+
+        if not post.title or not post.description:
+            return jsonify({"message": "Faltan datos"}), 401
+
+        db.session.commit()
+
+        return jsonify({"message": "Post modified successfully"}), 200
+
+    else:
+        return jsonify({'message': 'Error trying to modify post'}), 404
+
+
 @api.route('/set_cookie', methods=['POST'])
 def cookies():
     response = make_response("Cookie consent set")
     response.set_cookie('cookie_consent', 'accepted', max_age=31536000)  # Max age of 1 year
     return response
 
+@api.route('/send_email', methods=['POST'])
+def email():
+    data = request.get_json()
+
+    message = Mail(
+        from_email='fisioinmadrid@gmail.com',
+        to_emails='fisioinmadrid@gmail.com',
+        subject='Sending with Twilio SendGrid is Fun',
+        html_content=f'<strong>Nombre: {data.get("name")}</strong><br><strong>Email: {data.get("email")}</strong><br><strong>Nombre: {data.get("phone")}</strong><br>{data.get("message")}'
+    )
+    try:
+        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
+        return "Correo enviado con éxito!"  # Añade esta línea para devolver una respuesta
+    except Exception as e:
+        print(e.message)
+        return "Error al enviar el correo"  # Puedes personalizar este mensaje según sea necesario

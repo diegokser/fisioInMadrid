@@ -2,8 +2,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			user: {},
+			new_password: {},
 			user_data: {},
-			// blogs:[],
+			blogs:[],
 			blog:null,
 			isloged: false,
 		},
@@ -26,6 +27,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 						  "Content-Type": "application/json",
 						},
 						body: JSON.stringify(newUser),
+					  }
+					);
+					const result = await response.json();
+					if (response.status == 200) {
+					  return true;
+					}
+					return result.message;
+				  } catch (error) {
+					console.log(error);
+				  }
+				},
+			changePassword: async (password) => {
+				const store = getStore()
+				console.log(password)
+				const newPassword = {
+					password : password,
+				}
+				console.log(newPassword)
+				try {
+					const token = localStorage.getItem("jwt-token");
+					const response = await fetch(
+					  process.env.BACKEND_URL + `/api/admin/change/${store.user_data}`,
+					  {
+						method: "PUT",
+						headers: {
+						  "Content-Type": "application/json",
+						  Authorization: `Bearer ${token}`,
+						},
+						body: JSON.stringify(newPassword),
 					  }
 					);
 					const result = await response.json();
@@ -163,14 +193,50 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  console.log(error);
 				}
 			  },
-			//   blogs: () =>{
-			// 	fetch(process.env.BACKEND_URL + "/api/post")
-			// 	.then((response) => response.json())
-			// 	.then((response) => {
-			// 		console.log(response)
-			// 		setStore({blogs: response})
-			// 	})
-			//   },
+			  editPost: async (id, title, description, img) => {
+				const store = getStore();
+				const newPost = {
+				  id: id,
+				  title: title,
+				  description: description,
+				  img: img,
+				  user_id: store.user_data.id
+				};
+		
+				try {
+				  const token = localStorage.getItem("jwt-token");
+				  const response = await fetch(
+					process.env.BACKEND_URL + `/api/admin/edit/${id}`,
+					{
+					  method: "PUT",
+					  headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + token,
+					  },
+					  body: JSON.stringify(newPost),
+					}
+				  );
+				  const result = await response.json();
+				  if (response.status == 401) {
+					console.log("error al modificar post");
+				  }
+				  if (response.status == 200) {
+					console.log(response);
+					return true;
+				  }
+				  return false;
+				} catch (error) {
+				  console.log(error);
+				}
+			  },
+			  blogs: () =>{
+				fetch(process.env.BACKEND_URL + "/api/post")
+				.then((response) => response.json())
+				.then((response) => {
+					console.log(response)
+					setStore({blogs: response})
+				})
+			  },
 			  blog: (id) =>{
 				fetch(`${process.env.BACKEND_URL}/api/post/${id}`)
 				.then((response) => response.json())

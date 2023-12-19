@@ -66,9 +66,9 @@ export const UserBlog = () => {
         </h1>
         {post.title ? (
           <div>
+            <h2 className="title-post">{post.title}</h2>
             <img src={post.img} alt="foto post" className="img-post" />
             <p className="date-post" >{new Date(post.date).toLocaleDateString()}</p>
-            <h2 className="title-post">{post.title}</h2>
             <p className="description-post">{post.description}</p>
           </div>
           ) : <h4 className="title-post pt-5">Nada que mostrar</h4>} 

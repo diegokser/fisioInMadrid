@@ -22,6 +22,12 @@ export const Box = () =>{
             >
                 Tu blog
             </Link>
+            <Link
+                to="/admin/password"
+                className={`list-group-item list-group-item-action box-list ${location.pathname === '/admin/password' ? 'active' : ''}`}
+            >
+                Cambiar contraseña
+            </Link>
             <button
                 className="list-group-item list-group-item-action box-list ${location.pathname === '/companyProfile' ? 'active' : ''}"
                 onClick={() => {

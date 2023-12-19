@@ -23,6 +23,8 @@ import { CookieAlert } from "./component/cookiesAlert";
 import { Metodo } from "./pages/metodo";
 import { UserBlogs } from "./pages/userBlogs";
 import { UserBlog } from "./pages/userBlog";
+import { ChangePassword } from "./pages/changepassword";
+import { EditBlog } from "./pages/editBlog";
 
 //create your first component
 const Layout = () => {
@@ -42,6 +44,7 @@ const Layout = () => {
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Signup />} path="/admin/signup"/>
                         <Route element={<Login />} path="/admin/login"/>
+                        <Route element={<ChangePassword />} path="/admin/password"/>
                         <Route element={<Specialties />} path="/especialidades" />
                         <Route element={<Metodo />} path="/metodo" />
                         <Route element={<Tarifas />} path="/tarifas" />
@@ -51,6 +54,7 @@ const Layout = () => {
                         <Route element={<Legal />} path="/legal" />
                         <Route element={<Privacidad />} path="/privacidad" />
                         <Route element={<Post />} path="/admin/post" />
+                        <Route element={<EditBlog />} path="/admin/edit/:id" />
                         <Route element={<AdminBlogs />} path="/admin/blogs" />
                         <Route element={<UserBlogs />} path="/blog" />
                         <Route element={<UserBlog />} path="/blog/:id" />

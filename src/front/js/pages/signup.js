@@ -46,15 +46,15 @@ export const Signup = () => {
             <h1 className="signup-title">Formulario de registro</h1>
             <form className="signup-all" onSubmit={(e) => handleSignup(e)}>
             <div className="mb-3">
-                <label for="exampleInputEmail1" className="form-label">Email</label>
+                <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  value={user.email} onChange={(data) => {setUser({...user, email: data.target.value})}} required />
             </div>
             <div className="mb-3">
-                <label for="exampleInputPassword1" className="form-label">Contraseña</label>
+                <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
                 <input type="password" className="form-control" id="exampleInputPassword1" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$" value={user.password} onChange={(data) => {setUser({...user, password: data.target.value})}} required/>
             </div>
             <div className="mb-3">
-                <label for="exampleInputPassword2" className="form-label">Repite la contraseña</label>
+                <label htmlFor="exampleInputPassword2" className="form-label">Repite la contraseña</label>
                 <input type="password" className="form-control" id="exampleInputPassword2" value={user.password2} onChange={(data) => {setUser({...user, password2: data.target.value})}} required/>
                 <div id="Help" className="form-text">Las contraseñas tienen que coincidir, tener mínimo 8 caracteres, 1 mayúscula, 1 minúscula y 1 número</div>
             </div>
