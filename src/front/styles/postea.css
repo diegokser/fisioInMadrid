@@ -1,44 +1,45 @@
-.container-post{
-    padding: 4rem;
-    text-align: -webkit-center;
-    background-color: #F4F9FC;
+
+.post-submit{
+    background-color: rgb(5,76,132);
+    color:white;
 }
-.img-post{
-    /* width: 75%; */
-    padding-top: 2rem;
+
+.post-submit:hover{
+    color:white;
 }
-.title-post{
+
+.post-encabezado{
     color:rgb(5,76,132);
+    text-align: center;
 }
 
-.date-post{
-    color:rgb(132,156,187);
-    text-align: right;
-}
-.description-post{
-    text-align: justify;
+.post-title{
     color: rgb(132,156,187);
+    font-weight:600;
 }
-
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .img-post{
-        width: 100%;
+    .post-container{
+        padding: 2rem;
+    }
+    .postea-container{
+        padding-top: 2rem;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .img-post{
-        width: 75%;
+    .post-container{
+        padding: 4rem;
     }
-    .description-post{
-        padding: 1rem 3rem 0 3rem;
+    .postea-container{
+        padding-top: 2rem;
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+    .postea-container{
+        padding-top: 0rem;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

@@ -32,23 +32,45 @@
 .icono-email{
     color:rgb(5,76,132);
     font-size: 5rem;
-    margin:1rem;
     align-self: center;
     text-align: center;
 }
 .icono-whatsapp{
     color:rgb(37 211 102);
     font-size: 5rem;
-    margin:1rem;
     align-self: center;
     text-align: center;
+}
+.link-contacto{
+    text-align: center;
+}
+.card-form-contacto{
+    padding-top: 1rem;
+}
+.form-contacto{
+    background-color:rgb(5,76,132);
+    border-radius: 0.2rem;
+    border: none;
+    box-shadow: 2px 2px 8px rgb(132,156,187);
+    padding: 0.5rem;
+}
+.label-contacto{
+    color:white
+}
+.btn-contacto{
+    background-color: rgba(1,179,229,255);
+    color: white;
+}
+.btn-contacto:hover{
+    color: white;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-.text-contacto{
+.text-contacto {
     font-size: 1.25rem;
 }
+
 .icono-email{
     font-size: 3rem;
     margin:0.5rem;
@@ -64,7 +86,7 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .text-contacto{
+    .text-contacto {
         font-size: 1.25rem;
     }
     .icono-email{
@@ -76,23 +98,24 @@
         margin:0.5rem
     }
     .imagen-logo-contacto{
-        height: 10rem;
+        height: 7rem;
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .icono-email{
-        font-size: 5rem;
-        margin:1rem;
+        font-size: 2.5rem;
+        margin-left: 0.5rem;
     }
     .icono-whatsapp{
-        font-size: 5rem;
-        margin:1rem
+        font-size: 2.5rem;
+        margin-left: 0.5rem;
     }
 }
 

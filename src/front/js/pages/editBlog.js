@@ -1,16 +1,17 @@
 import React, { useState, useContext, useEffect } from "react";
 import "../../styles/postea.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Postea = () => {
-    const {actions} = useContext(Context)
+export const EditBlog = () => {
+    const {store, actions} = useContext(Context)
     const [post, setPost] = useState({
         title:"",
         description:"",
         img: ""
     })
     const navigate = useNavigate()
+    const params = useParams();
 
     const [imgUpload, setImgUpload] = useState((false))
 
@@ -29,21 +30,38 @@ export const Postea = () => {
         }
       };
 
-      const handlePost = async (e) => {
+      const handleSignup = async (e) => {
         e.preventDefault();
         console.log(post);
+        console.log(params.id);
+    
         if (post.title === "" || post.description === "" || post.img === "") {
             console.log("Faltan datos");
         } else {
             try {
-                const result = await actions.post(post.title, post.description, post.img);
-                if (result === true) {
+                const token = store.jwt_token;
+                const response = await fetch(
+                    `${process.env.BACKEND_URL}/api/post/${params.id}`,
+                    {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            Authorization: "Bearer " + token,
+                        },
+                        body: JSON.stringify(post),  // Añade el cuerpo JSON con los datos actualizados del post
+                    }
+                );
+    
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('Post modificado:', result);
+                    // Redirecciona a la página de administración de blogs
                     navigate('/admin/blogs', { replace: true });
                 } else {
-                    console.log(result);
+                    console.error('Error al modificar el post:', response.statusText);
                 }
             } catch (error) {
-                console.error("Error en la solicitud API:", error);
+                console.error('Error al modificar el post:', error);
             }
         }
     };
@@ -51,17 +69,20 @@ export const Postea = () => {
     const [isDisabled, setIsDisabled] = useState(true);
 
     useEffect(() => {
+        if(!actions.isloged()){
+            navigate("/admin/login", { replace: true });
+        }
         if (post.title !== '' && post.description !== '' && post.img !== '') {
             setIsDisabled(false);
         } else {
             setIsDisabled(true);
         }
-    }, [post.title, post.description, post.img]);
+    }, [params.id, post.title, post.description, post.img]);
 
     return (
-        <section className="container-fluid postea-container">
-            <h1 className="post-encabezado">Publica tu post</h1>
-            <form onSubmit={(e) => handlePost(e)} encType="multipart/form-data">
+        <section className="container-fluid postea-container" style={{ padding: "4rem" }}>
+            <h1 className="post-encabezado">Modifica tu post</h1>
+            <form onSubmit={(e) => handleSignup(e)} encType="multipart/form-data">
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label post-title">Título</label>
                     <input type="text" className="form-control" id="exampleFormControlInput1" value={post.title} onChange={(data)=> {setPost({...post, title: data.target.value})}}/>

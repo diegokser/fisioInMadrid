@@ -1,49 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/blogs.css";
+import { Context } from "../store/appContext";
 
-export const Blogs = () => {
-
-// Otra forma de hacerlo mediante la store y actions. Usando AppContext
-//     const { store } = useContext(Context);
-//     const [loading, setLoading] = useState(true);
-
-//     useEffect(() => {
-//         setTimeout(() => {
-//             setLoading(false);
-//         }, 2000);
-//     }, []); 
-
-//     return (
-//         <section className="container-fluid container-blog">
-//             <div className="row row-blog">
-//                 {loading ? (
-//                 <div className="container-fluid">
-//                     <h1 style={{ textAlign: "center", color: "rgb(5,76,132)"}}>Cargando...</h1>
-//                 </div>
-//             ) :store.blogs.length > 0 ? (
-//                     store.blogs.map((post, index) => (
-//                         <div className="card col-12 col-md-4 card-blog" key={index}>
-//                             <Link to={`/blog/${post.id}`}><img src={post.img} className="card-img-top img-blog" alt="imagen de post"/></Link>
-//                             <div className="card-body">
-//                                 <Link to={`/blog/${post.id}`} className="card-title title-blog" ><h5>{post.title}</h5></Link>
-//                                 <p className="card-text date-blog">{post.date}</p>
-//                             </div>
-//                         </div>
-//                     ))
-//                 ) : (
-//                     <div className="container-fluid">
-//                         <h1 style={{ textAlign: "center", color: "rgb(5,76,132)"}} >No hay post publicados</h1>
-//                     </div>
-//                 )}
-//             </div>
-//         </section>
-//     );
-// };
-
+export const BlogsEdit = () => {
+    const { store } = useContext(Context);
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -76,6 +40,37 @@ export const Blogs = () => {
         fetchData();
     }, []);
 
+    const handleDelete = async (postId) => {
+        try {
+            const token = store.jwt_token;
+            const response = await fetch(
+                `${process.env.BACKEND_URL}/api/post/${postId}`,
+                {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`,
+                    },
+                }
+            );
+    
+            if (response.ok) {
+                // Actualizar el estado de posts después de eliminar el post
+                setPosts(prevPosts => prevPosts.filter(post => post.id !== postId));
+            } else {
+                console.error("Error al eliminar el post. Código de estado:", response.status);
+                const result = await response.text(); // Obtener el cuerpo de la respuesta como texto
+                console.error("Mensaje de error:", result);
+            }
+        } catch (error) {
+            console.error("Error al eliminar el post:", error);
+        }
+    };
+
+    const handleEdit = (postId) => {
+        navigate(`/admin/edit/${postId}`, { replace: true });
+    }
+
     return (
         <section className="container-fluid container-blog">
             <div className="row row-blog">
@@ -85,6 +80,10 @@ export const Blogs = () => {
                     posts.map((post, index) => (
                         <div className="card col-12 col-md-4 card-blog" key={index}>
                             <Link to={`/blog/${post.id}`}><img src={post.img} className="card-img-top img-blog" alt="imagen de post"/></Link>
+                            <div className="row icons-blogs">
+                                <button className="col-2 iconos-blogs" onClick={() => handleEdit(post.id)}><i className="fa-regular fa-pen-to-square"></i></button>
+                                <button className="col-2 iconos-blogs" onClick={() => handleDelete(post.id)}><i className="fa-solid fa-trash"></i></button>
+                            </div>
                             <div className="card-body">
                                 <Link to={`/blog/${post.id}`} className="card-title title-blog" ><h5>{post.title}</h5></Link>
                                 <p className="card-text date-blog">{post.date}</p>
