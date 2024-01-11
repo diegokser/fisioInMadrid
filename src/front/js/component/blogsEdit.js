@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/blogs.css";
 import { Context } from "../store/appContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const BlogsEdit = () => {
     const { store } = useContext(Context);
@@ -57,13 +59,16 @@ export const BlogsEdit = () => {
             if (response.ok) {
                 // Actualizar el estado de posts después de eliminar el post
                 setPosts(prevPosts => prevPosts.filter(post => post.id !== postId));
+                toast.success('Post eliminado')
             } else {
+                toast.error("Error al eliminar el post");
                 console.error("Error al eliminar el post. Código de estado:", response.status);
                 const result = await response.text(); // Obtener el cuerpo de la respuesta como texto
                 console.error("Mensaje de error:", result);
             }
         } catch (error) {
             console.error("Error al eliminar el post:", error);
+            toast.error("Error al eliminar el post");
         }
     };
 
@@ -96,6 +101,19 @@ export const BlogsEdit = () => {
                     </div>
                 )}
             </div>
+            <ToastContainer
+                            position="bottom-right"
+                            autoClose={1000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="colored"
+                            onClose="resolve"
+                            />
         </section>
     );
 };

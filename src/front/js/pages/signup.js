@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Signup = () => {
     const {actions} = useContext(Context)
@@ -26,18 +28,25 @@ export const Signup = () => {
         e.preventDefault()
         if (user.email === "" || user.password === "" || user.password2 === "") {
             console.log("Faltan datos")
+            toast.error('Faltan datos')
           } else if (user.password != user.password2){
-            console.log("Las contraseñas no son iguales")
+            console.log("Las contraseñas no coinciden")
+            toast.error('Las contraseñas no coinciden')
           }
         else{
             const emailLowercase = user.email.toLowerCase();
             const register = await actions.signup(emailLowercase,user.password);
             if (register == true) {
                 // await showToastAndNavigate();
-                navigate('/admin/login', { replace: true });          
+                toast.success('Registrado con éxito!', {
+                    onClose: () => {
+                        navigate('/admin/login', { replace: true });
+                    }
+                });          
             }
             else {
                 console.log(register);
+                toast.error(register)
             }
     }};
 
@@ -59,6 +68,19 @@ export const Signup = () => {
                 <div id="Help" className="form-text">Las contraseñas tienen que coincidir, tener mínimo 8 caracteres, 1 mayúscula, 1 minúscula y 1 número</div>
             </div>
             <button type="submit" className="btn signup-submit">Enviar</button>
+            <ToastContainer
+                            position="bottom-right"
+                            autoClose={1000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="colored"
+                            onClose="resolve"
+                            />
             </form>
         </section>
     )

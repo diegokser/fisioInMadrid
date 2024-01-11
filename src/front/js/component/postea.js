@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import "../../styles/postea.css";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Postea = () => {
     const {actions} = useContext(Context)
@@ -34,16 +36,23 @@ export const Postea = () => {
         console.log(post);
         if (post.title === "" || post.description === "" || post.img === "") {
             console.log("Faltan datos");
+            toast.error('Faltan datos')
         } else {
             try {
                 const result = await actions.post(post.title, post.description, post.img);
                 if (result === true) {
-                    navigate('/admin/blogs', { replace: true });
+                    toast.success('Post publicado!', {
+                        onClose: () => {
+                            navigate('/admin/blogs', { replace: true });
+                        }
+                    });
                 } else {
                     console.log(result);
+                    toast.error(result)
                 }
             } catch (error) {
                 console.error("Error en la solicitud API:", error);
+                toast.error(error)
             }
         }
     };
@@ -75,6 +84,19 @@ export const Postea = () => {
                     <input className="form-control" type="file" id="formFile" onChange={(e) => { uploadFile(e) }} />
                 </div>
                 <button type="submit" className="btn post-submit" disabled={isDisabled}>Enviar</button>
+                <ToastContainer
+                position="bottom-right"
+                autoClose={1000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                onClose="resolve"
+                />
             </form>
         </section>
     )
