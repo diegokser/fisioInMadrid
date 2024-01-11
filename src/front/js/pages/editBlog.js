@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import "../../styles/postea.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const EditBlog = () => {
     const {store, actions} = useContext(Context)
@@ -32,11 +34,12 @@ export const EditBlog = () => {
 
       const handleSignup = async (e) => {
         e.preventDefault();
-        console.log(post);
-        console.log(params.id);
+        // console.log(post);
+        // console.log(params.id);
     
         if (post.title === "" || post.description === "" || post.img === "") {
-            console.log("Faltan datos");
+            // console.log("Faltan datos");
+            toast.error("Faltan datos");
         } else {
             try {
                 const token = store.jwt_token;
@@ -54,14 +57,19 @@ export const EditBlog = () => {
     
                 if (response.ok) {
                     const result = await response.json();
-                    console.log('Post modificado:', result);
-                    // Redirecciona a la página de administración de blogs
-                    navigate('/admin/blogs', { replace: true });
+                    // console.log('Post modificado:', result);
+                    toast.success('Post modificado', {
+                        onClose: () => {
+                            navigate('/admin/blogs', { replace: true });
+                        }
+                    });          
                 } else {
                     console.error('Error al modificar el post:', response.statusText);
+                    toast.error("Error al modificar el post");
                 }
             } catch (error) {
                 console.error('Error al modificar el post:', error);
+                toast.error("Error al modificar el post");
             }
         }
     };
@@ -97,6 +105,19 @@ export const EditBlog = () => {
                 </div>
                 <button type="submit" className="btn post-submit" disabled={isDisabled}>Enviar</button>
             </form>
+            <ToastContainer
+                            position="bottom-right"
+                            autoClose={1000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="colored"
+                            onClose="resolve"
+                            />
         </section>
     )
 }

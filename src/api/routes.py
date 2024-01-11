@@ -206,7 +206,7 @@ def email():
     data = request.get_json()
 
     message = Mail(
-        from_email='fisioinmadrid@gmail.com',
+        from_email='diego_22_11_92@msn.com',
         to_emails='fisioinmadrid@gmail.com',
         subject='Sending with Twilio SendGrid is Fun',
         html_content=f'<strong>Nombre: {data.get("name")}</strong><br><strong>Email: {data.get("email")}</strong><br><strong>Nombre: {data.get("phone")}</strong><br>{data.get("message")}'

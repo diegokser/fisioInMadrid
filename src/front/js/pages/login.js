@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Login = () => {
     const {actions} = useContext(Context)
@@ -14,14 +16,16 @@ export const Login = () => {
           email: event.target.id === "exampleInputEmail1" ? event.target.value : user.email.toLowerCase(),
           password: event.target.id === "exampleInputPassword1" ? event.target.value : user.password
         });
-        console.log(user)
       };
 
     const submit_login = async (event) => {
         event.preventDefault()
         const result = await actions.login(user);
         if (result.success) navigate("/admin/post");
-        else console.log("FATAL:", result.message);
+        else {
+            console.log("Error:", result.message);
+            toast.error("Email o contraseña incorrectos");
+        }
     }
 
     return(
@@ -38,6 +42,19 @@ export const Login = () => {
                 </div>
                 <button type="submit" className="btn signup-submit">Enviar</button>
             </form>
+            <ToastContainer
+                            position="bottom-right"
+                            autoClose={1000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="colored"
+                            onClose="resolve"
+                            />
         </section>
     )
 }

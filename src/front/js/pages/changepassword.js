@@ -3,6 +3,8 @@ import { Box } from "../component/box";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const ChangePassword = () => {
@@ -17,17 +19,23 @@ export const ChangePassword = () => {
         e.preventDefault()
         if ( user.password === "" || user.password2 === "") {
             console.log("Faltan datos")
+            toast.error('Faltan datos')
           } else if (user.password != user.password2){
             console.log("Las contraseñas no son iguales")
+            toast.error('Las contraseñas no son iguales')
           }
         else{
             const register = await actions.changePassword(user.password);
             if (register == true) {
                 // await showToastAndNavigate();
-                navigate('/admin/login', { replace: true });          
-            }
+                    toast.success('Contraseña modificada', {
+                        onClose: () => {
+                            navigate('/admin/blogs', { replace: true });
+                        }
+                    });} 
             else {
                 console.log(register);
+                toast.error(register)
             }
     }};
 
@@ -59,6 +67,19 @@ export const ChangePassword = () => {
                             </div>
                             <button type="submit" className="btn signup-submit">Enviar</button>
                         </form>
+                        <ToastContainer
+                            position="bottom-right"
+                            autoClose={1000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="colored"
+                            onClose="resolve"
+                            />
                 </div>
             </div>
         </section>

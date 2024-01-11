@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../../styles/contacto.css";
 import imagenLogo from "../../img/Mano.png";
 import { useNavigate } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const Contacto = () => {
@@ -16,9 +17,10 @@ export const Contacto = () => {
 
     const handleMail = async (e) => {
         e.preventDefault();
-        console.log(mail);
+        // console.log(mail);
         if (mail.name === "" || mail.email === "" || mail.phone === "") {
-            console.log("Faltan datos");
+            // console.log("Faltan datos");
+            toast.error('Faltan datos')
         } else {
             try {
                 const response = await fetch(
@@ -34,14 +36,20 @@ export const Contacto = () => {
     
                 if (response.ok) {
                     const result = await response.text();  // texto No es JSON 
-                    console.log('Email enviado:', result);
-                    navigate('/', { replace: true });
+                    // console.log('Email enviado:', result);
+                    toast.success('Email enviado!', {
+                        onClose: () => {
+                            navigate('/', { replace: true });
+                        }
+                    });
                 } else {
                     console.error('Error al modificar el post:', response.statusText);
+                    toast.error('Error al modificar el post')
                 }
 
             } catch (error) {
                 console.error("Error en la solicitud API:", error);
+                toast.error('Error al modificar el post')
             }
         }
     };
@@ -89,6 +97,19 @@ export const Contacto = () => {
                             <div className="d-flex">
                                 <button type="submit" className="btn btn-contacto">Enviar</button>
                             </div>
+                            <ToastContainer
+                            position="bottom-right"
+                            autoClose={1000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="colored"
+                            onClose="resolve"
+                            />
                         </form>
                     </div>
                 </div>
