@@ -1,0 +1,64 @@
+# To better understand this file read this:
+# https://docs.ionos.space/docs/github-actions-customization/
+
+name: "Deploy Now: Execute Build"
+
+on:
+  workflow_call:
+    inputs:
+      site-url:
+        required: true
+        type: string
+      branch-id:
+        required: true
+        type: string
+
+env:
+  DEPLOYMENT_FOLDER: public
+
+jobs:
+# Please do not rename this job
+  build-project:
+    name: build fisioInMadrid
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: v16.x
+
+      - name: Build Node assets
+        env:
+          CI: true
+          CLOUDINARY_API_KEY: 217632135377832
+          CLOUDINARY_API_SECRET: DFtr90vkur45KHhRSsJoNzIer_g
+          CLOUDINARY_CLOUD_NAME: dcfzd2h8e
+          CLOUDINARY_UR: cloudinary://217632135377832:DFtr90vkur45KHhRSsJoNzIer_g@dcfzd2h8e
+          MAIL_PASSWORD: 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
+          MAIL_PORT: 587
+          MAIL_SERVER: smtp.sendgrid.net
+          MAIL_USE_TLS: true
+          MAIL_USERNAME: apikey
+          SENDGRID_API_KEY: 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
+          SITE_URL: ${{ inputs.site-url }}
+        run: |
+          npm ci
+          npm run build
+
+# Please do not touch the following action
+      - name: Store deployment content
+        uses: ionos-deploy-now/artifact-action@v1
+        with:
+          api-key: ${{ secrets.IONOS_API_KEY }}
+          service-host: api-eu.ionos.space
+          project-id: 134bac47-67ad-495b-a4a1-eae94a28e3cd
+          branch-id: ${{ inputs.branch-id }}
+          version: ${{ github.sha }}
+          folder: ${{ env.DEPLOYMENT_FOLDER }}
+          config-file: .deploy-now/fisioInMadrid/config.yaml
+          action: upload
