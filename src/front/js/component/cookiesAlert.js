@@ -7,7 +7,7 @@ export const CookieAlert = () => {
 
     const acceptCookies = () => {
         // Realiza una solicitud al servidor para establecer la cookie de consentimiento.
-        fetch('/set_cookie', {
+        fetch(process.env.BACKEND_URL + '/api/set_cookie', {
             method: 'POST',
         })
         .then(() => {
