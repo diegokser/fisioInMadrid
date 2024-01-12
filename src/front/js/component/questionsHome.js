@@ -9,7 +9,7 @@ export const QuestionsHome = () =>  {
             question:"¿Como saber cual es el mejor tratamiento para mi?",
             answer:(
               <span>
-                  Ponte en contacto con nosotros aquí: <Link to="/contacto" className="fa-solid fa-phone icon-phone"></Link>
+                  Ponte en contacto con nosotros aquí: <Link to="/contacto"> <i className="fa-solid fa-phone icon-phone"> </i>Contacto</Link>
               </span>),
             ncollapse:"panelsStayOpen-collapse1"
         },
