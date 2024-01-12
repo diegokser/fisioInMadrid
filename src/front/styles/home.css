@@ -81,6 +81,7 @@
     color: rgb(5,76,132);
     margin-right: auto;
 }
+
 .subtitle-bienvenida{
     color:  rgba(1,179,229,255);
     margin-right: auto;
@@ -88,6 +89,7 @@
 .text-bienvenida{
     color: rgb(132,156,187);
     text-align: justify;
+    /* text-align: center; */
     margin-right: auto;
 }
 .imagen-oferta-home{
@@ -155,14 +157,16 @@
     border-radius: 0.2rem;
 }
 .icon-phone{
-    color: rgb(5,76,132);
+    color:rgb(5,76,132);
     padding-left: 1rem;
+    padding-right: 1rem;
     text-decoration: none;
 }
 .text-questions{
-    padding-right: 2rem;
+    /* padding-right: 2rem; */
     color:rgb(132,156,187);
-    text-align:justify;
+    /* text-align:justify; */
+    text-align: center;
 }
 .accordion-button:not(.collapsed){
     background-color: #F4F9FC;
@@ -263,6 +267,12 @@
         width: calc(45% - 10px); /* 25% de ancho con 5px de margen a cada lado */
         margin: 10px; /* Márgenes de 5px */
     }
+    .text-questions{
+        padding-right: 2rem;
+        color:rgb(132,156,187);
+        text-align:justify;
+    }
+    
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

@@ -91,7 +91,7 @@ export const Contacto = () => {
                                 <input type="text" className="form-control" id="phone-form" placeholder="+34 XXX XX XX XX" value={mail.phone} onChange={(data)=> {setMail({...mail, phone: data.target.value})}}/>
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleFormControlTextarea1" className="form-label label-contacto">Cuentanos su dolencia</label>
+                                <label htmlFor="exampleFormControlTextarea1" className="form-label label-contacto">Cuéntanos tu caso</label>
                                 <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" value={mail.message} onChange={(data)=> {setMail({...mail, message: data.target.value})}}></textarea>
                             </div>
                             <div className="d-flex">
