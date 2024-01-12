@@ -40,8 +40,8 @@ export const Tarifas = () =>{
                 <div className="row row-tarifas">
                 {precios.map((precio,index)=>{
                     return(
-                        <div className="card col-12 col-md-6 col-xxl-3 gy-3 card-tarifas">
-                            <div className="card-body card-bono-tarifas" key={index}>
+                        <div key={index} className="card col-12 col-md-6 col-xxl-3 gy-3 card-tarifas">
+                            <div className="card-body card-bono-tarifas">
                                 <h5 className="card-title bono-title-tarifas">{precio.title}</h5>
                                 <p className="card-text bono-precio-tarifas">{precio.precio}</p>
                                 <h6 className="card-text bono-sesion-tarifas">{precio.sesion}</h6>
