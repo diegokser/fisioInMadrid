@@ -43,13 +43,13 @@ export const Contacto = () => {
                         }
                     });
                 } else {
-                    console.error('Error al modificar el post:', response.statusText);
-                    toast.error('Error al modificar el post')
+                    console.error('Error al enviar el email:', response.statusText);
+                    toast.error('Error al enviar el email')
                 }
 
             } catch (error) {
                 console.error("Error en la solicitud API:", error);
-                toast.error('Error al modificar el post')
+                toast.error('Error al enviar el email')
             }
         }
     };
