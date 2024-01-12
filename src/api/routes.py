@@ -209,7 +209,7 @@ def email():
         from_email='Consulta@fisioin.es',
         to_emails='fisioinmadrid@gmail.com',
         subject='Paciente que solicita información',
-        html_content=f'<strong>Nombre: {data.get("name")}</strong><br><strong>Email: {data.get("email")}</strong><br><strong>Nombre: {data.get("phone")}</strong><br>{data.get("message")}'
+        html_content=f'<strong>Nombre: {data.get("name")}</strong><br><strong>Email: {data.get("email")}</strong><br><strong>Número de telefono: {data.get("phone")}</strong><br>{data.get("message")}'
     )
     try:
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
