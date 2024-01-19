@@ -37,7 +37,6 @@ export const Signup = () => {
             const emailLowercase = user.email.toLowerCase();
             const register = await actions.signup(emailLowercase,user.password);
             if (register == true) {
-                // await showToastAndNavigate();
                 toast.success('Registrado con éxito!', {
                     onClose: () => {
                         navigate('/admin/login', { replace: true });
@@ -45,8 +44,10 @@ export const Signup = () => {
                 });          
             }
             else {
-                console.log(register);
-                toast.error(register)
+                // console.log(register);
+                // toast.error(register)
+                console.log("Error al registrar usuario");
+                toast.error("Error al registrar usuario")
             }
     }};
 
