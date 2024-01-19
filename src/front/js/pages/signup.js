@@ -44,10 +44,8 @@ export const Signup = () => {
                 });          
             }
             else {
-                // console.log(register);
-                // toast.error(register)
-                console.log("Error al registrar usuario");
-                toast.error("Error al registrar usuario")
+                console.log(register);
+                toast.error(register)
             }
     }};
 

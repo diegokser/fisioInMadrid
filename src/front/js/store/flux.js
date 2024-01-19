@@ -12,12 +12,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Use getActions to call a function within a fuction
 			signup: async (email, password) => {
 				const store = getStore()
-				console.log(email,password)
+				// console.log(email,password)
 				const newUser = {
 					email : email,
 					password : password
 				}
-				console.log(newUser)
+				// console.log(newUser)
 				try {
 					const response = await fetch(
 					  process.env.BACKEND_URL + "/api/admin/signup",
@@ -40,11 +40,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				},
 			changePassword: async (password) => {
 				const store = getStore()
-				console.log(password)
+				// console.log(password)
 				const newPassword = {
 					password : password,
 				}
-				console.log(newPassword)
+				// console.log(newPassword)
 				try {
 					const token = localStorage.getItem("jwt-token");
 					const response = await fetch(
