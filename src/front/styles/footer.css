@@ -23,6 +23,12 @@
 .img-cam{
 border: 2px solid rgb(132,156,187);
 }
+.footer_iconos{
+  color:white;
+}
+.footer_iconos:hover{
+  color:rgba(1,179,229,255);
+}
 
 
 /* Extra small devices (phones, 600px and down) */
