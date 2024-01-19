@@ -145,9 +145,6 @@
     color: rgb(132,156,187);
     font-size: 1rem;
 }
-.all-questions{
-    padding: 4rem;
-}
 .card-questions{
     justify-content: center;
 }
@@ -196,7 +193,7 @@
         height: 90%;
     }
     .home-info{
-        padding-bottom:7rem;
+        padding-bottom:4rem;
     }
     .card-info-home{
         padding:2rem;
@@ -212,6 +209,9 @@
     }
     .text-questions{
         font-size: 1rem;
+    }
+    .all-questions{
+        padding: 2rem;
     }
 }
 
@@ -243,6 +243,9 @@
     .card-info-home{
         padding:4rem;
     }
+    .all-questions{
+        padding: 3rem;
+    }
     .text-questions{
         font-size: 1.25rem;
     }
@@ -272,7 +275,6 @@
         color:rgb(132,156,187);
         text-align:justify;
     }
-    
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

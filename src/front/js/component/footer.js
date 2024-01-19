@@ -20,7 +20,7 @@ export const Footer = () => (
           <img src={imagenColegio} className="img-cam" alt="imagen colegiofisio"/>
         </div>
       </div>
-      <div className="col-4 footer_col">
+      <div className="col-4 footer_col footer-2-column">
         <div className="footer_infotext_container ">
           <p className="footer_infotext">Información</p>
             <Link to="/contacto" className="footer_infosubtext">Contacto</Link><br/>
