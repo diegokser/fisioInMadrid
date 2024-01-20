@@ -97,7 +97,7 @@ export const BlogsEdit = () => {
                     ))
                 ) : (
                     <div className="container-fluid">
-                        <h1 style={{ textAlign: "center", color: "rgb(5,76,132)"}} >No hay post publicados</h1>
+                        <h1 style={{ textAlign: "center", padding: "3rem", color: "rgb(5,76,132)"}} >No hay post publicados</h1>
                     </div>
                 )}
             </div>
