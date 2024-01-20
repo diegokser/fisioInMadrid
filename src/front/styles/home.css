@@ -186,6 +186,9 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .text-especialidades{
+        padding:2rem 2rem 1rem 2rem;
+    }
     .card-home-text{
         top:20%;
         right:-10%;
@@ -218,6 +221,9 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    .text-especialidades{
+        padding:2rem 4rem 1rem 4rem;
+    }
     .card-text-info{
         font-size: 1.5rem;
         line-height: 3rem;
