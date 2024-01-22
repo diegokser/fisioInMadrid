@@ -29,10 +29,16 @@
         .password-section{
             padding-top: 2rem;
         }
+        .signup-container{
+            padding: 2rem;
+        }
     }
     
     /* Small devices (portrait tablets and large phones, 600px and up) */
     @media only screen and (min-width: 600px) {
+        .signup-container{
+            padding: 4rem;
+        }
         .password-container{
             padding: 4rem;
         }

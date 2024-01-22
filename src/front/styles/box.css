@@ -18,11 +18,17 @@
         text-align: center;
         font-size: 0.75rem;
     }
+    .list-group-item+.list-group-item {
+        border-top-width: 1px !important;
+    }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .box-list{
         text-align: center;
+    }
+    .list-group-item+.list-group-item {
+        border-top-width: 1px !important; 
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */
@@ -32,6 +38,9 @@
     }
     .box-list{
         text-align: left;
+    }
+    .list-group-item+.list-group-item {
+        border-top-width: 0 !important; 
     }
 }
 

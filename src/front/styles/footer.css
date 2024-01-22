@@ -12,6 +12,7 @@
   text-decoration: none;
   display: flex;
   align-items: center;
+  margin-bottom: -0.9rem; 
 }
 .footer_infosubtext:hover{
   color:white;
@@ -22,6 +23,12 @@
 }
 .img-cam{
 border: 2px solid rgb(132,156,187);
+}
+.footer_iconos{
+  color:white;
+}
+.footer_iconos:hover{
+  color:rgba(1,179,229,255);
 }
 
 
@@ -43,6 +50,12 @@ border: 2px solid rgb(132,156,187);
   .img-cam{
     width:6rem;
     margin-top: 1rem;
+  }
+  /* .footer-2-column{
+    display: none;
+  } */
+  .footer_col{
+    margin-bottom: 2rem;
   }
   }
   

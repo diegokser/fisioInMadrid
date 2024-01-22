@@ -41,7 +41,7 @@ mail.init_app(app)
 app.url_map.strict_slashes = False
 
 app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
-app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(minutes = 5)
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(minutes = 15)
 jwt = JWTManager(app)
 
 # database condiguration

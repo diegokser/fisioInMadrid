@@ -37,7 +37,6 @@ export const Signup = () => {
             const emailLowercase = user.email.toLowerCase();
             const register = await actions.signup(emailLowercase,user.password);
             if (register == true) {
-                // await showToastAndNavigate();
                 toast.success('Registrado con éxito!', {
                     onClose: () => {
                         navigate('/admin/login', { replace: true });

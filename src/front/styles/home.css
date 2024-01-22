@@ -145,9 +145,6 @@
     color: rgb(132,156,187);
     font-size: 1rem;
 }
-.all-questions{
-    padding: 4rem;
-}
 .card-questions{
     justify-content: center;
 }
@@ -189,6 +186,9 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .text-especialidades{
+        padding:2rem 2rem 1rem 2rem;
+    }
     .card-home-text{
         top:20%;
         right:-10%;
@@ -196,7 +196,7 @@
         height: 90%;
     }
     .home-info{
-        padding-bottom:7rem;
+        padding-bottom:4rem;
     }
     .card-info-home{
         padding:2rem;
@@ -213,11 +213,17 @@
     .text-questions{
         font-size: 1rem;
     }
+    .all-questions{
+        padding: 2rem;
+    }
 }
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    .text-especialidades{
+        padding:2rem 4rem 1rem 4rem;
+    }
     .card-text-info{
         font-size: 1.5rem;
         line-height: 3rem;
@@ -242,6 +248,9 @@
     }
     .card-info-home{
         padding:4rem;
+    }
+    .all-questions{
+        padding: 3rem;
     }
     .text-questions{
         font-size: 1.25rem;
@@ -272,7 +281,6 @@
         color:rgb(132,156,187);
         text-align:justify;
     }
-    
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

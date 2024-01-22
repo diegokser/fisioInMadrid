@@ -7,7 +7,7 @@ import imagenColegio from "../../img/IMG_0649.jpg";
 export const Footer = () => (
   <footer className="footer_container" id="footer_contain">
     <div className="row footer_row">
-      <div className="col-4 footer_col">
+      <div className="col-6 col-sm-4 footer_col">
         <p className="footer_infotext"> Síguenos en:</p>
         <div className="footer_social">
           <a href="https://www.instagram.com/fisioinmadrid/"><i className="fab fa-instagram fa-lg footer_iconos"></i></a>
@@ -20,7 +20,7 @@ export const Footer = () => (
           <img src={imagenColegio} className="img-cam" alt="imagen colegiofisio"/>
         </div>
       </div>
-      <div className="col-4 footer_col">
+      <div className="col-6 col-sm-4 footer_col footer-2-column">
         <div className="footer_infotext_container ">
           <p className="footer_infotext">Información</p>
             <Link to="/contacto" className="footer_infosubtext">Contacto</Link><br/>
@@ -29,7 +29,7 @@ export const Footer = () => (
             <Link to="/blog" className="footer_infosubtext">Blog</Link><br/>
         </div>
       </div>
-      <div className="col-4 footer_col  ">
+      <div className="col-6 col-sm-4 footer_col  ">
         <div className="footer_infotext_container ">
           <p className="footer_infotext">Links de ayuda</p>
             <Link to="/legal" className="footer_infosubtext">Aviso legal</Link><br/>
