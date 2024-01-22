@@ -54,6 +54,9 @@ border: 2px solid rgb(132,156,187);
   /* .footer-2-column{
     display: none;
   } */
+  .footer_col{
+    margin-bottom: 2rem;
+  }
   }
   
   /* Small devices (portrait tablets and large phones, 600px and up) */
