@@ -12,6 +12,7 @@
   text-decoration: none;
   display: flex;
   align-items: center;
+  margin-bottom: -0.9rem; 
 }
 .footer_infosubtext:hover{
   color:white;
