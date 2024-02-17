@@ -35,7 +35,7 @@
 }
 
 .caption-description {
-    font-size: 3vw; /* Ajusta el tamaño de fuente según tus preferencias */
+    font-size: 3vw;
 }
 
 .carousel-item img {
@@ -211,6 +211,19 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .caption-title {
+        font-size: 1rem;
+    }
+    .caption-description {
+        font-size: 1rem;
+    }
+    .carousel-caption {
+        z-index: 2;
+        width: 70%; /* Ajusta el ancho del cuadro de texto */ 
+        height: 80%;
+        padding: auto;
+    }
+
     .text-especialidades{
         padding:2rem 2rem 1rem 2rem;
     }
@@ -227,10 +240,10 @@
         padding:2rem;
     }
     .title-bienvenida{
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
     .subtitle-bienvenida{
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
     .text-bienvenida{
         font-size: 1rem;
@@ -263,7 +276,7 @@
         padding-top:6rem;
     }
     .title-bienvenida{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     .subtitle-bienvenida{
         font-size: 1.25rem;
