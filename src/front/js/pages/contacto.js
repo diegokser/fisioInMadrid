@@ -90,7 +90,7 @@ export const Contacto = () => {
                         <div className="card card-contacto col-12">
                             <div className="row row-icono">
                                 <i className="col-2 fa-solid fa-phone icono-tlf"></i>
-                                <p className="col-9 card-title text-contacto">Puedes enviarnos llamarnos al: <a className="link-contacto" href="tel:+34650369409">650369409</a></p>
+                                <p className="col-9 card-title text-contacto">Puedes llamarnos al: <a className="link-contacto" href="tel:+34650369409">650369409</a></p>
                             </div>
                         </div>
                         <div className="card card-contacto col-12">
