@@ -7,7 +7,7 @@ import imagenColegio from "../../img/IMG_0649.jpg";
 export const Footer = () => (
   <footer className="footer_container" id="footer_contain">
     <div className="row footer_row">
-      <div className="col-6 col-sm-4 footer_col">
+      <div className="col-6 col-sm-4 footer_col" id="footer-column-social">
         <p className="footer_infotext"> Síguenos en:</p>
         <div className="footer_social">
           <a href="https://www.instagram.com/fisioinmadrid/"><i className="fab fa-instagram fa-lg footer_iconos"></i></a>
