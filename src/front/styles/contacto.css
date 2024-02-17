@@ -127,6 +127,7 @@
     }
     .card-form-contacto{
         padding: 3rem;
+        align-self: center;
     }
 }
 
@@ -163,5 +164,8 @@
 @media only screen and (min-width: 1200px) {
     .row-contacto{
         padding: 0 3rem 0 3rem;
+    }
+    .card-form-contacto{
+        padding: 1rem 3rem 1rem 3rem;
     }
 }
