@@ -5,7 +5,7 @@ import "../../styles/politicas.css";
 export const Legal = () => {
     return(
         <article className="container container-politicas">
-            <h2 className="title-politicas">Fisioin Madrid fiseoterapia y rehabilitación neurológica domicilio</h2>
+            <h2 className="title-politicas">FISIOIN MADRID</h2>
             <h3 className="text-politicas">LEY DE LOS SERVICIOS DE LA SOCIEDAD DE LA INFORMACIÓN (LSSI)</h3>
             <p className="text-politicas">FISIOIN MADRID SL, responsable del sitio web, en adelante RESPONSABLE, pone a disposición de los usuarios el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), BOE N º 166, así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso.<br/>
                 Toda persona que acceda a este sitio web asume el papel de usuario, comprometiéndose a la observancia y cumplimiento riguroso de las disposiciones aquí dispuestas, así como a cualquier otra disposición legal que fuera de aplicación.<br/>

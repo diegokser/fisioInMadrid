@@ -13,7 +13,7 @@ export const CardHome  = () =>{
                     <h5 className="card-text card-text-info">
                         ABIERTOS A ESCUCHARTE <br/>
                         Horario: L - V 9 am - 9pm <br/>
-                        <Link className="card-links-home" to="/contacto">650369409</Link>
+                        <a className="card-links-home" href="tel:+34650369409">650369409</a>
                         <a className="card-links-home" href="mailto:consulta@fisioin.es">consulta@fisioin.es</a>
                         <a className="card-links-home" href="https://api.whatsapp.com/send/?phone=34650369409&text&type=phone_number&app_absent=0">Whatsapp <i className="fab fa-whatsapp"></i></a>
                     </h5>

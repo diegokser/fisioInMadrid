@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/contacto.css";
 import imagenLogo from "../../img/Mano.png";
 import { useNavigate } from "react-router-dom";
@@ -18,10 +18,10 @@ export const Contacto = () => {
     const handleMail = async (e) => {
         e.preventDefault();
         // console.log(mail);
-        if (mail.name === "" || mail.email === "" || mail.phone === "") {
-            // console.log("Faltan datos");
-            toast.error('Faltan datos')
-        } else {
+        // if (mail.name === "" || mail.email === "" || mail.phone === "") {
+        //     // console.log("Faltan datos");
+        //     toast.error('Faltan datos')
+        // } else {
             try {
                 const response = await fetch(
                     `${process.env.BACKEND_URL}/api/send_email`,
@@ -51,26 +51,62 @@ export const Contacto = () => {
                 console.error("Error en la solicitud API:", error);
                 toast.error('Error al enviar el email')
             }
-        }
+        // }
     };
+
+    const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 780);
+    };
+
+    // Agregar evento de escucha para cambios en el tamaño de la ventana
+    window.addEventListener('resize', handleResize);
+
+    // Llamar a handleResize cuando el componente se monta para establecer el estado inicial
+    handleResize();
+
+    // Limpiar el evento de escucha cuando el componente se desmonta
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
 
     return(
         <section className="container-fluid container-contacto">
             <h1 className="title-contacto">CONTÁCTANOS <img className="imagen-logo-contacto"src={imagenLogo} alt="Logo de la empresa"/></h1>
             <div className="row row-contacto-form">
-                <div className="col-12 col-md-7">
+                <div className="col-12 col-md-7 all-type-contact">
                     <p className="text-contacto">Si tienes alguna duda o necesitas más información nuestro horario de atención es de <span className="contacto-horario">L - V 9 am - 9pm</span></p>
                     <div className="row row-contacto">
-                        <div className="card card-contacto col-12 col-lg-5">
+                        <div className="card card-contacto col-12">
                             <div className="row row-icono">
                                 <i className="col-2 far fa-envelope icono-email"></i>
                                 <p className="col-9 card-title text-contacto">Puedes enviarnos un email a: <a className="link-contacto" href="mailto:consulta@fisioin.es">consulta@fisioin.es</a></p>
                             </div>
                         </div>
-                        <div className="card card-contacto col-12 col-lg-5">
+                        <div className="card card-contacto col-12">
+                            <div className="row row-icono">
+                                <i className="col-2 fa-solid fa-phone icono-tlf"></i>
+                                <p className="col-9 card-title text-contacto">Puedes enviarnos llamarnos al: <a className="link-contacto" href="tel:+34650369409">650369409</a></p>
+                            </div>
+                        </div>
+                        <div className="card card-contacto col-12">
                             <div className="row row-icono">
                                 <i className="col-2 fab fa-whatsapp icono-whatsapp"></i>
-                                <p className="card-text col-9 text-contacto">Llamarnos o escribirnos por whatsapp: <a className="link-contacto" href="https://api.whatsapp.com/send/?phone=34650369409&text&type=phone_number&app_absent=0">650369409</a></p>
+                                <p className="card-text col-9 text-contacto">Puedes escribirnos un whatsapp: <a className="link-contacto" href="https://api.whatsapp.com/send/?phone=34650369409&text&type=phone_number&app_absent=0">Haz click aquí</a></p>
+                            </div>
+                        </div>
+                        <div className="card card-contacto col-12">
+                            <div className="row row-icono">
+                            {isMobile ? (
+                                <i className="col-2 fas fa-arrow-down icono-email"></i>
+                            ) : (
+                                <i className="col-2 fas fa-arrow-right icono-email"></i>
+                            )}
+                                <p className="card-text col-9 text-contacto">Puedes rellenar este formulario y le contestaremos lo antes posible o dejarnos una sugerencia sobre nuestro servicio de manera anónima sin rellenar los datos personales.</p>
                             </div>
                         </div>
                     </div>
@@ -79,23 +115,23 @@ export const Contacto = () => {
                     <div className="card form-contacto">
                         <form className="card-body" onSubmit={(e) => handleMail(e)}>
                             <div className="mb-3">
-                                <label htmlFor="name-form" className="form-label label-contacto">Nombre completo</label>
+                                <label htmlFor="name-form" className="form-label label-contacto text-contacto-form">Nombre completo</label>
                                 <input type="text" className="form-control" id="name-form" placeholder="FisioIn Madrid" value={mail.name} onChange={(data)=> {setMail({...mail, name: data.target.value})}}/>
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="email-form" className="form-label label-contacto">Email de contacto</label>
+                                <label htmlFor="email-form" className="form-label label-contacto text-contacto-form">Email de contacto</label>
                                 <input type="email" className="form-control" id="email-form" placeholder="name@example.com" value={mail.email} onChange={(data)=> {setMail({...mail, email: data.target.value})}} />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="phone-form" className="form-label label-contacto">Número de teléfono</label>
+                                <label htmlFor="phone-form" className="form-label label-contacto text-contacto-form">Número de teléfono</label>
                                 <input type="text" className="form-control" id="phone-form" placeholder="+34 XXX XX XX XX" value={mail.phone} onChange={(data)=> {setMail({...mail, phone: data.target.value})}}/>
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleFormControlTextarea1" className="form-label label-contacto">Cuéntanos tu caso</label>
+                                <label htmlFor="exampleFormControlTextarea1" className="form-label label-contacto text-contacto-form">Cuéntanos tu caso</label>
                                 <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" value={mail.message} onChange={(data)=> {setMail({...mail, message: data.target.value})}}></textarea>
                             </div>
                             <div className="d-flex">
-                                <button type="submit" className="btn btn-contacto">Enviar</button>
+                                <button type="submit" className="btn btn-contacto text-contacto-form">Enviar</button>
                             </div>
                             <ToastContainer
                             position="bottom-right"

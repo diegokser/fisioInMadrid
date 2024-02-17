@@ -20,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(91, 90, 90, 0.7);
+    background-color: rgba(27, 27, 27, 0.7);
     z-index: 1; /* Coloca la capa oscura detrás de la imagen */
 }
 
@@ -56,7 +56,7 @@
     height: 100%;
 }
 .card-home-text{
-    background-color: rgba(1,179,229,255);
+    background-color: rgb(5,76,132);
     border-radius: 1rem;
     position:absolute;
     display: flex;
@@ -65,16 +65,17 @@
     text-align: center;
 }
 .card-text-info{
-    color:  rgb(5,76,132);
+    /* color: rgba(1,179,229,255); */
+    color:white;
     display: flex;
     flex-direction: column;
 }
 .card-links-home{
     color:white;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 .card-links-home:hover{
-    color:rgb(5,76,132);
+    color:rgba(1,179,229,255);
 }
 
 .title-bienvenida{
@@ -168,12 +169,30 @@
 .accordion-button:not(.collapsed){
     background-color: #F4F9FC;
 }
+.container-img-col{
+    padding: 3rem;
+    background-color: #F4F9FC;
+}
+.all-img-col{
+    text-align: center;
+}
+.img-col{
+    width: 75%;
+    padding-bottom: 1rem;
+}
+
 
 /* Estilos para pantallas entre 420px y 600px (incluyendo ambos tamaños) */
 @media screen and (min-width: 420px) and (max-width: 600px) {
     .card-text-info {
-        font-size: 1.25rem;
+        font-size: 1rem;
         line-height: 2.25rem;
+    }
+    .subtitle-especialidades{
+        font-size:1.25rem;
+    }
+    #title-espacialidades-home{
+        font-size: 1.25rem;
     }
 }
 /* Estilos para pantallas entre 420px y 600px (incluyendo ambos tamaños) */
@@ -181,6 +200,12 @@
     .card-text-info {
         font-size: 0.85rem;
         line-height: 1.50rem;
+    }
+    .subtitle-especialidades{
+        font-size:1.1rem;
+    }
+    #title-espacialidades-home{
+        font-size: 1.25rem;
     }
 }
 
@@ -225,7 +250,7 @@
         padding:2rem 4rem 1rem 4rem;
     }
     .card-text-info{
-        font-size: 1.5rem;
+        font-size: 4vw;
         line-height: 3rem;
     }
     .card-home-text{
@@ -260,8 +285,8 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .card-text-info{
-        font-size: 2rem;
-        line-height: 5rem;
+        font-size: 1.75rem;
+        line-height: 4rem;
     }
     .title-bienvenida{
         font-size: 1.28rem;
@@ -311,7 +336,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .card-text-info{
-        font-size: 2rem;
+        font-size: 1.75rem;
         line-height: 3rem;
     }
 }

@@ -41,6 +41,9 @@
 }
 .all-tarifas{
     padding: 1rem 2rem 3rem 2rem;
+    justify-content: center;
+}
+.row-text-tarifas{
     display: flex;
 }
 .row-tarifas{
@@ -65,7 +68,6 @@
 }
 .bono-sesion-tarifas{
     color:rgba(1,179,229,255);
-    padding-bottom: 1rem;
 }
 .btn-bono-tarifas{
     background-color:rgb(5,76,132);
@@ -75,32 +77,58 @@
     background-color:rgba(1,179,229,255);
     color:white;
 }
+
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .bono-title-tarifas{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        line-height: 1;
     }
     .bono-precio-tarifas{
-        font-size: 1.5rem;
+        font-size: 1rem;
+        line-height: 1;
     }
     .bono-sesion-tarifas{
-        font-size: 1.5rem;
+        font-size: 1rem;
+        line-height: 1;
+        padding-bottom: 0.5rem;
     }
     .text-tarifas{
         font-size: 1rem;
+    }
+    .all-tarifas{
+        padding: 1rem 1rem 3rem 1rem;
+    }
+    .card-tarifas{
+        width: 55%;
+        margin: 1rem;
+    }
+}
+
+/* Estilos para pantallas entre 576px y 600px (incluyendo ambos tamaños) */
+@media screen and (min-width: 576px) and (max-width: 600px) {
+    .card-tarifas{
+        width: calc(35% - 10px); /* 25% de ancho con 5px de margen a cada lado */
+        margin: 10px; /* Márgenes de 5px */
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    .all-tarifas{
+        padding: 1rem 2rem 3rem 2rem;
+    }
     .bono-title-tarifas{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     .bono-precio-tarifas{
-        font-size: 1.5rem;
+        font-size: 1.15rem;
     }
     .bono-sesion-tarifas{
-        font-size: 1.5rem;
+        font-size: 1.15rem;
+        padding-bottom: 0.5rem;
     }
     .text-tarifas{
         font-size: 1.25rem;
@@ -111,13 +139,22 @@
         padding-left: 2rem;
         padding-right: 2rem;
     }
+    .card-tarifas{
+        width: calc(35% - 10px); /* 25% de ancho con 5px de margen a cada lado */
+        margin: 10px; /* Márgenes de 5px */
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .card-tarifas{
-        width: calc(35% - 10px); /* 25% de ancho con 5px de margen a cada lado */
-        margin: 10px; /* Márgenes de 5px */
+    .bono-title-tarifas{
+        font-size: 1.5rem;
+    }
+    .bono-precio-tarifas{
+        font-size: 1.5rem;
+    }
+    .bono-sesion-tarifas{
+        font-size: 1.5rem;
     }
 }
 

@@ -1,5 +1,6 @@
 .container-politicas{
-    padding: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 .text-politicas{
     text-align: justify;
@@ -48,6 +49,9 @@
         width: 5rem;
         height: 2rem;
         }
+    .container-politicas{
+        padding: 3rem;
+    }
 }
 
 
@@ -63,7 +67,9 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
+    .container-politicas{
+        padding: 3rem;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */

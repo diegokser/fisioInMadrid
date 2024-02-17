@@ -11,7 +11,7 @@ import "../../styles/tarifas.css";
 export const Tarifas = () =>{
     const precios = [{
         title:"INDIVIDUAL",
-        sesion:"1 sesión",
+        sesion:"(Sesión a 62€)",
         precio:"62€"
     },
     {
@@ -40,7 +40,7 @@ export const Tarifas = () =>{
                 <div className="row row-tarifas">
                 {precios.map((precio,index)=>{
                     return(
-                        <div key={index} className="card col-12 col-md-6 col-xxl-3 gy-3 card-tarifas">
+                        <div key={index} className="card col-12 col-sm-6 col-xxl-3 gy-3 card-tarifas">
                             <div className="card-body card-bono-tarifas">
                                 <h5 className="card-title bono-title-tarifas">{precio.title}</h5>
                                 <p className="card-text bono-precio-tarifas">{precio.precio}</p>
@@ -50,21 +50,23 @@ export const Tarifas = () =>{
                         </div>
                     )
                 })}
+                </div>
+                <div className="row row-text-tarifas">
                     <div className="tarifas-texto2">
                         <h3 className="subtitle-tarifas">NEURORREHABILITACIÓN INTEGRAL</h3>
                         <div className="row row-tarifas2">
                             <div className="col-12 col-xl-6">
                                 <p className="text-tarifas">Se establecerá un programa de tratamiento individualizado en base a una valoración inicial, en el que se combinen las sesiones de las especialidades necesarias en cada caso y con un presupuesto personalizado.<br/>
-                                <Link className="link-text-tarifas" to="/contacto">CONSULTA TU CASO</Link>
-                                </p>
-                                <p className="text-tarifas">*Para zonas de servicio distintas a las referenciadas, se considerará un suplemento adicional.<br/>
-                                    **Los bonos incluyen sesiones de tratamiento de 60 minutos, informes personalizados, acceso al portal del paciente, videoconsultas de seguimiento.<br/>
-                                    ***Los bonos tienen una validez de 6 meses.
+                                <Link className="link-text-tarifas" to="/contacto">Consulta tu caso</Link>
                                 </p>
                                 <h3 className="subtitle-tarifas">CHEQUE SERVICIO</h3>
                                 <p className="text-tarifas">Utiliza tu cheque servicio de la comunidad de Madrid con nosotros. Se rige por los precios acordados con la comunidad y siempre cumpliendo el decálogo de derechos de los usuarios:<br/>
                                 <Link className="link-text-tarifas" to="/derechos">Consúltalo aquí</Link>
                                  </p>
+                                 <p className="text-tarifas">*Para zonas de servicio distintas a las referenciadas, se considerará un suplemento adicional.<br/>
+                                    **Los bonos incluyen sesiones de tratamiento de 60 minutos, informes personalizados, acceso al portal del paciente, videoconsultas de seguimiento.<br/>
+                                    ***Los bonos tienen una validez de 6 meses.
+                                </p>
                             </div>
                             <div className="col-12 col-xl-6 all-carousel-tarifas">
                                 <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
