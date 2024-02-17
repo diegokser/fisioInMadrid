@@ -78,8 +78,8 @@ export const Contacto = () => {
         <section className="container-fluid container-contacto">
             <h1 className="title-contacto">CONTÁCTANOS <img className="imagen-logo-contacto"src={imagenLogo} alt="Logo de la empresa"/></h1>
             <div className="row row-contacto-form">
-                <div className="col-12 col-md-7 all-type-contact">
-                    <p className="text-contacto">Si tienes alguna duda o necesitas más información nuestro horario de atención es de <span className="contacto-horario">L - V 9 am - 9pm</span></p>
+            <p className="text-contacto">Si tienes alguna duda o necesitas más información nuestro horario de atención es de <span className="contacto-horario">L - V 9 am - 9pm.</span> También puedes completar el formulario y nos pondremos en contacto contigo lo antes posible. Además, apreciamos tus sugerencias sobre nuestro servicio. Si prefieres mantener el anonimato, siéntete libre de dejarnos comentarios sin proporcionar datos personales.</p>
+                <div className="col-12 col-md-6 all-type-contact">
                     <div className="row row-contacto">
                         <div className="card card-contacto col-12">
                             <div className="row row-icono">
@@ -106,12 +106,12 @@ export const Contacto = () => {
                             ) : (
                                 <i className="col-2 fas fa-arrow-right icono-email"></i>
                             )}
-                                <p className="card-text col-9 text-contacto">Puedes rellenar este formulario y le contestaremos lo antes posible o dejarnos una sugerencia sobre nuestro servicio de manera anónima sin rellenar los datos personales.</p>
+                                <p className="card-text col-9 text-contacto">Puedes completar el formulario y nos pondremos en contacto contigo lo antes posible. Además, apreciamos tus sugerencias sobre nuestro servicio. Si prefieres mantener el anonimato, siéntete libre de dejarnos comentarios sin proporcionar datos personales.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-12 col-md-5 card-form-contacto">
+                <div className="col-12 col-md-6 card-form-contacto">
                     <div className="card form-contacto">
                         <form className="card-body" onSubmit={(e) => handleMail(e)}>
                             <div className="mb-3">
