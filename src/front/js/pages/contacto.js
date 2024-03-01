@@ -78,7 +78,7 @@ export const Contacto = () => {
         <section className="container-fluid container-contacto">
             <h1 className="title-contacto">CONTÁCTANOS <img className="imagen-logo-contacto"src={imagenLogo} alt="Logo de la empresa"/></h1>
             <div className="row row-contacto-form">
-            <p className="text-contacto">Si tienes alguna duda o necesitas más información nuestro horario de atención es de <span className="contacto-horario">L - V 9 am - 9pm.</span> También puedes completar el formulario y nos pondremos en contacto contigo lo antes posible. Además, apreciamos tus sugerencias sobre nuestro servicio. Si prefieres mantener el anonimato, siéntete libre de dejarnos comentarios sin proporcionar datos personales.</p>
+            <p className="text-contacto">¿Tienes preguntas o necesitas más información? Estamos disponibles de <span className="contacto-horario">lunes a viernes, de 9 am a 9 pm.</span> También puedes completar el formulario y nos comunicaremos contigo lo más pronto posible. Valoramos tus sugerencias sobre nuestro servicio. ¡Estamos aquí para ayudarte!</p>
                 <div className="col-12 col-md-6 all-type-contact">
                     <div className="row row-contacto">
                         <div className="card card-contacto col-12">
@@ -106,7 +106,7 @@ export const Contacto = () => {
                             ) : (
                                 <i className="col-2 fas fa-arrow-right icono-email"></i>
                             )}
-                                <p className="card-text col-9 text-contacto">Puedes completar el formulario y nos pondremos en contacto contigo lo antes posible. Además, apreciamos tus sugerencias sobre nuestro servicio. Si prefieres mantener el anonimato, siéntete libre de dejarnos comentarios sin proporcionar datos personales.</p>
+                                <p className="card-text col-9 text-contacto">Si valoras tu privacidad, siéntete libre de dejarnos comentarios en el formulario sin necesidad de proporcionar información personal.</p>
                             </div>
                         </div>
                     </div>
