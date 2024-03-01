@@ -39,7 +39,7 @@ const Layout = () => {
 
     // Función para verificar si la página actual es de administrador
     const checkAdminPage = () => {
-        const adminPages = ["/admin/signup", "/admin/login", "/admin/password", "/admin/post", "/admin/edit"];
+        const adminPages = ["/admin/signup", "/admin/login", "/admin/password", "/admin/post", "/admin/edit", "/admin/blogs"];
         setIsAdminPage(adminPages.some(page => window.location.pathname.startsWith(page)));
     };
 
