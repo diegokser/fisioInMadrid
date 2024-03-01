@@ -118,7 +118,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (currentTime >= expirationTime) {
 						console.log("Se ha acabado el token");
 						setStore({ isloged: false });
-						localStorage.clear();
+						localStorage.removeItem("jwt-token") // Esto hace que se elimine solo el token y el de abajo elimina todo el localstorage por lo que nos dificulta las cookies
+						// localStorage.clear(); 
 						return false;
 					}
 
@@ -130,12 +131,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 	  
 			  // Token doesn't exist
 			  setStore({ isloged: false });
-			  localStorage.clear();
+			//   localStorage.clear();
+			  localStorage.removeItem("jwt-token")
+			  
 			  return false;
 			},
 			logout: () => {
 				setStore({ isloged: false });
-				localStorage.clear();
+				// localStorage.clear();  
+				localStorage.removeItem("jwt-token")
 				setStore({ user_data: {} });
 			  },
 			img_upload: async (img) => {
