@@ -1,9 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../../styles/politicas.css";
 import { Link } from 'react-router-dom';
 
 export const CookieAlert = () => {
-    const [showNotice, setShowNotice] = useState(!document.cookie.includes('cookie_consent'));
+    // const [showNotice, setShowNotice] = useState(!document.cookie.includes('cookie_consent'));
+
+    // const acceptCookies = () => {
+    //     // Realiza una solicitud al servidor para establecer la cookie de consentimiento.
+    //     fetch(process.env.BACKEND_URL + '/api/set_cookie', {
+    //         method: 'POST',
+    //     })
+    //     .then(() => {
+    //         // Una vez que el servidor establece la cookie, oculta el aviso.
+    //         setShowNotice(false);
+    //     })
+    //     .catch(error => {
+    //         console.error('Error al establecer la cookie de consentimiento:', error);
+    //     });
+    // };
+
+    const [showNotice, setShowNotice] = useState(false);
+
+    useEffect(() => {
+        const hasConsent = localStorage.getItem('cookie_consent');
+        setShowNotice(!hasConsent);
+    }, []);
 
     const acceptCookies = () => {
         // Realiza una solicitud al servidor para establecer la cookie de consentimiento.
@@ -11,8 +32,9 @@ export const CookieAlert = () => {
             method: 'POST',
         })
         .then(() => {
-            // Una vez que el servidor establece la cookie, oculta el aviso.
+            // Una vez que el servidor establece la cookie, oculta el aviso y almacena el consentimiento en localStorage.
             setShowNotice(false);
+            localStorage.setItem('cookie_consent', 'accepted');
         })
         .catch(error => {
             console.error('Error al establecer la cookie de consentimiento:', error);

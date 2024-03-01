@@ -25,6 +25,7 @@ import { UserBlogs } from "./pages/userBlogs";
 import { UserBlog } from "./pages/userBlog";
 import { ChangePassword } from "./pages/changepassword";
 import { EditBlog } from "./pages/editBlog";
+import { CallIcon } from "./component/callIcon";
 
 //create your first component
 const Layout = () => {
@@ -59,6 +60,7 @@ const Layout = () => {
                         <Route element={<UserBlogs />} path="/blog" />
                         <Route element={<UserBlog />} path="/blog/:id" />
                     </Routes>
+                    <CallIcon />
                     <CookieAlert />
                     <Footer />
                 </ScrollToTop>
