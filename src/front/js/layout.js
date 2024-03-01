@@ -35,6 +35,19 @@ const Layout = () => {
 
     if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
 
+    const [isAdminPage, setIsAdminPage] = React.useState(false);
+
+    // Función para verificar si la página actual es de administrador
+    const checkAdminPage = () => {
+        const adminPages = ["/admin/signup", "/admin/login", "/admin/password", "/admin/post", "/admin/edit"];
+        setIsAdminPage(adminPages.some(page => window.location.pathname.startsWith(page)));
+    };
+
+    React.useEffect(() => {
+        checkAdminPage();
+    }, [window.location.pathname]);
+
+
     return (
         <div>
             <BrowserRouter basename={basename}>
@@ -60,7 +73,7 @@ const Layout = () => {
                         <Route element={<UserBlogs />} path="/blog" />
                         <Route element={<UserBlog />} path="/blog/:id" />
                     </Routes>
-                    <CallIcon />
+                    {!isAdminPage && <CallIcon />}                    
                     <CookieAlert />
                     <Footer />
                 </ScrollToTop>
