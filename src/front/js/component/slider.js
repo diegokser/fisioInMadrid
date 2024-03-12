@@ -17,7 +17,7 @@ export const Slider = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <div className="carousel-caption">
-                        <h3 className="caption-title">REHABILITACIÓN NEURÓLOGICA<br/> A DOMICILIO</h3>
+                        <h3 className="caption-title">REHABILITACIÓN NEUROLÓGICA<br/> A DOMICILIO</h3>
                         <p className="caption-description">Fisioterapia, Logopedia, Neuropsicología, Terapia Ocupacional</p>
                     </div>
                     <div className="carousel-overlay"></div>

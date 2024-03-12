@@ -78,35 +78,30 @@ export const Contacto = () => {
         <section className="container-fluid container-contacto">
             <h1 className="title-contacto">CONTÁCTANOS <img className="imagen-logo-contacto"src={imagenLogo} alt="Logo de la empresa"/></h1>
             <div className="row row-contacto-form">
-            <p className="text-contacto">¿Tienes preguntas o necesitas más información? Estamos disponibles de <span className="contacto-horario">lunes a viernes, de 9 am a 9 pm.</span> También puedes completar el formulario y nos comunicaremos contigo lo más pronto posible. Valoramos tus sugerencias sobre nuestro servicio. ¡Estamos aquí para ayudarte!</p>
+                <div className="paragraph-contact">
+                    <p className="text-contacto">{/* ¿Necesitas más información?
+                    <br /> */}Completa el formulario para consultas y sugerencias y nos pondremos en contacto contigo lo antes posible.</p>
+                    <p className="text-contacto">
+                    Nuestro horario de atención es de <span className="contacto-horario">lunes a viernes de 9 am a 9 pm.</span> ¡Estamos aquí para ayudarte!</p>
+                </div>
                 <div className="col-12 col-md-6 all-type-contact">
-                    <div className="row row-contacto">
+                    <div className="row row-contact">
                         <div className="card card-contacto col-12">
                             <div className="row row-icono">
                                 <i className="col-2 far fa-envelope icono-email"></i>
-                                <p className="col-9 card-title text-contacto">Puedes enviarnos un email a: <a className="link-contacto" href="mailto:consulta@fisioin.es">consulta@fisioin.es</a></p>
+                                <p className="col-9 p-4 card-title text-contacto">Puedes enviarnos un email a<br /> <a className="link-contacto" href="mailto:consulta@fisioin.es">consulta@fisioin.es</a></p>
                             </div>
                         </div>
                         <div className="card card-contacto col-12">
                             <div className="row row-icono">
                                 <i className="col-2 fa-solid fa-phone icono-tlf"></i>
-                                <p className="col-9 card-title text-contacto">Puedes llamarnos al: <a className="link-contacto" href="tel:+34650369409">650369409</a></p>
+                                <p className="col-9 p-4 card-title text-contacto">Puedes llamarnos al<br /> <a className="link-contacto" href="tel:+34650369409">650369409</a></p>
                             </div>
                         </div>
                         <div className="card card-contacto col-12">
                             <div className="row row-icono">
                                 <i className="col-2 fab fa-whatsapp icono-whatsapp"></i>
-                                <p className="card-text col-9 text-contacto">Puedes escribirnos un whatsapp: <a className="link-contacto" href="https://api.whatsapp.com/send/?phone=34650369409&text&type=phone_number&app_absent=0">Haz click aquí</a></p>
-                            </div>
-                        </div>
-                        <div className="card card-contacto col-12">
-                            <div className="row row-icono">
-                            {isMobile ? (
-                                <i className="col-2 fas fa-arrow-down icono-email"></i>
-                            ) : (
-                                <i className="col-2 fas fa-arrow-right icono-email"></i>
-                            )}
-                                <p className="card-text col-9 text-contacto">Si valoras tu privacidad, siéntete libre de dejarnos comentarios en el formulario sin necesidad de proporcionar información personal.</p>
+                                <p className="card-text p-4 col-9 text-contacto">Puedes escribirnos un <br /><a className="link-contacto" href="https://api.whatsapp.com/send/?phone=34650369409&text&type=phone_number&app_absent=0">whatsapp</a></p>
                             </div>
                         </div>
                     </div>
@@ -148,9 +143,9 @@ export const Contacto = () => {
                             />
                         </form>
                     </div>
+                    <p className="text-asterisco">** Puedes rellenar el formulario de forma anónima para enviarnos tus sugerencias.</p>
                 </div>
             </div>
-            
         </section>
     )
 }

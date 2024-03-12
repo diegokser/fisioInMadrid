@@ -53,22 +53,22 @@ export const Tarifas = () =>{
                 </div>
                 <div className="row row-text-tarifas">
                     <div className="tarifas-texto2">
-                        <h3 className="subtitle-tarifas">NEURORREHABILITACIÓN INTEGRAL</h3>
                         <div className="row row-tarifas2">
-                            <div className="col-12 col-xl-6">
+                            <div className="col-12 col-xl-7">
+                                <h3 className="subtitle-tarifas">NEURORREHABILITACIÓN INTEGRAL</h3>
                                 <p className="text-tarifas">Se establecerá un programa de tratamiento individualizado en base a una valoración inicial, en el que se combinen las sesiones de las especialidades necesarias en cada caso y con un presupuesto personalizado.<br/>
                                 <Link className="link-text-tarifas" to="/contacto">Consulta tu caso</Link>
                                 </p>
-                                <h3 className="subtitle-tarifas">CHEQUE SERVICIO</h3>
+                                <h3 className="subtitle-tarifas pt-4">CHEQUE SERVICIO</h3>
                                 <p className="text-tarifas">Utiliza tu cheque servicio de la comunidad de Madrid con nosotros. Se rige por los precios acordados con la comunidad y siempre cumpliendo el decálogo de derechos de los usuarios:<br/>
                                 <Link className="link-text-tarifas" to="/derechos">Consúltalo aquí</Link>
                                  </p>
-                                 <p className="text-tarifas">*Para zonas de servicio distintas a las referenciadas, se considerará un suplemento adicional.<br/>
+                                 <p className="text-tarifas pt-3">*Para zonas de servicio distintas a las referenciadas, se considerará un suplemento adicional.<br/>
                                     **Los bonos incluyen sesiones de tratamiento de 60 minutos, informes personalizados, acceso al portal del paciente, videoconsultas de seguimiento.<br/>
                                     ***Los bonos tienen una validez de 6 meses.
                                 </p>
                             </div>
-                            <div className="col-12 col-xl-6 all-carousel-tarifas">
+                            <div className="col-12 col-xl-5 all-carousel-tarifas">
                                 <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                                 <div className="carousel-inner">
                                     <div className="carousel-item active">

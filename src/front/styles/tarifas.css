@@ -17,7 +17,8 @@
 }
 
 .all-carousel-tarifas{
-    padding-top: 2rem;
+    padding: 2rem 2rem 0rem 2rem;
+    align-self: center;
 }
 .img-carousel-tarifas{
     border-radius: 0.25rem;
@@ -165,7 +166,9 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-
+    .all-carousel-tarifas{
+        padding-top: 2rem;
+    }
 }
 
 @media only screen and (min-width: 1400px) {

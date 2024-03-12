@@ -6,14 +6,21 @@
     color:rgb(5,76,132);
     text-align: center;
 }
+.paragraph-contact{
+    padding: 0rem 1rem 1rem 1rem;
+}
 .imagen-logo-contacto{
     height: 10rem;
 }
 .text-contacto{
     color: rgb(132,156,187);
-    padding:1rem;
     text-align: center;
     align-self: center;
+}
+.text-asterisco{
+    color: rgb(132,156,187);
+    padding-top: 1rem;
+    text-align: center;
 }
 .contacto-horario{
     color:rgba(1,179,229,255);
@@ -26,7 +33,7 @@
     margin:1rem;
     /* background-color:  #F4F9FC; */
 }
-.row-contacto{
+.row-contact{
     justify-content: center;
 }
 .icono-email{
@@ -91,11 +98,11 @@
 .imagen-logo-contacto{
     height: 7rem;
 }
-.row-contacto{
-    padding: 0 2rem 0 2rem;
+.row-contact{
+    padding: 0 1rem 0 1rem;
 }
 .card-form-contacto{
-    padding: 2rem;
+    padding: 2rem 1rem 0rem 1rem;
 }
 }
 
@@ -122,11 +129,11 @@
     .imagen-logo-contacto{
         height: 7rem;
     }
-    .row-contacto{
+    .row-contact{
         padding: 0 3rem 0 3rem;
     }
     .card-form-contacto{
-        padding: 3rem;
+        padding: 3rem 3rem 0rem 3rem;
         align-self: center;
     }
 }
@@ -136,11 +143,11 @@
 /* .all-type-contact{
     padding: 0 3rem 0 3rem;
 } */
-.row-contacto{
+.row-contact{
     padding: 0 2rem 0 2rem;
 }
 .card-form-contacto{
-    padding: 1rem;
+    padding: 1rem 1rem 0rem 1rem;
 }
 }
 
@@ -162,10 +169,10 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .row-contacto{
+    .row-contact{
         padding: 0 3rem 0 3rem;
     }
     .card-form-contacto{
-        padding: 1rem 3rem 1rem 3rem;
+        padding: 1rem 3rem 0rem 3rem;
     }
 }

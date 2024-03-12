@@ -15,7 +15,7 @@ export const Especialidades = () =>{
         },
         {
         title:"LOGOPEDIA",
-        description:"Recupera o mantiene las capacidades relacionadas con la comunicación (voz, habla, lenguaje) y abordar las alteraciones miofuncionales que involucren a procesos como la respiración, deglución o masticación.",
+        description:"Recupera o mantiene las capacidades relacionadas con la comunicación (voz, habla, lenguaje) y aborda las alteraciones miofuncionales que involucren a procesos como la respiración, deglución o masticación.",
         img: imagenLogo
         },
         {
