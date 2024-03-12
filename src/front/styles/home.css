@@ -78,11 +78,6 @@
     color:rgba(1,179,229,255);
 }
 
-.title-bienvenida{
-    color: rgb(5,76,132);
-    margin-right: auto;
-}
-
 .subtitle-bienvenida{
     color:  rgba(1,179,229,255);
     margin-right: auto;
@@ -241,9 +236,6 @@
     .card-info-home{
         padding:2rem;
     }
-    .title-bienvenida{
-        font-size: 1rem;
-    }
     .subtitle-bienvenida{
         font-size: 1.1rem;
     }
@@ -284,9 +276,6 @@
     .home-oferta{
         padding-top:6rem;
     }
-    .title-bienvenida{
-        font-size: 1.25rem;
-    }
     .subtitle-bienvenida{
         font-size: 1.25rem;
     }
@@ -312,9 +301,6 @@
     .card-text-info{
         font-size: 1.75rem;
         line-height: 4rem;
-    }
-    .title-bienvenida{
-        font-size: 1.28rem;
     }
     .subtitle-bienvenida{
         font-size: 1.5rem;
@@ -346,9 +332,6 @@
         padding-left: 6rem;
         padding-top: 2rem;
     }
-    .title-bienvenida{
-        font-size: 1.75rem;
-    }
     .subtitle-bienvenida{
         font-size: 1.75rem;
     }
@@ -371,8 +354,5 @@
     .card-especialidades{
         width: calc(25% - 20px); /* 25% de ancho con 5px de margen a cada lado */
         margin: 10px; /* Márgenes de 5px */
-    }
-    .title-bienvenida{
-        font-size: 1.5rem;
     }
 }
