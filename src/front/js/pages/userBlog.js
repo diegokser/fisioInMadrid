@@ -65,7 +65,7 @@ export const UserBlog = () => {
           <span className="title-2"> BLOG</span>
         </h1>
         {post.title ? (
-          <div>
+          <div className="all-post">
             <h2 className="title-post">{post.title}</h2>
             <img src={post.img} alt="foto post" className="img-post" />
             <p className="date-post" >{new Date(post.date).toLocaleDateString()}</p>

@@ -6,7 +6,7 @@ export const QuestionsHome = () =>  {
 
     const questions =[
         {
-            question:"¿Como saber cual es el mejor tratamiento para mi?",
+            question:"¿Como saber cuál es el mejor tratamiento para mi?",
             answer:(
               <span>
                   Ponte en contacto con nosotros aquí: <Link to="/contacto"> <i className="fa-solid fa-phone icon-phone"> </i>Contacto</Link>
@@ -20,7 +20,7 @@ export const QuestionsHome = () =>  {
         },
         {
           question:"¿Cómo son las posibles formas de pago?",
-          answer:"El pago se realiza a la contratación de los servicios y se puede realizar por transferencia, pasarela de pago online o domiciliazión.",
+          answer:"El pago se realiza a la contratación de los servicios y se puede realizar por transferencia, efectivo o domiciliazión.",
           ncollapse:"panelsStayOpen-collapse5"
       }
     ]

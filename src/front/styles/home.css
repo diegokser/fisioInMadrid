@@ -78,11 +78,6 @@
     color:rgba(1,179,229,255);
 }
 
-.title-bienvenida{
-    color: rgb(5,76,132);
-    margin-right: auto;
-}
-
 .subtitle-bienvenida{
     color:  rgba(1,179,229,255);
     margin-right: auto;
@@ -170,7 +165,6 @@
     background-color: #F4F9FC;
 }
 .container-img-col{
-    padding: 3rem;
     background-color: #F4F9FC;
 }
 .all-img-col{
@@ -180,6 +174,7 @@
     width: 75%;
     padding-bottom: 1rem;
 }
+
 
 
 /* Estilos para pantallas entre 420px y 600px (incluyendo ambos tamaños) */
@@ -194,6 +189,7 @@
     #title-espacialidades-home{
         font-size: 1.25rem;
     }
+
 }
 /* Estilos para pantallas entre 420px y 600px (incluyendo ambos tamaños) */
 @media screen and (min-width: 320px) and (max-width: 420px) {
@@ -207,6 +203,7 @@
     #title-espacialidades-home{
         font-size: 1.25rem;
     }
+    
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -239,9 +236,6 @@
     .card-info-home{
         padding:2rem;
     }
-    .title-bienvenida{
-        font-size: 1rem;
-    }
     .subtitle-bienvenida{
         font-size: 1.1rem;
     }
@@ -253,6 +247,13 @@
     }
     .all-questions{
         padding: 2rem;
+    }
+    .container-img-col{
+        padding: 1rem;
+    }
+    .img-col{
+        width: 100%;
+        padding-bottom: 1rem;
     }
 }
 
@@ -275,9 +276,6 @@
     .home-oferta{
         padding-top:6rem;
     }
-    .title-bienvenida{
-        font-size: 1.25rem;
-    }
     .subtitle-bienvenida{
         font-size: 1.25rem;
     }
@@ -293,6 +291,9 @@
     .text-questions{
         font-size: 1.25rem;
     }
+    .container-img-col{
+        padding: 2rem;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -300,9 +301,6 @@
     .card-text-info{
         font-size: 1.75rem;
         line-height: 4rem;
-    }
-    .title-bienvenida{
-        font-size: 1.28rem;
     }
     .subtitle-bienvenida{
         font-size: 1.5rem;
@@ -334,16 +332,15 @@
         padding-left: 6rem;
         padding-top: 2rem;
     }
-    .title-bienvenida{
-        font-size: 1.75rem;
-    }
     .subtitle-bienvenida{
         font-size: 1.75rem;
     }
     .text-bienvenida{
         font-size: 1.5rem;
     }
-
+    .container-img-col{
+        padding: 3rem;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -357,8 +354,5 @@
     .card-especialidades{
         width: calc(25% - 20px); /* 25% de ancho con 5px de margen a cada lado */
         margin: 10px; /* Márgenes de 5px */
-    }
-    .title-bienvenida{
-        font-size: 1.5rem;
     }
 }

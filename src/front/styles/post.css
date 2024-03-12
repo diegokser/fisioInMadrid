@@ -20,7 +20,6 @@
     color: rgb(132,156,187);
 }
 
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .img-post{
@@ -30,10 +29,14 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .img-post{
-        width: 75%;
+        width: 50%;
+    }
+    .all-post{
+        width: 50%;
     }
     .description-post{
         padding: 1rem 3rem 0 3rem;
+        font-size: 1.25rem;
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */

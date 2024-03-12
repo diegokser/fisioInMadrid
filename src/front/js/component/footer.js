@@ -1,7 +1,6 @@
 import React from "react";
 import "../../styles/footer.css";
 import { Link } from "react-router-dom";
-import imagenCam from "../../img/IMG_0488.jpg";
 import imagenColegio from "../../img/IMG_0649.jpg";
 
 export const Footer = () => (
@@ -12,9 +11,6 @@ export const Footer = () => (
         <div className="footer_social">
           <a href="https://www.instagram.com/fisioinmadrid/"><i className="fab fa-instagram fa-lg footer_iconos"></i></a>
           <a href="https://www.facebook.com/people/Fisioin-Madrid/100086704850925/"><i className="fab fa-facebook-square fa-lg footer_iconos"></i></a>
-        </div>
-        <div className="imagenes-footer">
-          <img src={imagenCam} className="img-cam" alt="imagen cheque servicio"/>
         </div>
         <div className="imagenes-footer">
           <img src={imagenColegio} className="img-cam" alt="imagen colegiofisio"/>

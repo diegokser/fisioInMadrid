@@ -1,7 +1,6 @@
 import React from "react";
 import "../../styles/home.css";
 import imagenCard from "../../img/IMG-0376.jpg";
-import { Link } from "react-router-dom";
 
 export const CardHome  = () =>{
     return(
@@ -22,10 +21,9 @@ export const CardHome  = () =>{
             </div>
         </div>
         <div className="col-12 col-lg-6 home-oferta">
-            <h5 className="title-bienvenida">VUELVE A SENTIR LA VIDA QUE TE GUSTA</h5>
-            <h5 className="subtitle-bienvenida">Bienvenidos</h5>
+            <h5 className="subtitle-bienvenida">BIENVENIDOS</h5>
             <p className="text-bienvenida">
-            FISIOIN MADRID SL expertos en neurorrehabilitación a domicilio, nace para facilitar el acceso a los servicios de fisioterapia neurológica, logopedia, neuropsicología y terapia ocupaciones, tanto a personas con limitaciones de movilidad como a personas que prefieran recibir su tratamiento en la comodidad de su hogar. 
+            FISIOIN MADRID SL expertos en neurorrehabilitación a domicilio, nace para facilitar el acceso a los servicios de fisioterapia neurológica, logopedia, neuropsicología y terapia ocupacional, tanto a personas con limitaciones de movilidad como a personas que prefieran recibir su tratamiento en la comodidad de su hogar. 
             Contamos con un equipo multidisciplinar de profesionales especializados en rehabilitación neurológica para garantizar una atención integral personalizada y totalmente adaptada a las necesidades de cada paciente.
             </p>
         </div>
