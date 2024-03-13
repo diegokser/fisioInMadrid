@@ -29,10 +29,10 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .img-post{
-        width: 50%;
+        width: 60%;
     }
     .all-post{
-        width: 50%;
+        width: 75%;
     }
     .description-post{
         padding: 1rem 3rem 0 3rem;

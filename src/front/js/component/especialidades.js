@@ -37,7 +37,7 @@ export const Especialidades = () =>{
                         <div className="card col-12 col-md-6 col-xxl-3 gy-3 card-especialidades" key={index}>
                             <img src={especialidad.img} className="imagen-especialidades" alt="imagen especialidad"/>
                             <div className="card-body card-texto-especialidades">
-                                <h5 className="card-title title-bienvenida text-center">{especialidad.title}</h5>
+                                <h5 className="card-title title-especialidad text-center">{especialidad.title}</h5>
                                 <p className="card-text description-especialidades">{especialidad.description}</p>
                                 {/* <a href="#" className="btn btn-primary">Saber más</a> */}
                             </div>

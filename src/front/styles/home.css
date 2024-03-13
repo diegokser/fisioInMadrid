@@ -77,7 +77,9 @@
 .card-links-home:hover{
     color:rgba(1,179,229,255);
 }
-
+.title-especialidad{
+    color: rgb(5,76,132);
+}
 .subtitle-bienvenida{
     color:  rgba(1,179,229,255);
     margin-right: auto;
