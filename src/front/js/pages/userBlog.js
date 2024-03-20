@@ -102,6 +102,7 @@ export const UserBlog = () => {
                 <img src={post.img} alt="foto post" className="img-post" />
                 <div className="text-post">
                   <p className="date-post" >{new Date(post.date).toLocaleDateString()}</p>
+                  {/* Se añade esto para que interprete los salteos de linea */}
                   <div className="description-post" dangerouslySetInnerHTML={{ __html: post.description }}></div>                </div>
               </div>
             ) : <h4 className="title-post pt-5">Nada que mostrar</h4>} 
