@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import "../../styles/postea.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -32,12 +32,16 @@ export const EditBlog = () => {
         }
       };
 
-      const handleSignup = async (e) => {
+      const handleEditPost = async (e) => {
         e.preventDefault();
         // console.log(post);
         // console.log(params.id);
+
+                // Procesamiento de la descripción para mantener los saltos de línea
+                const processedDescription = post.description.replace(/\n/g, '<br />');
+                const processedPost = { ...post, description: processedDescription };
     
-        if (post.title === "" || post.description === "" || post.img === "") {
+        if (processedPost.title === "" || processedPost.description === "" || processedPost.img === "") {
             // console.log("Faltan datos");
             toast.error("Faltan datos");
         } else {
@@ -51,7 +55,7 @@ export const EditBlog = () => {
                             'Content-Type': 'application/json',
                             Authorization: "Bearer " + token,
                         },
-                        body: JSON.stringify(post),  // Añade el cuerpo JSON con los datos actualizados del post
+                        body: JSON.stringify(processedPost),  // Añade el cuerpo JSON con los datos actualizados del post
                     }
                 );
     
@@ -90,7 +94,7 @@ export const EditBlog = () => {
     return (
         <section className="container-fluid postea-container" style={{ padding: "4rem" }}>
             <h1 className="post-encabezado">Modifica tu post</h1>
-            <form onSubmit={(e) => handleSignup(e)} encType="multipart/form-data">
+            <form onSubmit={(e) => handleEditPost(e)} encType="multipart/form-data">
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label post-title">Título</label>
                     <input type="text" className="form-control" id="exampleFormControlInput1" value={post.title} onChange={(data)=> {setPost({...post, title: data.target.value})}}/>
@@ -104,6 +108,7 @@ export const EditBlog = () => {
                     <input className="form-control" type="file" id="formFile" onChange={(e) => { uploadFile(e) }} />
                 </div>
                 <button type="submit" className="btn post-submit" disabled={isDisabled}>Enviar</button>
+                <Link to="/admin/blogs" className="btn btn-danger ms-3">Cancelar</Link>
             </form>
             <ToastContainer
                             position="bottom-right"

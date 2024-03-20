@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import "../../styles/postea.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -88,6 +88,7 @@ export const Postea = () => {
                     <input className="form-control" type="file" id="formFile" onChange={(e) => { uploadFile(e) }} />
                 </div>
                 <button type="submit" className="btn post-submit" disabled={isDisabled}>Enviar</button>
+                <Link to="/admin/blogs" className="btn btn-danger ms-3">Cancelar</Link>
                 <ToastContainer
                 position="bottom-right"
                 autoClose={1000}
