@@ -161,7 +161,7 @@
     /* padding-right: 2rem; */
     color:rgb(132,156,187);
     /* text-align:justify; */
-    text-align: center;
+    text-align: left;
 }
 .accordion-button:not(.collapsed){
     background-color: #F4F9FC;
@@ -245,7 +245,7 @@
         font-size: 1rem;
     }
     .text-questions{
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .all-questions{
         padding: 2rem;

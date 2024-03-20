@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../../styles/blogs.css";
 import { Context } from "../store/appContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "../../styles/adminBlogs.css"
 
 export const BlogsEdit = () => {
     const { store } = useContext(Context);
@@ -77,21 +77,21 @@ export const BlogsEdit = () => {
     }
 
     return (
-        <section className="container-fluid container-blog">
-            <div className="row row-blog">
+        <section className="container-fluid container-blogs">
+            <div className="row row-blogs">
                 {loading ? (
                     <p style={{ textAlign: "center", color: "rgb(5,76,132)"}}>Cargando...</p>
                 ) : posts.length > 0 ? (
                     posts.map((post, index) => (
-                        <div className="card col-12 col-md-4 card-blog" key={index}>
-                            <Link to={`/blog/${post.id}`}><img src={post.img} className="card-img-top img-blog" alt="imagen de post"/></Link>
+                        <div className="card col-12 col-md-3 card-blogs" key={index}>
+                            <Link to={`/blog/${post.id}`}><img src={post.img} className="card-img-top img-blogs" alt="imagen de post"/></Link>
                             <div className="row icons-blogs">
                                 <button className="col-2 iconos-blogs" onClick={() => handleEdit(post.id)}><i className="fa-regular fa-pen-to-square"></i></button>
                                 <button className="col-2 iconos-blogs" onClick={() => handleDelete(post.id)}><i className="fa-solid fa-trash"></i></button>
                             </div>
                             <div className="card-body">
-                                <Link to={`/blog/${post.id}`} className="card-title title-blog" ><h5>{post.title}</h5></Link>
-                                <p className="card-text date-blog">{post.date}</p>
+                                <Link to={`/blog/${post.id}`} className="card-title title-blogs" ><h5>{post.title}</h5></Link>
+                                <p className="card-text date-blogs">{post.date}</p>
                             </div>
                         </div>
                     ))
