@@ -102,8 +102,7 @@ export const UserBlog = () => {
                 <img src={post.img} alt="foto post" className="img-post" />
                 <div className="text-post">
                   <p className="date-post" >{new Date(post.date).toLocaleDateString()}</p>
-                  <p className="description-post">{post.description}</p>
-                </div>
+                  <div className="description-post" dangerouslySetInnerHTML={{ __html: post.description }}></div>                </div>
               </div>
             ) : <h4 className="title-post pt-5">Nada que mostrar</h4>} 
                   <div className="col-3">
