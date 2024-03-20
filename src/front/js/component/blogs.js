@@ -83,7 +83,7 @@ export const Blogs = () => {
                     <p style={{ textAlign: "center", color: "rgb(5,76,132)"}}>Cargando...</p>
                 ) : posts.length > 0 ? (
                     posts.map((post, index) => (
-                        <div className="card col-12 col-md-4 card-blog" key={index}>
+                        <div className="card col-12 col-sm-5 col-md-4 card-blog" key={index}>
                             <Link to={`/blog/${post.id}`}><img src={post.img} className="card-img-top img-blog" alt="imagen de post"/></Link>
                             <div className="card-body">
                                 <Link to={`/blog/${post.id}`} className="card-title title-blog" ><h5>{post.title}</h5></Link>

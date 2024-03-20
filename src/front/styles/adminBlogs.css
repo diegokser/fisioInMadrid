@@ -1,29 +1,29 @@
-.card-blog{
+.card-blogs{
     border: none;
     box-shadow: 2px 2px 8px rgb(132,156,187);
     margin: 20px;
 }
-.img-blog{
+.img-blogs{
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 0.25;
 }
 
-.row-blog > * {
+.row-blogs > * {
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
 
-.title-blog{
+.title-blogs{
     color:  rgb(5,76,132);
     text-decoration: none;
 }
-.title-blog:hover{
+.title-blogs:hover{
     text-decoration:underline;
 }
 
-.date-blog{
+.date-blogs{
     color: rgb(132,156,187);
 }
 .icons-blogs{
@@ -37,59 +37,41 @@
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .row-blog{
+    .row-blogs{
         justify-content: center;
     }
-    .card-blog{     /* Esto antes no estaba */
-        max-width: 260px;
+    .card-blogs{     /* Esto antes no estaba */
+        max-width: 250px;
     } 
-
 }
 
-@media screen and (min-width: 576px) and (max-width: 600px) {     /* Esto antes no estaba */
-    .row-blog {
-      justify-content: left;
-    }
-  }
-
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {     /* Esto antes era center*/
-    .row-blog{
-        justify-content: left;
+@media only screen and (min-width: 600px) {     
+    .row-blogs{
+        justify-content: center;
+    }
+    .card-blogs{
+        flex: 0 0 calc(33.33% - 20px);
+        margin: 10px;
+        /* max-width: 300px;*/
+        min-width: 200px; 
     }
 
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    /* .container-blog{
+    .container-blogs{
         padding-left: 4rem;
-    } */
-    .row-blog{     /* Esto antes era left */
-        justify-content: center;
     }
-    .card-blog {
-        flex: 0 0 calc(33.33% - 20px);
-        /* max-width: calc(33.33% - 20px); */
-        max-width: 325px;     /* Esto antes no estaba */
-        margin: 10px;
-    }
-    .card-blog{/* Esto antes no estaba */
-        min-width: 199px;
-    }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .card-blog{
-        margin-right: 2.2rem;
-    }
 }
 
 @media only screen and (min-width: 1400px) {

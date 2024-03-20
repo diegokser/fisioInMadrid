@@ -19,6 +19,9 @@
 .nav-link:hover{
     color: rgb(5,76,132);
 }
+.nav-link:focus{
+    color: rgb(5,76,132);
+}
 .navbar-toggler{
     color: rgb(132,156,187)
 }

@@ -10,6 +10,32 @@
 .title-post{
     color:rgb(5,76,132);
 }
+.title-posts{
+    color:rgb(5,76,132);
+    text-decoration: none; 
+}
+.title-posts:hover{
+    text-decoration: underline;
+}
+.title-last-posts{
+    color:rgb(5,76,132);
+    font-size: 1.25rem;
+}
+.all-posts{
+    justify-content: center;
+}
+.all-img-posts{
+    align-self: center;
+}
+.all-info-posts{
+    padding: 1rem 0 1rem 0;
+}
+.img-posts{
+    width: 100%;
+}
+.date-posts{
+    color:rgb(132,156,187);
+}
 
 .date-post{
     color:rgb(132,156,187);
@@ -19,39 +45,60 @@
     text-align: justify;
     color: rgb(132,156,187);
 }
+.other-posts{
+    padding: 1rem;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .img-post{
         width: 100%;
     }
+    .other-posts{
+        display: none;
+    } 
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .img-post{
         width: 60%;
     }
-    .all-post{
-        width: 75%;
-    }
-    .description-post{
+    .text-post{
         padding: 1rem 3rem 0 3rem;
-        font-size: 1.25rem;
     }
+    .other-posts{
+        display: none;
+    } 
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+    .img-post{
+        width: 50%;
+    }
+    .text-post{
+        padding: 1rem 4rem 0 4rem;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+    .description-post{
+        font-size: 1.25rem;
+    }
+    .text-post{
+        padding: 1rem 3rem 0 3rem;
+    }
+    .other-posts{
+        display: block;
+    } 
 
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-
+    .img-post{
+        width: 35%;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
