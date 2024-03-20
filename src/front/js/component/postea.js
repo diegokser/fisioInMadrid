@@ -33,13 +33,17 @@ export const Postea = () => {
 
       const handlePost = async (e) => {
         e.preventDefault();
-        console.log(post);
-        if (post.title === "" || post.description === "" || post.img === "") {
+    
+        // Procesamiento de la descripción para mantener los saltos de línea
+        const processedDescription = post.description.replace(/\n/g, '<br />');
+        const processedPost = { ...post, description: processedDescription };
+    
+        if (processedPost.title === "" || processedPost.description === "" || processedPost.img === "") {
             console.log("Faltan datos");
-            toast.error('Faltan datos')
+            toast.error('Faltan datos');
         } else {
             try {
-                const result = await actions.post(post.title, post.description, post.img);
+                const result = await actions.post(processedPost.title, processedPost.description, processedPost.img);
                 if (result === true) {
                     toast.success('Post publicado!', {
                         onClose: () => {
@@ -48,11 +52,11 @@ export const Postea = () => {
                     });
                 } else {
                     console.log(result);
-                    toast.error(result)
+                    toast.error(result);
                 }
             } catch (error) {
                 console.error("Error en la solicitud API:", error);
-                toast.error(error)
+                toast.error(error);
             }
         }
     };
