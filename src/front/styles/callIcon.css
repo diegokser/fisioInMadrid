@@ -5,13 +5,10 @@
     right: 10px; /* Alinea con la esquina derecha */
     z-index: 999; /* Asegura que esté por encima del contenido */
     max-width: 100px; /* Cambia este valor según el ancho máximo deseado para poder clickear lo que hay en la fila y debajo*/
-    margin-left: auto; /* Mueve el contenedor hacia la derecha */
 }
 .all-cell-icon{
     padding: 1rem;
     justify-content: right;
-    max-width: 100px; /* Cambia este valor según el ancho máximo deseado */
-    margin-left: auto; /* Mueve el contenedor hacia la derecha */
 }
 .btn-cell-icon{
     border:1px solid rgb(132,156,187);
