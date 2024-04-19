@@ -37,7 +37,7 @@ export const QuestionsHome = () =>  {
     },
     {
         question:"¿Cómo funcionan las video sesiones? ",
-        answer:"La video sesión se confirmará como una cita más, se te enviará un correo con el enlace para iniciar la videosesión a la hora y fecha programada, tú sólo tendras que dar un click. Sin instalaciones ni requerimientos técnicos por tu parte, accederas a un entorno encriptado, personal y seguro con estandares homologados.",
+        answer:"La video sesión se confirmará como una cita más, se te enviará un correo con el enlace para iniciar la video sesión a la hora y fecha programada, tú sólo tendras que dar un click. Sin instalaciones ni requerimientos técnicos por tu parte, accederas a un entorno encriptado, personal y seguro con estandares homologados.",
         ncollapse:"panelsStayOpen-collapse6"
     }
     ]
