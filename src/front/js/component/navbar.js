@@ -42,6 +42,9 @@ export const Navbar = () => {
 							<Link className="nav-link" to="/tarifas">TARIFAS</Link>
 						</li>
 						<li className="nav-item">
+							<Link className="nav-link" to="/cheque-servicio">CHEQUE SERVICIO</Link>
+						</li>
+						<li className="nav-item">
 							<Link className="nav-link" to="/contacto">CONTACTO</Link>
 						</li>
 					</ul>

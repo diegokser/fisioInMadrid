@@ -21,6 +21,7 @@ export const Footer = () => (
           <p className="footer_infotext">Información</p>
             <Link to="/contacto" className="footer_infosubtext">Contacto</Link><br/>
             <Link to="/tarifas" className="footer_infosubtext" >Tarifas</Link><br/>
+            <Link to="/cheque-servicio" className="footer_infosubtext">Cheque Servicio</Link><br/>
             <Link to="/especialidades" className="footer_infosubtext">Especialidades</Link><br/>
             <Link to="/blog" className="footer_infosubtext">Blog</Link><br/>
         </div>

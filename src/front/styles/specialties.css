@@ -4,7 +4,14 @@
 .all-specialties{
     justify-content: center;
     text-align: center;
-    line-height: 2rem;
+}
+.title-specialties{
+    padding-top: 1rem;
+}
+.subtitle-specialties{
+    color:rgb(5,76,132);
+    text-align: center;
+    margin: 1rem;
 }
 .description-especialidades{
     text-align: center;
@@ -13,7 +20,7 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .all-specialties{
-        padding: 3rem;
+        padding: 1rem 1rem 1rem 1rem;
     }
     .description-especialidades{
         font-size: 1rem;
@@ -22,8 +29,8 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .container-specialties{
-        padding: 4rem;
+    .all-specialties{
+        padding: 1rem 2rem 1rem 2rem;
     }
     .description-especialidades{
         font-size: 1rem;
