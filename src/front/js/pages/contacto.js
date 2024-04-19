@@ -101,7 +101,7 @@ export const Contacto = () => {
                         <div className="card card-contacto col-12">
                             <div className="row row-icono">
                                 <i className="col-2 fab fa-whatsapp icono-whatsapp"></i>
-                                <p className="card-text p-4 col-9 text-contacto">Puedes escribirnos un <br /><a className="link-contacto" href="https://api.whatsapp.com/send/?phone=34650369409&text&type=phone_number&app_absent=0">whatsapp</a></p>
+                                <p className="card-text p-4 col-9 text-contacto">Puedes escribirnos un <br /><a className="link-contacto" href="https://api.whatsapp.com/send/?phone=34650369409&text&type=phone_number&app_absent=0">WhatsApp</a></p>
                             </div>
                         </div>
                     </div>

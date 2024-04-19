@@ -20,7 +20,7 @@ export const QuestionsHome = () =>  {
         },
         {
           question:"¿Cómo son las posibles formas de pago?",
-          answer:"El pago se realiza a la contratación de los servicios y se puede realizar por transferencia, efectivo o domiciliazión.",
+          answer:"El pago se realiza a la contratación de los servicios y se puede realizar por transferencia, efectivo o domiciliación.",
           ncollapse:"panelsStayOpen-collapse5"
       }
     ]
