@@ -60,7 +60,7 @@ export const Tarifas = () =>{
                                 <Link className="link-text-tarifas" to="/contacto">Consulta tu caso</Link>
                                 </p>
                                 <h3 className="subtitle-tarifas pt-4">CHEQUE SERVICIO</h3>
-                                <p className="text-tarifas">Utiliza tu cheque servicio de la comunidad de Madrid con nosotros. Se rige por los precios acordados con la comunidad y siempre cumpliendo el decálogo de derechos de los usuarios:<br/>
+                                <p className="text-tarifas">Utiliza tu cheque servicio de la Comunidad de Madrid con nosotros. Se rige por los precios acordados con la comunidad y siempre cumpliendo el decálogo de derechos de los usuarios:<br/>
                                 <Link className="link-text-tarifas" to="/derechos">Consúltalo aquí</Link>
                                  </p>
                                  <p className="text-tarifas pt-3">*Para zonas de servicio distintas a las referenciadas, se considerará un suplemento adicional.<br/>
