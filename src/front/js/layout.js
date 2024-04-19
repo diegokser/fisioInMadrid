@@ -26,6 +26,7 @@ import { UserBlog } from "./pages/userBlog";
 import { ChangePassword } from "./pages/changepassword";
 import { EditBlog } from "./pages/editBlog";
 import { CallIcon } from "./component/callIcon";
+import { Cheques } from "./pages/cheque";
 
 //create your first component
 const Layout = () => {
@@ -62,6 +63,7 @@ const Layout = () => {
                         <Route element={<Specialties />} path="/especialidades" />
                         <Route element={<Metodo />} path="/metodo" />
                         <Route element={<Tarifas />} path="/tarifas" />
+                        <Route element={<Cheques />} path="/cheque-servicio" />
                         <Route element={<Derechos />} path="/derechos" />
                         <Route element={<Cookies />} path="/cookies" />
                         <Route element={<Contacto />} path="/contacto" />

@@ -1,0 +1,90 @@
+.container-cheque{
+    background-color: #F4F9FC;
+}
+.all-cheque{
+    justify-content: center;
+}
+.card-img-cheque{
+    align-self: center;
+    text-align: center;
+}
+.img-cheque{
+    border-radius: 0.25rem;
+}
+.title-cheque{
+    text-align: center;
+    padding-top: 2rem;
+}
+.title-1-cheque{
+    color: rgb(132,156,187);
+}
+.title-2-cheque{
+    color: rgba(1,179,229,255);
+}
+.subtitle-cheque{
+    color:rgb(5,76,132);
+    text-align: center;
+    margin: 1rem;
+}
+.text-cheque{
+    color: rgb(132,156,187);
+    margin:1rem;
+    text-align: justify;
+}
+.link-text-cheque{
+    color: rgb(5,76,132);
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .text-cheque{
+        font-size: 1rem;
+    }
+    .all-cheque{
+        padding: 1rem 1rem 3rem 1rem;
+    }
+    .img-cheque{
+        width: 18rem;
+        padding-top: 2rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .all-cheque{
+        padding: 1rem 2rem 3rem 2rem;
+    }
+    .text-cheque{
+        font-size: 1.25rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .subtitle-cheque{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .img-cheque{
+        width: 25rem;
+        padding: 2rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .img-cheque{
+        padding-top: 0;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+}

@@ -103,7 +103,7 @@
     background-color: #F4F9FC;
 }
 .text-especialidades{
-    padding:2rem 4rem 1rem 4rem;
+    padding:2rem 4rem 0rem 4rem;
 }
 .title-1{
     color: rgb(132,156,187);
@@ -115,7 +115,7 @@
     color: rgb(5,76,132);
 }
 .all-especialidades{
-    padding: 1rem 2rem 3rem 2rem;
+    padding: 0rem 2rem 3rem 2rem;
     display: flex;
 }
 .row-especialidades{
@@ -224,7 +224,7 @@
     }
 
     .text-especialidades{
-        padding:2rem 2rem 1rem 2rem;
+        padding:2rem 2rem 0rem 2rem;
     }
     .card-home-text{
         top:20%;
@@ -263,7 +263,7 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .text-especialidades{
-        padding:2rem 4rem 1rem 4rem;
+        padding:2rem 4rem 0rem 4rem;
     }
     .card-text-info{
         font-size: 4vw;
@@ -318,6 +318,10 @@
         padding-right: 2rem;
         color:rgb(132,156,187);
         text-align:justify;
+    }
+    .all-especialidades{
+        padding: 1rem 2rem 3rem 2rem;
+        display: flex;
     }
 }
 
