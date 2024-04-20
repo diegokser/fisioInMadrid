@@ -27,6 +27,7 @@ import { ChangePassword } from "./pages/changepassword";
 import { EditBlog } from "./pages/editBlog";
 import { CallIcon } from "./component/callIcon";
 import { Cheques } from "./pages/cheque";
+import NotFound from "./pages/notfound";
 
 //create your first component
 const Layout = () => {
@@ -74,6 +75,7 @@ const Layout = () => {
                         <Route element={<AdminBlogs />} path="/admin/blogs" />
                         <Route element={<UserBlogs />} path="/blog" />
                         <Route element={<UserBlog />} path="/blog/:id" />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                     {!isAdminPage && <CallIcon />}                    
                     <CookieAlert />
