@@ -19,9 +19,6 @@
     color:  rgb(5,76,132);
     text-decoration: none;
 }
-.title-blog:hover{
-    text-decoration:underline;
-}
 
 .date-blog{
     color: rgb(132,156,187);
