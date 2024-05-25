@@ -21,29 +21,25 @@ def has_no_empty_params(rule):
     arguments = rule.arguments if rule.arguments is not None else ()
     return len(defaults) >= len(arguments)
 
-
 def generate_sitemap(app):
     # Define las rutas específicas del frontend que deseas incluir
     frontend_routes = [
-        '/metodo',
+        '/',
         '/contacto',
-        '/blog',
-        '/especialidades',
         '/cheque-servicio',
-        '/tarifas'
+        '/tarifas',
+        '/especialidades',
+        '/metodo',
+        '/blog',
     ]
 
     # Genera las URLs completas solo para las rutas del frontend
     links = [url_for('serve_any_other_file', path=route, _external=True) for route in frontend_routes]
 
     # Añade dinámicamente las URLs de las entradas del blog
-    for blog in Blog.query.all():
-        links.append(url_for('api.get_post', post_id=blog.id, _external=True))
-
-    for rule in app.url_map.iter_rules():
-        if "GET" in rule.methods and has_no_empty_params(rule) and not rule.rule.startswith('/admin/') and rule.rule != '/sitemap.xml':
-            url = url_for(rule.endpoint, **(rule.defaults or {}), _external=True)
-            links.append(url)
+    blogs = Blog.query.all()
+    for blog in blogs:
+        links.append(url_for('serve_any_other_file', path=f'/blog/{blog.id}', _external=True))
 
     sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for link in links:
