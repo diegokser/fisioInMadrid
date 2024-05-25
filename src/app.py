@@ -79,6 +79,11 @@ def sitemap():
         return generate_sitemap(app)
     return send_from_directory(static_file_dir, 'index.html')
 
+@app.route('/sitemap.xml', methods=['GET'])
+def sitemap_xml():
+    # Aquí generas el sitemap y lo devuelves como una respuesta XML
+    return generate_sitemap(app), 200, {'Content-Type': 'application/xml'}
+
 # any other endpoint will try to serve it like a static file
 @app.route('/<path:path>', methods=['GET'])
 def serve_any_other_file(path):
