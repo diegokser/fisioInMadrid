@@ -25,7 +25,6 @@ def has_no_empty_params(rule):
 def generate_sitemap(app):
     # Define las rutas específicas del frontend que deseas incluir
     frontend_routes = [
-        '/',
         '/metodo',
         '/contacto',
         '/blog',
