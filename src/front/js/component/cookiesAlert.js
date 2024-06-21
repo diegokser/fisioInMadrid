@@ -27,18 +27,37 @@ export const CookieAlert = () => {
     }, []);
 
     const acceptCookies = () => {
-        // Realiza una solicitud al servidor para establecer la cookie de consentimiento.
-        fetch(process.env.BACKEND_URL + '/api/set_cookie', {
+        fetch(`${process.env.BACKEND_URL}/api/set_cookie`, {
             method: 'POST',
         })
         .then(() => {
-            // Una vez que el servidor establece la cookie, oculta el aviso y almacena el consentimiento en localStorage.
             setShowNotice(false);
             localStorage.setItem('cookie_consent', 'accepted');
+            loadGoogleAnalytics(); // Cargar Google Analytics después del consentimiento
         })
         .catch(error => {
             console.error('Error al establecer la cookie de consentimiento:', error);
         });
+    };
+
+    const loadGoogleAnalytics = () => {
+        if (localStorage.getItem('cookie_consent') === 'accepted') {
+            const script = document.createElement('script');
+            script.src = `https://www.googletagmanager.com/gtag/js?id=TU_ID_DE_ANALYTICS`;
+            script.async = true;
+            script.onload = () => {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'TU_ID_DE_ANALYTICS', {
+                    'anonymize_ip': true,
+                    'cookie_flags': 'max-age=7200;secure;samesite=none',
+                    'cookie_update': true,
+                    'send_page_view': true
+                });
+            };
+            document.head.appendChild(script);
+        }
     };
 
     return showNotice ? (
