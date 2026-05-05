@@ -11,21 +11,21 @@ import "../../styles/tarifas.css";
 export const Tarifas = () =>{
     const precios = [{
         title:"INDIVIDUAL",
-        sesion:"(Sesión a 62€)",
-        precio:"62€"
+        sesion:"(Sesión a 65€)",
+        precio:"65€"
     },
     {
         title:"BONO 5",
-        sesion:"(Sesión a 56€)",
-        precio:"280€"
+        sesion:"(Sesión a 63€)",
+        precio:"315€"
     },{
         title:"BONO 10",
-        sesion:"(Sesión a 53€)",
-        precio:"530€"
+        sesion:"(Sesión a 60€)",
+        precio:"600€"
     },{
         title:"BONO 15",
-        sesion:"(Sesión a 50€)",
-        precio:"750€"
+        sesion:"(Sesión a 57€)",
+        precio:"855€"
     }]
 
     return(
