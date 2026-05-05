@@ -13,16 +13,13 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import json
-from flask_mail import Message, Mail
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
-
+import requests
+import re
 
 ph = argon2.PasswordHasher()
 
 api = Blueprint('api', __name__)
 
-mail = Mail()
 
 cloudinary.config(
     cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
@@ -201,23 +198,116 @@ def cookies():
     response.set_cookie('cookie_consent', 'accepted', max_age=31536000)  # Max age of 1 year
     return response
 
+import re
+
 @api.route('/send_email', methods=['POST'])
 def email():
     data = request.get_json()
 
-    message = Mail(
-        from_email='Consulta@fisioin.es',
-        to_emails='fisioinmadrid@gmail.com',
-        subject='Paciente que solicita información',
-        html_content=f'<strong>Nombre: {data.get("name")}</strong><br><strong>Email: {data.get("email")}</strong><br><strong>Número de telefono: {data.get("phone")}</strong><br>{data.get("message")}'
-    )
     try:
-        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-        response = sg.send(message)
-        print(response.status_code)
-        print(response.body)
-        print(response.headers)
-        return "Correo enviado con éxito!"  # Añade esta línea para devolver una respuesta
+        url = "https://api.mailersend.com/v1/email"
+
+        headers = {
+            "Authorization": f"Bearer {os.getenv('MAILERSEND_API_KEY')}",
+            "Content-Type": "application/json"
+        }
+
+        # EMAIL PARA TI
+        admin_payload = {
+            "from": {
+                "email": "noreply@fisioin.es",
+                "name": "FisioIn Madrid"
+            },
+            "to": [
+                {
+                    "email": "fisioinmadrid@gmail.com",
+                    "name": "FisioIn Madrid"
+                }
+            ],
+            "subject": "Nueva solicitud de información",
+            "text": f"""
+Se ha recibido una nueva solicitud desde la web.
+
+Nombre: {data.get('name', '')}
+Email: {data.get('email', '')}
+Teléfono: {data.get('phone', '')}
+
+Mensaje:
+{data.get('message', '')}
+"""
+        }
+
+        admin_response = requests.post(
+            url,
+            json=admin_payload,
+            headers=headers
+        )
+
+        print("ADMIN EMAIL:", admin_response.status_code)
+
+        # EMAIL AL USUARIO (solo si parece válido)
+        email_user = data.get("email", "")
+
+        email_valid = re.match(
+            r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$",
+            email_user
+        )
+
+        user_status = "not_sent"
+
+        if email_valid:
+            user_payload = {
+                "from": {
+                    "email": "noreply@fisioin.es",
+                    "name": "FisioIn Madrid"
+                },
+                "to": [
+                    {
+                        "email": email_user,
+                        "name": data.get("name", "Usuario")
+                    }
+                ],
+                "subject": "Hemos recibido tu solicitud",
+                "text": f"""
+Hola {data.get('name', '')},
+
+Gracias por contactar con FisioIn Madrid.
+
+Hemos recibido correctamente tu solicitud y nos pondremos en contacto contigo lo antes posible para ayudarte.
+
+Resumen de tu consulta:
+
+Nombre: {data.get('name', '')}
+Teléfono: {data.get('phone', '')}
+
+Mensaje:
+{data.get('message', '')}
+
+Un saludo,
+
+FisioIn Madrid
+"""
+            }
+
+            try:
+                user_response = requests.post(
+                    url,
+                    json=user_payload,
+                    headers=headers
+                )
+                user_status = user_response.status_code
+                print("USER EMAIL:", user_status)
+
+            except Exception as user_error:
+                print("USER EMAIL ERROR:", user_error)
+                user_status = "failed"
+
+        return jsonify({
+            "message": "Formulario enviado correctamente",
+            "admin_email": admin_response.status_code,
+            "user_email": user_status
+        }), 200
+
     except Exception as e:
-        print(e.message)
-        return "Error al enviar el correo"  # Puedes personalizar este mensaje según sea necesario
+        print("ERROR EMAIL:", repr(e))
+        return jsonify({"error": str(e)}), 500
