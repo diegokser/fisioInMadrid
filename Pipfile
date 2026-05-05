@@ -21,8 +21,8 @@ typing-extensions = "*"
 argon2-cffi = "*"
 flask-jwt-extended = "*"
 flask-wtf = "*"
-flask-mail = "*"
-sendgrid = "*"
+mailersend = "*"
+requests = "*"
 
 [requires]
 python_version = "3.13"
