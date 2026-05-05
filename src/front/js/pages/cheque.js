@@ -13,18 +13,24 @@ export const Cheques = () =>{
             <div className="all-cheque">
                 <div className="row">
                     <div className="col-12 col-xl-8">
-                        <p className="text-cheque">El Cheque Servicio es una prestación económica que ofrece la Comunidad de Madrid asociada
-                                                    a la Ley de Dependencia, que contribuye a la financiación del coste del servicio. Este centro
-                                                    está homologado por la Dirección General de Servicios Sociales e Integración Social para poder
-                                                    realizar con nosotros la rehabilitación médico funcional. </p>
+                        <p className="text-cheque">El Cheque Servicio es una prestación económica de la Comunidad de Madrid destinada a financiar servicios profesionales de atención y rehabilitación para personas en situación de dependencia. Permite elegir libremente un centro acreditado, garantizando calidad y seguridad en la atención. </p>
                         <p className="text-cheque">
-                        En Fisioin Madrid somos expertos en fisioterapia y rehabilitación neurológica, contamos con
-                        un equipo multidisciplinar formado por fisioterapeutas, logopedas, neuropsicólogas y
-                        terapeutas ocupacionales que proporcionarán una atención integral personalizada y
-                        totalmente adaptada a las necesidades de cada usuario.</p>
+                        En Fisioin Madrid estamos acreditados por la Dirección General de Servicios Sociales e Integración Social, por lo que puedes realizar con nosotros tu programa de rehabilitación médico-funcional con total confianza. Somos expertos en fisioterapia y rehabilitación neurológica, contamos con un equipo multidisciplinar formado por fisioterapeutas, logopedas, neuropsicólogas y terapeutas ocupacionales que proporcionarán una atención integral personalizada y adaptada a las necesidades de cada usuario.</p>
+                        <p className="text-cheque"><strong>¿Cómo trabajamos con el Cheque Servicio?</strong></p>
+                            <ul>
+                                <li className="text-cheque">
+                                Valoración inicial personalizada: evaluación completa para diseñar un plan terapéutico adaptado.
+                                </li>
+                                <li className="text-cheque">
+                                Sesiones ajustadas a la ayuda concedida: adaptamos frecuencia y duración según el grado de dependencia.
+                                </li>
+                                <li className="text-cheque">
+                                Seguimiento continuo y coordinación familiar: revisamos la evolución y ofrecemos orientación a familiares y cuidadores.
+                                </li>
+                            </ul>
+                    
                         <p className="text-cheque">Este servicio se rige por el decálogo de <Link className="link-text-cheque" to="/derechos">derechos de los usuarios.</Link></p>
                         <p className="text-cheque">Contacta con nosotros para <Link className="link-text-cheque" to="/contacto"> consultar tu caso</Link></p>
-
                     </div>
                     <div className="col-12 col-xl-4 card-img-metodo">
                         <img src={imagenCheque} className="img-cheque" alt="Imagen logo del cheque servicio de la Comunidad de Madrid"/>                         
