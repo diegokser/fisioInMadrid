@@ -28,3 +28,4 @@ setuptools==65.5.0
 wheel
 flask-jwt-extended==3.25.1
 argon2-cffi==21.3.0
+requests==2.31.0
