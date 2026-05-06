@@ -72,7 +72,9 @@ def login():
         else: 
             try:
                 if ph.verify(user.password, password):
-                    token = create_access_token(identity=user.id)
+                    token = create_access_token(identity=str(user.id))
+                # if ph.verify(user.password, password):
+                #     token = create_access_token(identity=user.id)
                     return jsonify({"email": email, "token":token, "user_data": {"id": user.id}, "message": "Inicio de sesión realizado con éxito"}),200
                 else:
                     return jsonify({"message": "Contraseña incorrecta"}), 401
@@ -104,7 +106,8 @@ def post():
     title = data.get("title")
     description = data.get ("description")
     img = data.get("img")
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
+    # user_id = get_jwt_identity()
     date = datetime.today().date().strftime('%Y-%m-%d')
 
     if not title or not description:
